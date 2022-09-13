@@ -2,7 +2,7 @@
 
 
 $host = "localhost";
-$DataBase = "sinhat" ;
+$DataBase = "normal!" ;
 $Nombre = "root";
 $password = "";
  

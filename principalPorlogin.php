@@ -55,6 +55,10 @@
             <td><center>".$consulta['direccion']."</center></td>
             <td><center>".$consulta['email']."</center></td>
             <td><center>".$consulta['fkcarrera_id']."</center></td>
+
+
+
+
          
             </tr>
             </table>
