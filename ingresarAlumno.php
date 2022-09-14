@@ -156,34 +156,37 @@
       $observacion =  $_POST["observacion"];
     
       
-      $prueba =  "SELECT * FROM Alumno WHERE $DniPass = 'dni'";
+      $prueba =  "SELECT * FROM Alumno WHERE dni = '$DniPass' ";
       $resultado = mysqli_query($conexion,$prueba);
       $consulta = mysqli_fetch_array($resultado);
 
-      if (!empty($consulta)){
+     $DNIComp = $consulta['dni'];
+      
+            
 
-        echo  "no Existe!!!";
 
-       if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,      cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DniPass','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$DniPass',  '$carrera')")){ 
-
-           echo "se realizó el ingreso" ; 
-                  
-        }else {echo "no se pudo realizar el ingreso" ; }
+      if (strcmp($DNIComp, $DniPass) === 0){
 
         
-
+        echo  "Existe!!!";
   
-    
 
       }else {
 
-        echo  "Existe!!!";
+
+        if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,      cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DniPass','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$DniPass',  '$carrera')")){ 
+ 
+          echo "se realizó el ingreso" ; 
+                   
+         }else {echo "no se pudo realizar el ingreso" ; }
+
+        
       }
     
 
 
     }
-        
+       
 
     ?>
 

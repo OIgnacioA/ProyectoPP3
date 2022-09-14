@@ -35,15 +35,12 @@
     session_start(); 
 
 
-   
+ include("Conexion.php");
 
 
-include("Conexion.php");
+  if (isset($_POST["busqueda"]) )  {
 
-
-if (isset($_POST["busqueda"]) )  {
-
-    $consultaAl = "SELECT * FROM alumno WHERE DNI = '". $_POST["DNI"]."'";  
+    $consultaAl = "SELECT * FROM alumno WHERE dni = '". $_POST["DNI"]."'";  
 
     $resultado = mysqli_query($conexion,$consultaAl);
 
