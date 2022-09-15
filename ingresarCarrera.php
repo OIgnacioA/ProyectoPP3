@@ -10,10 +10,11 @@
 </head>
 
 <body>
-
+<br>
+  <center><p><a href="index.php">Inicio</a></p></center>
     <section class="registro">
 
-      <form action="administrarCarrera.php" method="post">
+      <form action="ingresarCarrera.php" method="post">
       <h4>Datos de la Carrera</h4>
 
 

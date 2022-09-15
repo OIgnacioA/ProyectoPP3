@@ -4,55 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-</head>
-<body>
-<br>
-  <center><p><a href="index.php">Inicio</a></p></center>
-<section class="registro">
-
-
-
-
-
-    <form action="BUSQUEDA.php" method="post">
-    <h4>Ingreso</h4>
-   
-      <input class="textos" type="text" name="DNI" id="" placeholder="Ingrese DNI">
-   
 
     
-      <input class="botones" type="submit" value="BUSCAR" name="busqueda">
-     
+    <script src="enie.js"></script>
 
-    </form>
+</head>
 
-  </section>
+<body>
 
-
-
-
-
+<br>
+  <center><p><a href="index.php">Inicio</a></p></center>
 <?php
 
-
-    session_start(); 
-
+  session_start(); 
 
  include("Conexion.php");
 
 
-  if (isset($_POST["busqueda"]) )  {
-
-    $consultaAl = "SELECT * FROM alumno WHERE dni = '". $_POST["DNI"]."'";  
+    $consultaAl = "SELECT * FROM alumno";  
 
     $resultado = mysqli_query($conexion,$consultaAl);
 
 
         while($consulta = mysqli_fetch_array($resultado)){
 
-        
+          
+
             echo "<center> <table border=\"3\">
             <tr>
                 </tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
@@ -104,23 +82,11 @@
             <td><center>".$consulta["estado"]."</center></td>
             <td><center>".$consulta["observaciones"]."</center></td>
             <td><center>".$consulta["dni"]."</center></td>
-            <td><center>".$consulta['fk_carrera_id']."</center></td>
-
-             
-
-
-            </tr>
-            </table>
-            
-            <br><br>
-            
-
-            " ;
+            <td><center>".$consulta['fk_carrera_id']."</center></td>";
 
         }
-}
-?>
 
+?>
 
 </body>
 </html>

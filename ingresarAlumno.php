@@ -11,9 +11,12 @@
 
 <body>
 
-    <section class="registro">
+  <br>
+  <center><p><a href="index.php">Inicio</a></p></center>
 
-      <form action="ingresarAlumno.php" method="post">
+  <section class="registro">
+
+    <form action="ingresarAlumno.php" method="post">
       <h4>Datos del Estudiante</h4>
 
 
@@ -67,7 +70,7 @@
 
         <!-- mail contacto --> 
 
-        <input class="textos" type="text" name="emailC" id="emailC" placeholder="Ingrese email">
+        <input class="textos" type="text" name="emailC" id="emailC" placeholder="Ingrese email de contacto">
 
         <!-- cod y telefono--> 
 
@@ -104,7 +107,7 @@
 
         <!-- estado--> 
 
-        <label >DNI/Pasaporte</label>
+        <label >Estado</label>
           <select class="select" Name="estado">
           <option value='Egresado'>Egresado</option>
           <option value='Regular' selected>Regular</option>

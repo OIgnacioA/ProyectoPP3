@@ -9,7 +9,8 @@
 </head>
 <body>
 
-
+<br>
+  <center><p><a href="index.php">Inicio</a></p></center>
 
 
 <?php

@@ -2,7 +2,7 @@
 
 
 $host = "localhost";
-$DataBase = "normal!" ;
+$DataBase = "normal1_" ;
 $Nombre = "root";
 $password = "";
  

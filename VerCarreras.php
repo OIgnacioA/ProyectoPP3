@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 
     
@@ -14,19 +13,14 @@
 
 <body>
 
-
-
-
+<br>
+  <center><p><a href="index.php">Inicio</a></p></center>
 <?php
 
-
-    session_start(); 
-
+  session_start(); 
 
  include("Conexion.php");
 
-
-  
 
     $consultaAl = "SELECT * FROM carrera";  
 
@@ -35,13 +29,13 @@
 
         while($consulta = mysqli_fetch_array($resultado)){
 
-           
+            $var =  $consulta["id"];
 
-            echo "<center> <table border=\"3\">
+            echo "<br><br><center> <table border=\"3\">
             <tr>
                 </tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
                 <td><font color='blue'><b><center>Nombre:</center></b></font></td>
-                <td><center>".$consulta['nombre']."</center></td>
+                <td><center>".$consulta["nombre"]."</center></td>
                 <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
             <tr>
             <tr>
@@ -70,49 +64,20 @@
             
             </tr>
             </table>
-            
-            <br><br>
+ 
+            <form action=". "'". "verMateriasCarrera.php". "'"."method=". "'". "post". "'". ">
 
+            <input class=" . "'" ."textos". "'".  "type="."'" . "text" . "'" . "name=". "'"."texto". "'". "id=". "'". "localidad". "'"." placeholder=". "'"."prueba". "'". "value =". "'".$var."'"." style = "."'" ."display:none". "'".">        
+
+            <input type="."'". "submit"."'"."value="."'". "Ver Materias"."'"."name="."'"."envio"."'"."/><br><br>
            
-            <form action=". "'". "materias.php". "'"."method=". "'". "post". "'". ">
-
-
-
-            <input class=" . "'" ."textos". "'".  "type=". "'" . "'" . "text" . "'" . "name=". "'"."localidad". "'". "id=". "'". "localidad". "'"." placeholder=". "'". $consulta["id"]. "'". ">        
-
-
-
-
-           <input "."type="."'". "submit"."'"."value="."'". "Ver Materias"."'"."onclick="."'"."name=". "'".id."'". "verMaterias(".$consulta["id"].")"."'"."/><br><br>
-           
-           </form>
-
+            </form>
 
             " ;
 
-
-
         }
 
-       
-        
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

@@ -11,23 +11,19 @@
     
 <section class="registro">
 
-    <form action="" method="post">
-    <h4>Principal</h4>
+    <form action="index.php" method="post">
+    <h4>Ingreso</h4>
+   
+      <input class="textos" type="text" name="email" id="email" placeholder="Ingrese email">
    
 
-      <p><a href="ingresarAlumno.php">Ingresar Alumnos</a></p>
-      <p><a href="ingresarMateria.php">Ingresar Materia</a></p>
-      <p><a href="ingresarProfesor.php">ingresarProfesor</a></p>
-      <br><br>
-      <p><a href="verCarreras.php">Ver Carreras</a></p>
-      <p><a href="verAlumnosCarrera.php">Ver Alumnos por carrera</a></p>
-      <p><a href="verAlumnos.php">Ver todos los Alumnos </a></p>
-      <p><a href="verMateriasCarrera.php">Ver Materias</a></p>
-      <br><br>
-      <p><a href="busqueda.php">Buscar alumno por dni</a></p>
-      <br><br>
-      <p><a href="paginaRegistro.php">pagina de registro -?</a></p>
-      <p><a href="ingresarCarrera.php">Ingresar Carrera</a></p>
+      
+      <input class="textos" type="password" name="contrasenia" id="contrasenia" placeholder="Ingrese su contraseña">
+
+
+    
+      <input class="botones" type="submit" value="Ingresar" name="ingreso">
+      <p><a href="paginaRegistro.php">No tienes usuario? Create uno</a></p>
 
     </form>
 

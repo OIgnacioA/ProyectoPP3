@@ -8,6 +8,8 @@
     <title>Inicio</title>
 </head>
 <body>
+  <br>
+  <center><p><a href="index.php">Inicio</a></p></center>
 
   <section class="registro">
 
@@ -61,7 +63,7 @@
       $pass2 = $_POST["repcontra"];
       
 
-     if ( (strcmp($pass,$pass2 ) !== 0)){
+     if ( (strcmp($pass,$pass2) !== 0)){
 
       echo "<script>
       alert('Las contraseñas no coinciden');
