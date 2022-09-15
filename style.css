@@ -86,3 +86,10 @@ body {
     font-size: 18px;
     color: #ff7b00;
 }
+
+.MateriaPop{
+    background-color: red;
+    width: 500px;
+    height: 500px;
+
+}
