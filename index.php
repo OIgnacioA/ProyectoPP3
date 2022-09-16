@@ -14,7 +14,7 @@
     <form action="" method="post">
     <h4>Principal</h4>
    
-
+       <br>
       <p><a href="ingresarAlumno.php">Ingresar Alumnos</a></p>
       <p><a href="ingresarMateria.php">Ingresar Materia</a></p>
       <p><a href="ingresarProfesor.php">ingresarProfesor</a></p>
@@ -23,6 +23,7 @@
       <p><a href="verAlumnosCarrera.php">Ver Alumnos por carrera</a></p>
       <p><a href="verAlumnos.php">Ver todos los Alumnos </a></p>
       <p><a href="verMateriasCarrera.php">Ver Materias</a></p>
+      <p><a href="verProfesores.php">Ver Profesores</a></p>
       <br><br>
       <p><a href="busqueda.php">Buscar alumno por dni</a></p>
       <br><br>

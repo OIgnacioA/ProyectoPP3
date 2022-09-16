@@ -72,7 +72,7 @@
 
      }else {  
 
-      if (mysqli_query($conexion, " INSERT INTO Alumno (nombre, apellido, dni, direccion, email,fkcarrera_id, contrasenia) values ('$Nombre', '$Apellido','$DNI', '$direccion','$email','$carrera','$pass')")){ 
+      if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, dni, direccion, email, fkcarrera_id, pass) values ('$Nombre', '$Apellido','$DNI', '$direccion','$email','$carrera','$pass')")){ 
 
         echo "se realizó el ingreso" ; 
           

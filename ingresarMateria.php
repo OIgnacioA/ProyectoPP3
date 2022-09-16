@@ -15,7 +15,7 @@
     <section class="registro">
 
       <form action="ingresarMateria.php" method="post">
-      <h4>Datos de la Materia</h4>
+      <h4>Datos de la Materia</h4><br>
 
         <!-- Nombre--> 
 
@@ -27,12 +27,20 @@
 
         <!-- descripcion --> 
 
-        <input class="textos" type="text" name="descripcion" id="email" placeholder="Codigo">
+        <input class="textos" type="text" name="descripcion" id="email" placeholder="descripcion">
 
         <!-- ID Profesor --> 
 
         <input class="textos" type="text" name="IDProfesor" id="idprofesor" placeholder="ID Profesor">
 
+         <!-- carreras --> 
+
+          <input type="checkbox" id="html" name="1" value="1">
+           <label for="html">Analista de Sistemas</label><br>
+          <input type="checkbox" id="css" name="2" value="2">
+            <label for="css">Desarrollador de Software</label><br>
+          <input type="checkbox" id="javascript" name="3" value="3">
+           <label for="javascript">Seguridad e Higiene</label><br><br>
 
         <input class="botones" type="submit" value="Registrar" name="alta"><br><br>
 
@@ -42,46 +50,68 @@
       
   <?php
 
-    session_start(); 
+  session_start(); 
 
 
-    if ( isset($_POST["alta"]))  {
+  if ( isset($_POST["alta"]))  {
 
 
-      include("Conexion.php");
+    include("Conexion.php");
 
-      $Nombre = $_POST["nombre"];
-      $Codigo = $_POST["codigo"];
-      $Descripcion = $_POST["descripcion"];
-      $IDProfesor= $_POST["IDProfesor"];
- ;
-      
+    $Nombre = $_POST["nombre"];
+    $Codigo = $_POST["codigo"];
+    $Descripcion = $_POST["descripcion"];
+    $IDProfesor= $_POST["IDProfesor"];
+
+    $FK_Carrera1= $_POST["1"];
+    $FK_Carrera2= $_POST["2"];
+    $FK_Carrera3= $_POST["3"];
+
+    $arrayFK = [1 => $FK_Carrera1, 2 => $FK_Carrera2, 3 => $FK_Carrera3];
+
+    $prueba =  "SELECT * FROM materia WHERE nombre = '$Nombre'";
+    $resultado = mysqli_query($conexion,$prueba);
+    $consulta = mysqli_fetch_array($resultado);
+ 
+    $CODComp = $consulta['codigo'];
+
+    if (strcmp($CODComp, $Codigo) === 0){
+
+        echo  "Materia existente";
+
+    }else {
+
+      if ((mysqli_query($conexion, " INSERT INTO materia (nombre, descripcion, codigo, profesor_id ) values ('$Nombre', '$Descripcion', '$Codigo', '$IDProfesor')"))){ 
+
+        echo "se realizó la alta" ; 
+      }else {echo "no se pudo realizar la alta" ; }
+
 
       $prueba =  "SELECT * FROM materia WHERE codigo = '$Codigo'";
       $resultado = mysqli_query($conexion,$prueba);
       $consulta = mysqli_fetch_array($resultado);
+      $idUltima = $consulta['id'];
 
-      $CODComp = $consulta['codigo'];
-      
-            
+     
 
-        if (strcmp($CODComp, $Codigo) === 0){
+      $cont = 1 ; 
 
-            echo  "Materia existente";
+      while ($cont < 4) {
 
-        }else {
+        if ( $arrayFK[$cont]!=NULL) {  
 
-            if (mysqli_query($conexion, " INSERT INTO carrera (nombre, descripcion, codigo, profesro_id) values ('$Nombre', '$Descripcion', '$Codigo',' $Duracion', '$IDProfesor')")){ 
+          if ((mysqli_query($conexion, " INSERT INTO materia_carrera (materia_id, carrera_id ) values ('$idUltima', '$arrayFK[$cont]')"))){ 
 
-                echo "se realizó la alta" ; 
-                        
-            }else {echo "no se pudo realizar la alta" ; }
+            echo "se realizó alta en carrera". $cont ; ; 
 
-        }
-
-    }
+          }}else {echo "no se pudo realizar el alta". $cont ; }
         
 
+        $cont= $cont + 1 ; 
+
+      }
+    }
+  }
     ?>
 
   </body>

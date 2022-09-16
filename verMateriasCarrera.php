@@ -31,25 +31,28 @@
 <?php
 
 
-if ( isset($_POST["envio"]))  {
 
-    $var = $_POST["carrera"];
+
+if ( isset($_POST["envio"]))  {
 
 
     session_start(); 
 
-
+    $var = $_POST["carrera"];
     include("Conexion.php");
 
     
 
 
-    $consultaAl = "SELECT C.nombre as Carrera, M.nombre as Materia, M.descripcion,  M.codigo, M.profesor_id as profesor, MC.materia_id as ID FROM `materia_carrera` as MC
+    $consultaAl = "SELECT C.nombre as Carrera, M.nombre as Materia, M.descripcion,  M.codigo, p.apellido as profesor , M.id  FROM `materia_carrera` as MC
 
     JOIN carrera C on (C.id = MC.carrera_id)
     JOIN materia M on (M.id = MC.materia_id)
+    JOIN profesor p on (p.id = M.profesor_id)
     
     WHERE C.id = $var";  
+
+   
 
     $resultado = mysqli_query($conexion,$consultaAl);
 
@@ -64,7 +67,7 @@ if ( isset($_POST["envio"]))  {
             <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
         <tr>
         <tr>
-        <td><b><center>ID</center></b></td>
+        
         <td><b><center>Materia</center></b></td>
         <td><b><center>Descripcion</center></b></td>
         <td><b><center>Codigo</center></b></td>
@@ -76,7 +79,7 @@ if ( isset($_POST["envio"]))  {
         <td><center>".$consulta["descripcion"]."</center></td>
         <td><center>".$consulta["codigo"]."</center></td>
         <td><center>".$consulta["profesor"]."</center></td>
-        td><center>".$consulta["ID"]."</center></td>
+        <td><center>".$consulta["id"]."</center></td>
         </tr>
         </table>
         
@@ -85,7 +88,7 @@ if ( isset($_POST["envio"]))  {
         
         <form action=". "'". "VerCarreras.php". "'"."method=". "'". "post". "'". ">
 
-        <input type="."'". "submit"."'"."value="."'". "Ver Materias"."'"."name="."'"."envio"."'"."/><br><br>
+        <input type="."'". "submit"."'"."value="."'". "Ver Carreras"."'"."name="."'"."envio"."'"."/><br><br>
         
         </form>
 
