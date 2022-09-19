@@ -82,17 +82,17 @@ if ( isset($_POST["envio"]))  {
         <td><center>".$consulta["id"]."</center></td>
         </tr>
         </table>
-        
+       
         <br><br>
 
         
-        <form action=". "'". "VerCarreras.php". "'"."method=". "'". "post". "'". ">
+        <form action=". "'". "verCarreras.php". "'"."method=". "'". "post". "'". ">
 
         <input type="."'". "submit"."'"."value="."'". "Ver Carreras"."'"."name="."'"."envio"."'"."/><br><br>
         
         </form>
 
-
+      </center>
         ";
 
         

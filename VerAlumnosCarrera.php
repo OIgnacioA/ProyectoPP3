@@ -29,65 +29,59 @@
 <?php
 
 
-    if ( isset($_POST["envio"]))  {
+  if ( isset($_POST["envio"]))  {
 
-     $var = $_POST["carrera"];
-    
+    session_start(); 
 
-     session_start(); 
-
-
-     include("Conexion.php");
-    
-      
+    $var = $_POST["carrera"];
+    include("Conexion.php");
+  
     
     
-        $consultaAl = "SELECT A.nombre, A.apellido, A.dni, A.email, A.cod_area, A.telefono, A.estado  from alumno As A
-        join carrera C on (A.fk_carrera_id = c.id)
-        WHERE c.id = $var";  
+    $consultaAl = "SELECT A.nombre, A.apellido, A.email, A.cod_area, A.telefono, A.estado  from alumno As A
+  
+    WHERE A.fk_carrera_id = $var";  
+
+    $resultado = mysqli_query($conexion,$consultaAl);
+
+
+   while($consulta = mysqli_fetch_array($resultado)){
+
+    echo "<center> <table border=\"3\">
+    <tr>
+      </tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+      <td><font color='blue'><b><center>Nombre:</center></b></font></td>
+      <td><center>".$consulta['nombre']."</center></td>
+      <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+    <tr>
+    <tr>
     
-        $resultado = mysqli_query($conexion,$consultaAl);
-    
-    
-        while($consulta = mysqli_fetch_array($resultado)){
+    <td><b><center>Nombre</center></b></td>
+    <td><b><center>Apellido</center></b></td>      
+    <td><b><center>DNI</center></b></td>
+    <td><b><center>email</center></b></td>
+    <td><b><center>cod Area</center></b></td>
+    <td><b><center>Telefono</center></b></td>          
+    <td><b><center>Estado</center></b></td>
+    </tr>
+    <tr>      
+    <td><center>".$consulta["nombre"]."</center></td>
+    <td><center>".$consulta["apellido"]."</center></td>
+    <td><center>".$consulta["dni"]."</center></td>
+    <td><center>".$consulta["email"]."</center></td>
+    <td><center>".$consulta["cod_area"]."</center></td>
+    <td><center>".$consulta["telefono"]."</center></td>
+    </tr>
+    </table>
+    <br>
+  </center>
+  
+    ";
 
-            echo "<center> <table border=\"3\">
-            <tr>
-                </tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
-                <td><font color='blue'><b><center>Nombre:</center></b></font></td>
-                <td><center>".$consulta['nombre']."</center></td>
-                <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
-            <tr>
-            <tr>
-            
-            <td><b><center>Nombre</center></b></td>
-            <td><b><center>Apellido</center></b></td>      
-            <td><b><center>DNI</center></b></td>
-            <td><b><center>email</center></b></td>
-            <td><b><center>cod Area</center></b></td>
-            <td><b><center>Telefono</center></b></td>          
-            <td><b><center>Estado</center></b></td>
-            </tr>
-            <tr>      
-            <td><center>".$consulta["nombre"]."</center></td>
-            <td><center>".$consulta["apellido"]."</center></td>
-            <td><center>".$consulta["dni"]."</center></td>
-            <td><center>".$consulta["email"]."</center></td>
-            <td><center>".$consulta["cod_area"]."</center></td>
-            <td><center>".$consulta["telefono"]."</center></td>
-       
-          <br>
+  }  
+}
 
-            ";
-
-            
-            
-
-        }  
-    }
-    
-
-    ?>
+  ?>
      
 
 
