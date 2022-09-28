@@ -10,10 +10,10 @@
 <body>
    
 <?php
-
+ error_reporting(0);
 
   session_start(); 
-  include("ControlDNI.php");
+  
 
   if (isset($_POST["envio"]) )  {
         
@@ -29,35 +29,36 @@
 
 
     // asignacion por defecto. 
-    $pass="NULL";
-    $DNI="NULL";
+   $pass="NULL";
+   $DNI="NULL";
 
 //------------------------------------------DNI o Pass? 
    
-  $DNI_P =  $_POST["dniPass"];
+$DNI_P =  $_POST["dniPass"];
 
-
+ 
   if ($tipo == 'D') {
 
-    $_SESSION['dni'] = $DNI_P; //para comprobacion
-   
-    $GLOBALS['$DNI'] = $DNI_P;//asignacion local
+    $_SESSION['dni'] =  $DNI_P; //para comprobacion
+    $DNI =  $DNI_P;//asignacion local
 
   }else {
 
-    $_SESSION['pass']=  $DNI_P;//para comprobacion
+    $_SESSION['pass']=  $GLOBALS['$DNI_P'];//para comprobacion
     
-    $GLOBALS['$pass'] = $DNI_P;//asignacion local
+    $pass = $DNI_P;//asignacion local
+ 
   }
     
     //comprobacion existente-no (retorno) -
 
-    
-    $DNINuevo = 
+    include("ControlDNI.php");
+   
     $DNINuevo = $_SESSION['$checkeoDNI'];
-    
-
+   
+  
   //-------------------------------------------------
+
 
     if ($DNINuevo == 0){
 
@@ -99,7 +100,7 @@
       echo '<script>alert( "El contacto ya existe")</script>)' ; 
       
     }
-    
+   
     
   }
 
