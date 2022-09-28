@@ -17,22 +17,22 @@
 
             <div class="campos">
                 <label>Nombre</label>
-                <input type="text" maxlength="10"  pattern="[a-zA-Z]{1,15}"placeholder="Nombre" required name="nombre";>
+                <input type="text" maxlength="100"  pattern="[a-zA-Z\s]{1,100}"placeholder="Nombre" required name="nombre";>
             </div>
 
             <div class="campos">
                 <label>Apellido</label>
-                <input type="text" maxlength="10" pattern="[a-zA-Z]{1,15}" placeholder="Apellido" required name="apellido">
+                <input type="text" maxlength="100" pattern="[a-zA-Z\s]{1,100}" placeholder="Apellido" required name="apellido">
             </div>        
 
             <div class="campos">
 
                 <label>DNI/Pasaporte</label>
-                    <select name="DNIPass">
-                        <option value="true">DNI</option>
-                        <option value="falso">Pasaporte</option>
+                    <select name="DNIPassT">
+                        <option value="D">DNI</option>
+                        <option value="P">Pasaporte</option>
                     </select>
-                    <input type="number" maxlength={cambiar} placeholder="99.999.999" name="dniPass">
+                    <input type="number" maxlength={cambiar}  name="dniPass">
             </div>
 
             <div class="campos">

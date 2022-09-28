@@ -9,7 +9,7 @@ $existe = 0;
 
 include("Conexion.php");
 
-    if ($dni !="NULL") {
+    if ($dni !"NULL") {
 
         $consultaAl = "SELECT alumno.dni FROM alumno";  
 

@@ -9,34 +9,69 @@
 </head>
 <body>
    
-  <?php
+<?php
 
 
-    session_start(); 
+  session_start(); 
+  include("ControlDNI.php");
 
-    if (isset($_POST["envio"]) )  {
-          
-  
-      include("../Modelo/Conexion.php");
+  if (isset($_POST["envio"]) )  {
+        
 
-      $Nombre = $_POST["nombre"];
-      $Apellido =  $_POST["apellido"];
-      $DNI =  $_POST["dniPass"];
-      $email =  $_POST["email"];
-      $rol=  $_POST["roll"];
-      $carrera=  $_POST["carrera"];
-      
+    include("../Modelo/Conexion.php");
+
+    $Nombre = $_POST["nombre"];
+    $Apellido =  $_POST["apellido"];
+    $tipo = $_POST["DNIPassT"];
+    $email =  $_POST["email"];
+    $rol=  $_POST["roll"];
+    $carrera=  $_POST["carrera"];
+
+
+    // asignacion por defecto. 
+    $pass="NULL";
+    $DNI="NULL";
+
+//------------------------------------------DNI o Pass? 
+   
+  $DNI_P =  $_POST["dniPass"];
+
+
+  if ($tipo == 'D') {
+
+    $_SESSION['dni'] = $DNI_P; //para comprobacion
+   
+    $GLOBALS['$DNI'] = $DNI_P;//asignacion local
+
+  }else {
+
+    $_SESSION['pass']=  $DNI_P;//para comprobacion
+    
+    $GLOBALS['$pass'] = $DNI_P;//asignacion local
+  }
+    
+    //comprobacion existente-no (retorno) -
+
+    
+    $DNINuevo = 
+    $DNINuevo = $_SESSION['$checkeoDNI'];
+    
+
+  //-------------------------------------------------
+
+    if ($DNINuevo == 0){
+
       switch ($rol) {
 
         case "Alumno":
 
-          if (mysqli_query($conexion, " INSERT INTO  alumno (nombre, apellido, dni,  email, rol,fk_carrera_id) values ('$Nombre', '$Apellido','$DNI','$email','$rol',$carrera)")){ 
+          if (mysqli_query($conexion, " INSERT INTO  alumno (nombre, apellido, dni, pasaporte,  email, rol, fk_carrera_id) values ('$Nombre', '$Apellido','$DNI','$pass', '$email','$rol',$carrera)")){ 
 
             echo '<script>alert( "Se realizó el ingreso exitosamente")</script>)' ; 
               
-          }else {echo '<script>alert(" no se pudo realizar el ingreso")</script>' ;  }
+          }else {echo '<script>alert(" no se pudo realizar el ingreso (T1)")</script>' ;  }
 
-          break;
+        break;
 
         case "Docente":
           
@@ -44,27 +79,33 @@
 
             echo '<script>alert( "Se realizó el ingreso exitosamente")</script>' ;
               
-          }else {echo '<script>alert(" no se pudo realizar el ingreso")</script>' ; }
+          }else {echo '<script>alert(" no se pudo realizar el ingreso (T2)")</script>' ; }
 
           break;
 
         default :
 
-        if (mysqli_query($conexion, " INSERT INTO  personal (nombre, apellido, dni,pasaporte,  email, rol) values ('$Nombre', '$Apellido','$DNI','$DNI','$email','$rol')")){ 
+          if (mysqli_query($conexion, " INSERT INTO  personal (nombre, apellido, dni, pasaporte, email, rol, id_carrera) values ('$Nombre', '$Apellido','$DNI','$pass','$email','$rol', '$carrera' )")){ 
 
-          echo '<script>alert( "Se realizó el ingreso exitosamente")</script>' ;
-            
-        }else {echo '<script>alert(" no se pudo realizar el ingreso")</script>' ; }
-
+            echo '<script>alert( "Se realizó el ingreso exitosamente")</script>' ;
+              
+          }else {echo '<script>alert(" no se pudo realizar el ingreso (t3)")</script>' ; }
+          
         break;
       }
-      
-      
-      }
-     
-    
 
-  ?>
+    }else {
+
+      echo '<script>alert( "El contacto ya existe")</script>)' ; 
+      
+    }
+    
+    
+  }
+
+  
+
+?>
 
 </body>
 </html>

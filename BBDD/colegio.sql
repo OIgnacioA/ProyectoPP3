@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2022 a las 19:42:56
+-- Tiempo de generación: 28-09-2022 a las 21:04:29
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,10 +62,12 @@ INSERT INTO `alumno` (`id`, `nombre`, `apellido`, `fnacimiento`, `genero`, `dni`
 (11, 'matias ', 'botello', '0000-00-00', 'mas', '643664', 'matiasbotella@gmail.com', '332', '221743847', 'matiaspapi@gmail.com', '443', '221454368', '56 y 3', 'la plata', 'la plata ', 'maestro gardinero ', '2021-10-06', 'Inscripto', '..', '643664', 2, NULL, ''),
 (12, 'Alex', 'zarofla', '2002-02-05', 'otro', '23213213', 'selecto@gerlos.com', '221', '23423444', 'selecto@gerlos.com', '223', '34534577', '55 2 y 3', 'Buenos Aires', 'La Plata', 'secundario', '2022-09-21', 'Inscripto', 'ninguna por  ahora', '23213213', 1, NULL, ''),
 (13, 'Alberto', 'Masutti', '1997-02-11', 'mas', '22222', 'electrochongo@gegegeg.gog', '333', '123456', 'elevtrochongopadre@electrochongoloso.com.ar', '222', '456789', '13 y camino Gral belg', 'Buenos aires', 'La Plata', 'Progrmador', '2022-09-14', 'Regular', 'es una persona de buen comer', '22222', 3, NULL, ''),
-(14, 'Alexandra', 'Mazzutti', '1992-02-26', 'mas', '30567876', 'ellaesunamina@lareminaes.com', '445', '123451', 'nadiepasadeestacorner@gmail.com', '3476', '5566777', '44 y ruta 2', 'Catamarca', 'PaloBañado', 'Investigadora ', '2022-09-20', 'Inscripto', '.', '30567876', 2, NULL, ''),
+(14, 'Alexandra', 'Mazzutti', '1992-02-26', 'mas', '30567876', 'ellaesunamina@lareminaes.com', '445', '123451', 'nadiepasadeestacorner@gmail.com', '3476', '5566777', '44 y ruta 2', 'Catamarca', 'PaloBaÃ±ado', 'Investigadora ', '2022-09-20', 'Inscripto', '.', '30567876', 2, NULL, ''),
 (15, 'Matis', 'urubertis', '2000-02-13', 'fem', '20345654', 'haciaallavoy@novengas.con', '221', '23445433', 'the_toxicgirl@jajalapor.com', '333', '234325555', '1 y la matanza', 'Buenos Aires', 'Berisso', 'secundario', '2022-09-01', 'Regular', '.._', '20345654', 1, NULL, ''),
-(16, 'Nicol', 'Cruz', '2002-07-17', 'fem', '4595533', 'soynicol@joyref.com', '4400', '65465465', 'elpapadenicol@jajhste.com', '4400', '65465411', 'manzana c', 'Salta', 'Los salteñitos', 'secundario', '2022-09-14', 'Inscripto', 'none', '4595533', 2, NULL, ''),
-(24, 'Abel', 'Borrar', '0000-00-00', '', '333', 'sehent@hotmail.com', '', '', '', '', '', '', '', '', '', '0000-00-00', '', NULL, NULL, 3, NULL, 'Alumno');
+(16, 'Nicol', 'Cruz', '2002-07-17', 'fem', '4595533', 'soynicol@joyref.com', '4400', '65465465', 'elpapadenicol@jajhste.com', '4400', '65465411', 'manzana c', 'Salta', 'Los salteÃ±itos', 'secundario', '2022-09-14', 'Inscripto', 'none', '4595533', 2, NULL, ''),
+(25, 'root', 'hhhh', '0000-00-00', '', '22', 'sehent@hotmail.com', '', '', '', '', '', '', '', '', '', '0000-00-00', '', NULL, NULL, 2, NULL, 'Alumno'),
+(28, 'root', 'llll', '0000-00-00', '', '333', 'sehent@hotmail.com', '', '', '', '', '', '', '', '', '', '0000-00-00', '', NULL, NULL, 2, NULL, 'Alumno'),
+(35, 'Antonella', 'Giordano', '0000-00-00', '', '100', 'antonella_giordano@hotmail.com', '', '', '', '', '', '', '', '', '', '0000-00-00', '', NULL, 'Null', 2, NULL, 'Alumno');
 
 -- --------------------------------------------------------
 
@@ -115,10 +117,10 @@ CREATE TABLE `materia` (
 
 INSERT INTO `materia` (`id`, `nombre`, `descripcion`, `codigo`, `profesor_id`) VALUES
 (2, 'Logica', 'propedeutica', '001', NULL),
-(4, 'Matemáticas', 'Propedeutica', '002', 2),
+(4, 'MatemÃ¡ticas', 'Propedeutica', '002', 2),
 (9, 'Practicas Profecionalizantes', 'Propedeutica', '011', 3),
 (10, 'Historia', 'Propedeutica', '007', 1),
-(11, 'rectangulología basica', 'Correlativa', '013', 3);
+(11, 'rectangulologÃ­a basica', 'Correlativa', '013', 3);
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,9 @@ CREATE TABLE `personal` (
 --
 
 INSERT INTO `personal` (`id`, `nombre`, `apellido`, `dni`, `pasaporte`, `email`, `rol`, `id_carrera`) VALUES
-(4, 'Antonella', 'Leguizamon', '31422222', '31423345', 'ejemplo@esomismo', 'Director', 1);
+(4, 'Antonella', 'Leguizamon', '31422222', '31423345', 'ejemplo@esomismo', 'Director', 1),
+(38, 'nicol', 'Cruz', '45000000', '45000000', 'elenan@jklalkja', 'Director', 2),
+(40, 'Antonella', 'Giordano', 'NULL', 'NULL', 'antonella_giordano@hotmail.com', 'Director', 2);
 
 -- --------------------------------------------------------
 
@@ -204,6 +208,7 @@ CREATE TABLE `profesor` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telefono` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `DNI` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pasaporte` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -211,13 +216,13 @@ CREATE TABLE `profesor` (
 -- Volcado de datos para la tabla `profesor`
 --
 
-INSERT INTO `profesor` (`id`, `nombre`, `apellido`, `titulo`, `email`, `telefono`, `DNI`, `rol`) VALUES
-(1, 'Juan', 'Dominguez', 'Abogado', 'juanD@gmail.com', '221567800', '20890988', ''),
-(2, 'Eugenia', 'Benitez', 'Investigadora ', 'eugeniaBB@araucaria.com', '221345654', '45999999', ''),
-(3, 'Antonio', 'Yanini', 'Progrmador', 'antoniofagot@hothot.com', '2216666666', '54678876', ''),
-(4, 'Mauro', 'Gonzales', 'Ciencias Politicas', 'mauroGon83@jaleuolo.com', '2213334455', '18900334', ''),
-(5, 'Oscar', 'Avendaño', 'terciario', 'elefantopolis@saraza.com', '2218526598', '32666555', ''),
-(6, 'profe', 'borrar', '', 'sehent@hotmail.com', '', '555', 'Docente');
+INSERT INTO `profesor` (`id`, `nombre`, `apellido`, `titulo`, `email`, `telefono`, `DNI`, `pasaporte`, `rol`) VALUES
+(1, 'Juan', 'Dominguez', 'Abogado', 'juanD@gmail.com', '221567800', '20890988', '', ''),
+(2, 'Eugenia', 'Benitez', 'Investigadora ', 'eugeniaBB@araucaria.com', '221345654', '45999999', '', ''),
+(3, 'Antonio', 'Yanini', 'Progrmador', 'antoniofagot@hothot.com', '2216666666', '54678876', '', ''),
+(4, 'Mauro', 'Gonzales', 'Ciencias Politicas', 'mauroGon83@jaleuolo.com', '2213334455', '18900334', '', ''),
+(5, 'Oscar', 'AvendaÃ±o', 'terciario', 'elefantopolis@saraza.com', '2218526598', '32666555', '', ''),
+(6, 'profe', 'borrar', '', 'sehent@hotmail.com', '', '555', '', 'Docente');
 
 --
 -- Índices para tablas volcadas
@@ -281,7 +286,7 @@ ALTER TABLE `profesor`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `carrera`
@@ -305,13 +310,13 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
