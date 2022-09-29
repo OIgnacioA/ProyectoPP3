@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="stylesLeandro.css">
 </head>
 <body>
-    <header><i>Agregar usuario</i> </header>
-
+   <header><i>Agregar usuario</i> </header>
+   <center> <p><a href="index.php">inicio</a></p></center>
     <form action="altaAdmin.php" method="post">
 
         <main id="datos_personales">
@@ -70,7 +70,7 @@
         </main>
 
     </form>
-
+   
 <?php
 
 

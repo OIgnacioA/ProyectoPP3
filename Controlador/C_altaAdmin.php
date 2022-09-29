@@ -8,7 +8,7 @@
     <title>Inicio</title>
 </head>
 <body>
-   
+
 <?php
  error_reporting(0);
 

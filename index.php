@@ -1,5 +1,5 @@
 <?php
 
-header ("location:Vista/altaAdmin.php");
+header ("location:Vista/index.php");
 
 ?>

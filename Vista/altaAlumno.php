@@ -327,9 +327,14 @@ session_start();
 if ( isset($_POST["send"]))  {
 
   require_once("../Controlador/ingresarAlumno.php");
- 
+  
 }
+
+
 ?>
+
+
+
 
 
 
