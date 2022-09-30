@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Datos del estudiante</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="estilo.css">
+</head>
+<?php
+
+session_start(); 
+?>
+
+<body>
+
+	<center> <p><a href="index.php">inicio</a></p></center>
+   
+   
+	<main  id="datos_personales">
+	   
+	 <form action="altaAlumno.php"  class="formulario" id="formulario" method="post" >
+		
+	  
+		<h3><i> Datos Personales</i></h3>
+ 
+		<div class="contenedor">
+ 
+			<div class="etiquetas">
+				<p><label for="nombre" class="formulario__label">Nombres</label><br></p>
+				<p><label for="nombre" class="formulario__label">Apellidos</label><br></p>
+				<p><label for="fechanac" class="formulario__label">Fecha de nacimiento</label><br></p>
+				<p><label for="genero" class="formulario__label">Genero</label><br></p>
+				<p><label for="dni" class="formulario__label">DNI/Pasaporte</label><br></p>
+				<p><label for="email" class="formulario__label">E-Mail</label><br></p>			 
+				<p><label for="celular" class="formulario__label">Celular</label><br></p>
+				<p><label for="telefono" class="formulario__label">Teléfono</label><br></p>
+			</div>
+
+			<div class="cajas">
+				<!-- Grupo: Nombres -->
+				<div class="campos" id="grupo__nombre">
+					<div class="formulario__grupo-input">
+						<input id="inputt" type="text" class="formulario__input" name="nombre" id="nombre" maxlength="100"
+							pattern="[a-zA-Z\s]{1,100}">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>		
+					<!-- <p class="formulario__input-error">Los nombres tienen que tener hasta 100 caracteres y no puede contener numeros.
+					</p> -->
+				</div>
+
+				<!-- Grupo: Apellidos -->
+				<div class="campos" id="grupo__apellidos">
+				
+					<div class="formulario__grupo-input">
+						<input  id="inputt" type="text" class="formulario__input" name="apellido" id="apellidos" pattern="[a-zA-Z\s]{1,100}">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!-- <p class="formulario__input-error">Los apellidos tiene que tener hasta 100 caracteres y no puede contener numeros.
+					</p> -->
+				</div>
+				
+				<!-- Grupo: Fecha nacimiento -->
+				<div class="campos" id="grupo__fechanac">
+				
+					<div class="formulario__grupo-input">
+						<input id="inputt" type="date" class="formulario__input" name="calendarioN" id="fechanac">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+				
+				</div>
+				
+				<!-- Grupo: Genero -->
+				<div class="campos" id="grupo__genero">
+					
+					<div class="formulario__grupo-input">
+						<select id="inputt" class="formulario__input" name="genero">
+							<option value="Masculino">Masculino</option>
+							<option value="Femenino" selected>Femenino</option>
+							<option value="Otro">Otro</option>
+						</select>
+					</div>
+				</div>
+				
+
+				<div class="campos" id="grupo__dni">
+				
+					<select id="inputt" class="formulario__input" name="DNIPassT">
+						<option value="D">DNI</option>
+						<option value="P">Pasaporte</option>
+					</select>
+				
+				</div>
+
+				<!-- Grupo: E-Mail -->
+				<div class="formulario__grupo" id="grupo__email">
+				
+					<div class="campos">
+						<input id="inputt" type="email" class="formulario__input" name="emailC" id="mailcontacto" placeholder="correo@correo.com">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!-- <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p> -->
+				</div>
+	
+				<!-- Grupo: Celular COD AREA -->
+
+				<div class="campos" id="grupo__celular">
+
+					<input id="inputt" class="formulario__input" type="text" name="cod" id="cod" placeholder="Codigo de Area" maxlength="5">
+				</div>
+				
+
+				<!-- Grupo: Teléfono -->
+				<div class="campos" id="grupo__telefono">
+
+					<div class="campos">
+						<input id="inputt" type="text" class="formulario__input" name="tele" id="telefono" placeholder="4491234567"
+							pattern="[0-9]{1,14}">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!--<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>-->
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="contenedor">
+		
+			<div class="etiquetas">
+		
+				<p><label for="celular" class="formulario__label">Tel de un Contacto</label><br></p>
+				<p><label for="mailcontacto" class="formulario__label">Mail de un contacto</label><br></p>
+				<p><label for="direccion" class="formulario__label">Direccion</label><br></p>
+				<p><label for="provincia" class="formulario__label">Provincia</label><br></p>
+				<p><label for="localidad" class="formulario__label">Localidad</label><br></p>
+				<p><label for="egreso" class="formulario__label">Año de Egreso al Secundario</label><br></p>
+				<p><label for="titulo_secundario" class="formulario__label">Titulo del secundario</label><br></p>
+				<p><label for="genero" class="formulario__label">Carrera</label><br></p>
+				<p><label for="provincia" class="formulario__label">Estado</label><br></p>
+				<p><label for="celular" class="formulario__label">Observaciones</label><br></p>
+			</div>
+		
+			<div class="cajas">
+
+
+				<!--codigo area  y celular contaco -->
+				<div class="campos" id="grupo__celular">
+				
+					<input id="inputt" class="formulario__input" type="text" name="codC" id="cod" placeholder="Codigo de Area"
+						pattern="[0-9]{1,5}">
+				</div>
+		
+		
+		
+				<div class="campos" id="grupo__celular">
+					
+					<div class="formulario__grupo-input">
+						<input id="inputt" type="text" class="formulario__input" name="telC" id="celular" placeholder="4491234567"
+							pattern="[0-9]{1,14}">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!-- <p class="formulario__input-error">El celular solo puede contener numeros y el maximo son 14 dígitos.</p> -->
+				</div>
+		
+				<!-- Grupo: Mail de un contacto -->
+				<div class="campos" id="grupo__mailcontacto">
+					
+					<div id="inputt" class="formulario__grupo-input">
+						<input type="email" class="formulario__input" name="emailC" id="mailcontacto"
+							placeholder="correo@correo.com">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!-- <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion
+						bajo.</p> -->
+				</div>
+		
+				<!-- Grupo: Direccion -->
+				<div class="campos" id="grupo__direccion">
+				
+					<div id="inputt" class="formulario__grupo-input">
+						<input type="text" class="formulario__input" name="direccion" id="direccion"
+							placeholder="Ingrese direccion" maxlength="100">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!-- <p class="formulario__input-error">.</p> -->
+				</div>
+		
+				<!-- Grupo: Provincia -->
+				<div class="campos" id="grupo__provincia">
+				
+					<div class="formulario__grupo-input">
+						<select id="inputt" class="formulario__input" name="provincia">
+							<option value="Buenos Aires">Buenos Aires</option>
+							<option value="Cordoba" selected>Cordoba</option>
+							<option value="Santa Fe">Santa Fe</option>
+							<option value="Catamarca">Catamarca</option>
+							<option value="Chaco">Chaco</option>
+							<option value="Chubut">Chubut</option>
+							<option value="Corrientes">Corrientes</option>
+							<option value="Entre Ríos">Entre Ríos</option>
+							<option value="Formosa">Formosa</option>
+							<option value="Jujuy">Jujuy</option>
+							<option value="La Pampa">La Pampa</option>
+							<option value="La Rioja">La Rioja</option>
+							<option value="Mendoza">Mendoza</option>
+							<option value="Misiones">Misiones</option>
+							<option value="Neuquén">Neuquén</option>
+							<option value="Río Negro">Río Negro</option>
+							<option value="Salta">Salta</option>
+							<option value="San Juan">San Juan</option>
+							<option value="San Luis">San Luis</option>
+							<option value="Santa Cruz">Santa Cruz</option>
+							<option value="Santiago del Estero">Santiago del Estero</option>
+							<option value="Tierra del Fuego, Antártida e Islas del Atlántico Sur">Tierra del Fuego, Antártida e
+								Islas del Atlántico Sur</option>
+							<option value="Tucumán">Tucumán</option>
+						</select>
+					</div>
+				</div>
+				<!-- Grupo: Localidad -->
+				<div class="campos" id="grupo__localidad">
+					
+					<div class="formulario__grupo-input">
+						<input id="inputt" type="text" class="formulario__input" name="localidad" maxlength="50">
+					</div>
+				</div>
+		
+				<!-- Grupo: Año egreso -->
+				<div class="formulario__grupo" id="egreso">
+					
+					<div class="formulario__grupo-input">
+						<input id="inputt" type="text" class="formulario__input" name="egreso" id="egreso" placeholder="Ingrese Año"
+							pattern="[0-9]{4}">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!-- <p class="formulario__input-error">El año solo puede contener numeros y el maximo son 14 dígitos.</p> -->
+				</div>
+		
+		
+				<!-- Grupo: Titulo del secundario -->
+				<div class="campos" id="titulo_secundario">
+					
+					<div class="formulario__grupo-input">
+						<input id="inputt" type="text" class="formulario__input" name="titulo" id="titulo_secundario"
+							pattern="[a-zA-Z\s]{1,100}">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<!-- <p class="formulario__input-error">El titulo tiene que tener hasta 100 caracteres y no puede contener
+						numeros.</p> -->
+				</div>
+		
+				<!-- Grupo: Carrera -->
+				<div class="campos" id="grupo__genero">
+				
+					<select id="inputt" class="formulario__input" Name="carrera">
+						<option value='1'>Analista de sistemas</option>
+						<option value='2'>Desarrollador de software</option>
+						<option value='3'>Seguridad e higiene</option>
+					</select>
+		
+				</div>
+		
+		
+				<!--Estado-->
+		
+				<div class="campos" id="grupo__provincia">
+					
+					<select id="inputt" class="formulario__input" Name="estado" class="formulario__grupo" id="titulo_secundario">
+						<option value='Egresado'>Egresado</option>
+						<option value='Regular' selected>Regular</option>
+						<option value='Inscripto' selected>Inscripto</option>
+						<option value='Noregular' selected>No regular</option>
+					</select>
+				</div>
+		
+				<!--Observaciones-->
+				<!-- <div class="campos" id="grupo__celular">
+					
+					<textarea name="observacion" rows="10" cols="50"></textarea>
+				</div> -->
+            </div>
+
+		</div><br>
+	   
+		<input class="boton" type="submit" name="envio" value="Agregar usuario"><br><br>
+	  
+ 
+	 </form>
+
+	</main>
+	
+	<!--<script src="formulario.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>-->
+
+    
+<?php
+
+
+if ( isset($_POST["send"]))  {
+
+  require_once("../Controlador/ingresarAlumno.php");
+  
+}
+
+
+?>
+
+
+
+
+
+
+
+
+</body>
+</html>
