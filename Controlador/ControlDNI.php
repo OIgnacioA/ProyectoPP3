@@ -7,8 +7,7 @@ $dni =$_SESSION['dni'];
 $pass = $_SESSION['pass'];
 $existe = 0; 
 
-echo "dni: ". $dni. " <br>";
-echo "pass: ". $pass. " <br>";
+
 
 include("../Modelo/Conexion.php");
 
@@ -117,6 +116,8 @@ include("../Modelo/Conexion.php");
             }
         }
      
+        echo "nombre-------xxxxx: ". $Nombre . "<br>";
+
         $_SESSION['$checkeoDNI']= $GLOBALS['$existe']; 
 
     }

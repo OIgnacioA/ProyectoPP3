@@ -74,14 +74,14 @@
       }
         
       //comprobacion existente-no (retorno) -
-     
+      
 
       include("ControlDNI.php");
 
       $DNINuevo = $_SESSION['$checkeoDNI'];
 
     
-
+    
       //-------------------------------------------------
 
 
@@ -89,6 +89,8 @@
 
 
         if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,      cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id, rol) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DNI','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$pass',  '$carrera', 'Alumno')"))
+
+      
 
         echo '<script>alert( "Se realizó el ingreso exitosamente")</script>' ;
       

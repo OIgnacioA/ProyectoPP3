@@ -3,12 +3,12 @@
 
 $host = "localhost";
 $DataBase = "colegio2" ;
-$Nombre = "root";
+$Name = "root";
 $password = "";
  
 //$tabla_Al= "Alumno"; 
 
-$conexion = new mysqli($host,$Nombre,$password,$DataBase);
+$conexion = new mysqli($host,$Name,$password,$DataBase);
  
 
 if ($conexion->connect_errno){ 

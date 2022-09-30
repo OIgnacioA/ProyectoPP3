@@ -26,7 +26,7 @@
     $email =  $_POST["email"];
     $rol=  $_POST["roll"];
     $carrera=  $_POST["carrera"];
-
+    echo "nombre---------------: ". $Nombre;
 
     // asignacion por defecto. 
    $pass="NULL";
@@ -58,7 +58,7 @@ $DNI_P =  $_POST["dniPass"];
    
   
   //-------------------------------------------------
-
+  echo "nombre: ". $Nombre;
 
     if ($DNINuevo == 0){
 
