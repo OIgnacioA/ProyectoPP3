@@ -24,7 +24,6 @@ include("../Modelo/Conexion.php");
              $GLOBALS['$existe'] = 1; 
                 break;
             }
-           
         }
 
 

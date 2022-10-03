@@ -2,7 +2,7 @@
 
 
 $host = "localhost";
-$DataBase = "colegio" ;
+$DataBase = "colegio2" ;
 $Name = "root";
 $password = "";
  
@@ -12,7 +12,6 @@ $conexion = new mysqli($host,$Name,$password,$DataBase);
  
 
 if ($conexion->connect_errno){ 
-
 
     echo "no se ha podido realizar la conexion";
     exit(); 

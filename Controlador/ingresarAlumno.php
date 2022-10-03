@@ -1,7 +1,7 @@
 
 <?php
 
-  error_reporting(0);
+  //error_reporting(0);
 
   
 
@@ -34,7 +34,7 @@
     $egreso = $_POST["egreso"];
 
     
-
+     echo "nombre". $Nombre  ;
     // asignacion por defecto. 
     $pass="NULL";
     $DNI="NULL";

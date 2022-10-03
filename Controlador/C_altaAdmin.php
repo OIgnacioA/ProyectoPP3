@@ -26,7 +26,7 @@
     $email =  $_POST["email"];
     $rol=  $_POST["roll"];
     $carrera=  $_POST["carrera"];
-    echo "nombre---------------: ". $Nombre;
+   
 
     // asignacion por defecto. 
    $pass="NULL";
@@ -58,7 +58,7 @@ $DNI_P =  $_POST["dniPass"];
    
   
   //-------------------------------------------------
-  echo "nombre: ". $Nombre;
+
 
     if ($DNINuevo == 0){
 
@@ -74,7 +74,7 @@ $DNI_P =  $_POST["dniPass"];
 
         break;
 
-        case "Docente":
+        case "Profesor":
           
           if (mysqli_query($conexion, " INSERT INTO  profesor (nombre, apellido, dni,  email, rol) values ('$Nombre', '$Apellido','$DNI','$email','$rol')")){ 
 

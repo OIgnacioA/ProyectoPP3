@@ -9,8 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto:wght@700&display=swap" rel="stylesheet">
  
     <title>Alta de Administrador</title>
-    <link rel="stylesheet" href="stylesLeandro.css">
+    <link rel="stylesheet" href="../css/stylesLeandro.css">
 </head>
+
 <body>
    <header><i>Agregar usuario</i> </header>
    <center> <p><a href="index.php">inicio</a></p></center>
@@ -68,7 +69,7 @@
                         <option value="Director">Director</option>
                         <option value="Vicedirector">Vicedirector</option>
                         <option value="Secretario">Secretario</option>
-                        <option value="Docente">Docente</option>
+                        <option value="Profesor">Docente</option>
                         <option value="Alumno">Alumno</option>
                     </select>            
                 </div>            
