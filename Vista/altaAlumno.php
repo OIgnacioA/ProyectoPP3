@@ -304,8 +304,6 @@
 
 if ( isset($_POST["send"]))  {
 
-	echo "hola";
-
   require_once("../Controlador/ingresarAlumno.php");
   
 }
