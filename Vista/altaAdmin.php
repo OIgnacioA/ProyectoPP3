@@ -14,7 +14,7 @@
 
 <body>
    <header><i>Agregar usuario</i> </header>
-   <center> <p><a href="index.php">inicio</a></p></center>
+   <center> <p><a href="index.html">inicio</a></p></center>
    
    
    <main  id="datos_personales">

@@ -21,7 +21,7 @@
          <h1 style= "color: #F38618;">Nombre del Instituto</h1>              
       </div>
     </section>
-    <center> <p><a href="index.php">inicio</a></p></center>
+    <center> <p><a href="index.html">inicio</a></p></center>
     <section class="container">     
       <div class="col-lg-8" id="contenedorNav"  >
         <a  aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio" width="50%" ></a>

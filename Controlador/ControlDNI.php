@@ -16,7 +16,6 @@ include("../Modelo/Conexion.php");
         $consultaAl = "SELECT alumno.dni FROM alumno";  
         $resultado = mysqli_query($conexion,$consultaAl);
 
-
         while($consulta = mysqli_fetch_array($resultado)){
      
             if( $consulta['dni'] == $dni){

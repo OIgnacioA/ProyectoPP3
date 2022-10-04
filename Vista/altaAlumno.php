@@ -15,7 +15,7 @@
 <body>
 	<header><i>Inscripción</i> </header>
 	<center>
-		<p><a href="index.php">inicio</a></p>
+		<p><a href="index.html">inicio</a></p>
 	</center>
 
 	<main>	

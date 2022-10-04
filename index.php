@@ -1,5 +1,5 @@
 <?php
 
-header ("location:Vista/index.php");
+header ("location:Vista/index.html");
 
 ?>
