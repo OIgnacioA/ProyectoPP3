@@ -55,11 +55,11 @@ if ( isset($_POST["enviar"]))  {
         echo "<center>  <p style=color:red> El usuario no cuenta con permisos para ingresar a esta página </p></center>";  
         }else {
             
-           // header ("location:../Controlador/pagi_Ejem_Logueado.php"); 
+           header ("location:../Controlador/pagi_Ejem_Logueado.php"); 
      
             //  $_SESSION["Logueado!"] = true; 
             //  $_SESSION["Usuario_N"] = $_POST["email"];  
-            echo "engtrada----enn: ".$alta2. "<br>";
+            echo "entrada----en: ".$alta2. "<br>";
         }
 
     }else {  echo "<center>  <p style=color:red> EL USUARIO Y O CONTRASEÑA NO SON CORRECTOS </p></center>"; }
