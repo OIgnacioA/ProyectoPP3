@@ -13,6 +13,12 @@
 </head>
 
 <body>
+
+
+<?php
+error_reporting(0);
+
+?>
   <header>
 
   <center> <p><a href="index.html">inicio</a></p></center>
@@ -60,19 +66,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item menuli">
-                      <a href="#">ALTA DE ADMINISTRADOR</a>
+                      <a href="altaAdmin.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="#">ALUMNOS</a>
+                      <a href="enConstruccion.php">ALUMNOS</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="#">CREAR CARRERA</a>
+                      <a href="enConstruccion.php">CREAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="#">ADMINISTRAR CARRERA</a>
+                      <a href="enConstruccion.php">ADMINISTRAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="#">VISTA CARRERAS</a>
+                      <a href="enConstruccion.php">VISTA CARRERAS</a>
                     </li>
                   </ul>
 

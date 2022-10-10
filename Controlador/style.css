@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+.registro {
+    width: 400px;
+    background: #ff6500;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.textos {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: #ff7b00;
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.form-register a {
+    color: white;
+    text-decoration: none;
+}
+
+.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-register .botones {
+    width: 100%;
+    background: #ff7b00;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.form-register .botones:hover {
+    width: 100%;
+    background: #ffba00;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.select {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: #ff7b00;
+}
+
+.MateriaPop{
+    background-color: red;
+    width: 500px;
+    height: 500px;
+
+}
