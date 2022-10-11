@@ -178,7 +178,7 @@
 				<div class="campos" id="grupo__direccion">
 
 					<div id="inputt">
-						<input type="text" id="inputt" name="direccion" placeholder="Ingrese direccion" maxlength="100">
+						<input type="text" id="inputt" name="direccion" placeholder="Ingrese direccion" pattern="[a-zA-Z\s]{9,50}">
 						<i class="formulario__validacion-estado fas fa-times-circle"></i>
 					</div>
 					<!-- <p class="formulario__input-error">.</p> -->

@@ -24,7 +24,7 @@
     <center> <p><a href="index.html">inicio</a></p></center>
     <section class="container">     
       <div class="col-lg-8" id="contenedorNav"  >
-        <a  aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio" width="50%" ></a>
+        <a  aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio" width="50%" ></a>
       <!--href="#" aca va el link a pagina inicio-->                
       </div>
     </section>   
@@ -38,7 +38,7 @@
             <p style="text-align: center ;color:  #b5bebf;"><h0">Ingresa tus datos</h0></p>           
             <p style="text-align: center ;color: #f7c288;"><h0">USUARIO</h0></p>
                 
-            <td align="center"><input type="ing.usuario" minlength="9" maxlength="50" id="usuario" name="email" class="gui-input" autofocus required></td>                
+            <td align="center"><input type="ing.usuario" minlength="9" maxlength="50" id="usuario" name="email" class="gui-input" autofocus required pattern="[a-zA-Z\s]{9,50}"></td>                
             <br>
             <br>
             <p style="text-align: center ;color: #f7c288;"><h0">CONTRASEÑA</h0></p>
@@ -55,7 +55,7 @@
 
               
            
-          <button id=button2 type="button2" href="#" style="background-color: #ffffff; text-align:center; color: #b5bebf" >¿Olvidaste tu Contraseña?</button>              
+          <a href="olvidasteContrasenia.php" target="_blank"><input type="button"   style="background-color: #ffffff; text-align:center; color: #b5bebf" value ="¿Olvidaste tu Contraseña?" > </a>             
           <!--href="#" aca va el link a pagina restablecer contraseña-->
         
           
