@@ -49,7 +49,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="#"><img src="../img/home.png" alt="Inicio"></a>
+                  <a aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio"></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -72,7 +72,7 @@
                       <a href="enConstruccion.php">ADMINISTRAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="enConstruccion.php">VISTA CARRERAS</a>
+                      <a href="buscarCarreras.php">VISTA CARRERAS</a>
                     </li>
                   </ul>
 

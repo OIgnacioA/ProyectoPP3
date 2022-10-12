@@ -1,9 +1,0 @@
-
-
-function verMaterias(val){
-
-  
-
-}
-
-

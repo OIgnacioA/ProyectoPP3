@@ -1,0 +1,132 @@
+.principal{
+    margin: 4rem 4rem 2rem 4rem;
+
+    background-color: rgba(160, 153, 153, 0.267);
+}
+
+.block1{
+
+ padding-left: 15%;
+
+}
+
+.Display {
+    margin:1rem;
+    width:10rem;
+}
+
+#corto{
+    margin:1rem;
+}
+
+.boton{
+    margin-left: 30%;
+}
+
+#button1 {
+    margin: 0 10rem 0 10rem;
+}
+    
+input, select {
+    border-radius: 5px;
+    border: 1px solid #faf7f7;
+    padding: 0 4px 0 4px;
+}
+
+.Texto{
+width: 700px;
+height:200px;
+}
+
+.etiquetas {
+    display: inline-block;
+    height: 3rem;
+}
+
+.campos2 {
+    display: inline-block;
+    width: 11rem;
+    padding-bottom: 0.2rem;
+}
+
+.campos {
+    padding-bottom: 0.4rem;
+}
+
+
+
+
+
+
+
+#titulo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#navbarText ul{
+    display: flex;
+    align-items: center;
+}
+/* .menu{
+    padding-left: 3rem;
+} */
+#contenedor-li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contenedorNav{
+    height: 4rem;
+}
+.menuli{
+    position: relative;
+    left: 3rem;
+    padding: 1rem;
+   
+}
+.menuli:hover{
+    background-color: #b3b3b9;
+
+}
+.menuli a img{
+    position: relative;
+    width: 80%;
+}
+.menuli a img:hover{
+    background-color: coral;
+    border: 2px solid black;
+}
+.menuli a{
+    color: #f38618;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Roboto',Arial, Helvetica, sans-serif;
+    font-weight: bold;
+   
+}
+.menuli a:hover{
+    color: rgb(250, 250, 250);
+   
+}
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+
+
+
+#titulo h1{
+    font-size:  6vw;
+    font-weight: bold;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}   
+
+.moveL{
+    padding-left: 2rem;
+}
+

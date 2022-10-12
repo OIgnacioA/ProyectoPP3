@@ -23,7 +23,7 @@
 		<form action="altaAlumno.php"  method="post">
 
 	
-		<h3><i> Datos del amlumno</i></h3><br><br>
+		<h3><i> Datos del alumno</i></h3><br><br>
 
 
 		<div class="contenedor">

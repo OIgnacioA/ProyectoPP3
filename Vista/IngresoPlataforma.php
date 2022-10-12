@@ -21,7 +21,7 @@
          <h1 style= "color: #F38618;">Nombre del Instituto</h1>              
       </div>
     </section>
-    <center> <p><a href="index.html">inicio</a></p></center>
+   
     <section class="container">     
       <div class="col-lg-8" id="contenedorNav"  >
         <a  aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio" width="50%" ></a>
@@ -38,11 +38,11 @@
             <p style="text-align: center ;color:  #b5bebf;"><h0">Ingresa tus datos</h0></p>           
             <p style="text-align: center ;color: #f7c288;"><h0">USUARIO</h0></p>
                 
-            <td align="center"><input type="ing.usuario" minlength="9" maxlength="50" id="usuario" name="email" class="gui-input" autofocus required pattern="[a-zA-Z\s]{9,50}"></td>                
+            <td align="center"><input type="ing.usuario" minlength="9" maxlength="50" id="usuario" name="email" class="gui-input" autofocus required pattern="{9,50}"></td>                
             <br>
             <br>
             <p style="text-align: center ;color: #f7c288;"><h0">CONTRASEÑA</h0></p>
-            <td align="center"><input type="password"  id="contraseña" name="contrasenia" ></td>
+            <td align="center"><input type="password"  id="contraseña" name="contrasenia" pattern="{9,12}" minlength="9" maxlength="50"  ></td>
             <br>
             <br>
 
