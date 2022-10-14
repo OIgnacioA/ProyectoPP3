@@ -14,9 +14,11 @@
 
 <body>
 	<header><i>Inscripción</i> </header>
-	<center>
-		<p><a href="index.html">inicio</a></p>
-	</center>
+	
+	<div class="imgHome">
+       <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"></a>
+
+    </div>
 
 	<main>	
 

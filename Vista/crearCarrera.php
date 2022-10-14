@@ -69,13 +69,13 @@ error_reporting(0);
                       <a href="altaAdmin.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="enConstruccion.php">ALUMNOS</a>
+                      <a href="administrar_alumnos.php">ALUMNOS</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="enConstruccion.php">CREAR CARRERA</a>
+                      <a href="crearCarrera.php">CREAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="enConstruccion.php">ADMINISTRAR CARRERA</a>
+                      <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="enConstruccion.php">VISTA CARRERAS</a>

@@ -63,7 +63,7 @@
                       <a href="altaAdmin.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="enConstruccion.php">ALUMNOS</a>
+                      <a href="administrar_alumnos.php">ALUMNOS</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="../Vista/crearCarrera.php">CREAR CARRERA</a>
