@@ -69,7 +69,7 @@
                       <a href="../Vista/crearCarrera.php">CREAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="enConstruccion.php">ADMINISTRAR CARRERA</a>
+                      <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="buscarCarreras.php">VISTA CARRERAS</a>
