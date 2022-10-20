@@ -14,18 +14,16 @@
 
 <body>
 	<header><i>Inscripción</i> </header>
-	
-	<div class="imgHome">
-       <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"></a>
-
-    </div>
+	<center>
+		<p><a href="index.html">inicio</a></p>
+	</center>
 
 	<main>	
 
 		<form action="altaAlumno.php"  method="post">
 
 	
-		<h3><i> Datos del alumno</i></h3><br><br>
+		<h3><i> Datos del amlumno</i></h3><br><br>
 
 
 		<div class="contenedor">
@@ -69,13 +67,8 @@
 				<div class="campos" id="grupo__fechanac">
 
 					<div>
-						<input id="inputt" type="date" value= "dd-mm-aaaa"min= "1930-01-01" name="calendarioN" id="fechanac">
+						<input id="inputt" type="date" name="calendarioN" id="fechanac">
 						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-						
-						
-						
-						
-						
 					</div>
 
 				</div>
@@ -164,7 +157,7 @@
 				<p><label for="egreso" class="formulario__label">Año de Egreso al Secundario</label><br></p>
 				<p><label for="titulo_secundario" class="formulario__label">Titulo del secundario</label><br></p>
 				<p><label for="genero" class="formulario__label">Carrera</label><br></p>
-				
+				<p><label for="provincia" class="formulario__label">Estado</label><br></p>
 
 			</div>
 
@@ -185,7 +178,7 @@
 				<div class="campos" id="grupo__direccion">
 
 					<div id="inputt">
-						<input type="text" id="inputt" name="direccion" placeholder="Ingrese direccion" pattern="[a-zA-Z\s]{9,50}">
+						<input type="text" id="inputt" name="direccion" placeholder="Ingrese direccion" maxlength="100">
 						<i class="formulario__validacion-estado fas fa-times-circle"></i>
 					</div>
 					<!-- <p class="formulario__input-error">.</p> -->
@@ -267,7 +260,18 @@
 				</div>
 
 
-			
+				<!--Estado-->
+
+				<div class="campos">
+
+					<select id="inputt" Name="estado">
+						<option value='Egresado'>Egresado</option>
+						<option value='Regular' selected>Regular</option>
+						<option value='Inscripto' selected>Inscripto</option>
+						<option value='Noregular' selected>No regular</option>
+					</select>
+				</div>
+
 
 			</div>
 
@@ -275,9 +279,17 @@
 
 		
 
+		<div class="observacion">
+			<p><label for="celular" class="formulario__label">Observaciones</label><br></p> 
 		
+				<div class="campos" id="grupo__celular">
+					
+					<textarea name="observacion" rows="5" cols="50"></textarea>
+			</div>
 
-		<input class="boton" type="submit" name="send" value="Inscripcion"><br><br>
+		</div>
+
+		<input class="boton" type="submit" name="send" value="Agregar usuario"><br><br>
      
 
 	    </form>

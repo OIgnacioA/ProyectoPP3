@@ -1,7 +1,7 @@
 <?php
 
 
-if ( isset($_POST["enviar"]))  {
+if ( isset($_POST["enviar"]) || isset($_POST["envio"]) )  {
 
 
     include("../Modelo/Conexion.php");

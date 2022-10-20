@@ -71,7 +71,7 @@ error_reporting(0);
                       <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="buscarCarreras.php">VISTA CARRERAS</a>
+                      <a href="administrar_vistaCarrera.php">VISTA CARRERAS</a>
                     </li>
                   </ul>
 
