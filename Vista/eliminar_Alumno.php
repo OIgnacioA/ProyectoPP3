@@ -11,7 +11,7 @@
 <body>
   <header>
       <div id="titulo">
-        <h1 style= "color: #f38618;">Eliminar Alumno</h1>
+        <h1 style= "color: #f38618;">Eliminar Usuario</h1>
     </div>
   </header>
 
@@ -42,7 +42,7 @@
 
         <input type="text" name="dniP" placeholder="xxxxxxxxx" pattern="[0-9]{1,8}">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
-          
+
         </div>
 
       </div>
@@ -51,7 +51,7 @@
   
       <div class="boton">
         <button type="submit" id=button type="button" name="enviar"
-          style="background-color: #000000; text-align: center ;color: #ffffff">Eliminar Alumno</button>
+          style="background-color: #000000; text-align: center ;color: #ffffff">Eliminar USUARIO</button>
       </div>
   
   

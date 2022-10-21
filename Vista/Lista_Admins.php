@@ -133,7 +133,7 @@ error_reporting(0);
 
           <br><br>
 
-         <input class=" btn btn-secondary" type="submit" name="envio" value="Dar Alta"><br><br> 
+          <a href="altaAdmin.php"> <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
          
          <a href="eliminar_Alumno.php"> <button type="button" class=" btn btn-secondary">Eliminar</button></a><br><br> 
           
