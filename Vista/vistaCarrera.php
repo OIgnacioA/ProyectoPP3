@@ -90,6 +90,31 @@ error_reporting(0);
 
               $resultado = mysqli_query($conexion,$consultaAl);
 
+              while($consulta = mysqli_fetch_array($resultado)){
+
+                $nombre =   $consulta["nombre"];
+                $duracion =  $consulta["duracion"];
+                $duracion =  $consulta["duracion"];
+                $cursada =  $consulta["cursada"];
+                $plan =  $consulta["Plan"];
+
+                echo "<form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "administrar_vistaCarrera.php". "'" . "method=". "'" . "post" . "'" . "> 
+                <div class=". "'" . "espacioBlanco". "'". ">  
+
+                <div class=". "'". "info" . "'" ."> <label id=" . "'" . "inputt" . "'" .">". $nombre ."</label></div>
+
+                <div class=". "'". "info". "'" ."> <label id=" . "'" . "inputt" . "'" .">". $duracion ."</label></div>
+                
+
+                <div class=". "'". "info" . "'" ."> <label id=" . "'" . "inputt" . "'" .">". $cursada."</label></div>
+
+                <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Mas"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
+  
+                </div> 
+                </form> ";
+
+              }
+
 
               while($consulta = mysqli_fetch_array($resultado)){
 
@@ -99,7 +124,7 @@ error_reporting(0);
                 $cursada =  $consulta["cursada"];
                 $plan =  $consulta["Plan"];
             
-
+                  echo $nombre;
                   echo 
 
                   "
@@ -109,15 +134,15 @@ error_reporting(0);
 
              
 
-                  <div class=". "'". info. "'" ."> <label id=" . "'" . "inputt" . "'" .">". $nombre ."</label></div>
+                  <div class=". "'". "info". "'" ."> <label id=" . "'" . "inputt" . "'" .">". $nombre ."</label></div>
 
-                  <div class=". "'". info. "'" ."> <label id=" . "'" . "inputt" . "'" .">". $duracion ."</label></div>
+                  <div class=". "'". "info". "'" ."> <label id=" . "'" . "inputt" . "'" .">". $duracion ."</label></div>
 
-                  <div class=". "'". info. "'" ."> <label id=" . "'" . "inputt" . "'" .">". $cursada."</label></div>
+                  <div class=". "'". "info". "'" ."> <label id=" . "'" . "inputt" . "'" .">". $cursada."</label></div>
 
                  
                   
-                  <div class=". "'". info. "'" . ">" . "<a href=". "'" . enConstruccion.php ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Mas"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
+                  <div class=". "'". "info". "'" . ">" . "<a href=". "'" . enConstruccion.php ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Mas"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
   
                   
                   

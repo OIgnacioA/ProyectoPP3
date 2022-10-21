@@ -21,7 +21,7 @@ error_reporting(0);
 ?>
   <header>
 
-  <center> <p><a href="index.html">inicio</a></p></center>
+  <center> <p><a href="AdminLogueado.php">inicio</a></p></center>
 
     <div id="cerrarS">
       <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="./login">Cerrar Sesion</a></button>
@@ -55,7 +55,7 @@ error_reporting(0);
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio"></a>
+                  <a aria-current="page" href="AdminLogueado.php"><img src="../img/home3.png" alt="Inicio"></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -66,7 +66,7 @@ error_reporting(0);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item menuli">
-                      <a href="altaAdmin.php">ALTA DE ADMINISTRADOR</a>
+                      <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="administrar_alumnos.php">ALUMNOS</a>

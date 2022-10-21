@@ -48,7 +48,7 @@ error_reporting(0);
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"></a>
+                  <a aria-current="page" href="AdminLogueado.php"><img src="../img/home3.png" alt="Inicio"></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -59,7 +59,7 @@ error_reporting(0);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item menuli">
-                      <a href="altaAdmin.php">ALTA DE ADMINISTRADOR</a>
+                      <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="administrar_alumnos.php">ALUMNOS</a>
@@ -91,10 +91,10 @@ error_reporting(0);
 
       <div class="row d-flex justify-content-center align-items-center">
 
-        <form id="bodyprincipal" action="administrar_Carrera.php" method="post">
+        <form id="bodyprincipal" action="" method="post">
 
           <div class="titulos">
-            <p>Carreras Activas</p>
+            <p>Alumnos Activos</p>
           </div>
 
           <div class="titulosChicos">
@@ -134,25 +134,25 @@ error_reporting(0);
                 $Carrera =  $consulta["fk_carrera_id"];
                 $Historia =  $consulta["observaciones"];
              
-
+             
              
 
                   echo 
-                  "<div class=". "'". info. "'" . "><input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $nombre . "'" ."required name=". "'"."nombre". "'". "></div>
+                  "<div class=". "'". "info". "'" . "><input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $nombre . "'" ."required name=". "'"."nombre". "'". "></div>
 
-                  <div class=". "'". info. "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[0-9]{1,100}" . "'". "value=". "'". $Apellido . "'" ."required name=". "'"."nombre". "'". "></div>
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $Apellido . "'" ."required name=". "'"."apellido". "'". "></div>
 
-                  <div class=". "'". info. "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[0-9]{1,100}" . "'". "value=". "'". $Mail . "'" ."required name=". "'"."nombre". "'". "></div>
-                  <div class=". "'". info. "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[0-9]{1,100}" . "'". "value=". "'". $Dni_pass . "'" ."required name=". "'"."nombre". "'". "></div>
-                  <div class=". "'". info. "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $Carrera . "'" ."required name=". "'"."nombre". "'". "></div>
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" ."value=". "'". $Mail . "'" ."required name=". "'"."mail". "'". "></div>
+
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" .  "value=". "'". $Dni_pass . "'" ."required name=". "'"."apellido". "'". "></div>
+   
+
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "value=". "'". $Carrera . "'" ."required name=". "'"."carrera". "'". "></div>
                 
-                  <div class=". "'". info. "'" . ">" . "<a href=". "'" . enConstruccion.php ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>";
+                  <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>";
 
-               ;
+             
 
-                /*UPDATE carrera
-                SET alta= "10/10/2021", anio_caducidad ="10/10/2025" ,  anio_resolucion ="10/10/2000",  codigo ="003",  duracion ="6",  resolucion ="1515"
-                WHERE id = 3;     */
               }
             ?>
 
@@ -176,7 +176,7 @@ error_reporting(0);
   <!-- //------PHP------------------------------------------------------------------ -->
 
 
-  <?php if ( isset($_POST["enviar"])){require_once("../Controlador/C_crearCarrera.php");}?>
+  <?php if ( isset($_POST["enviar"])){require_once("");}?>
 
   <!-- //--------------------------------------------------------------------------- -->
 

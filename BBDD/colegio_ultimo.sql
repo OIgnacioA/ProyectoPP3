@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 20-10-2022 a las 16:58:16
--- Versión del servidor: 10.5.15-MariaDB-cll-lve
--- Versión de PHP: 7.2.34
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 21-10-2022 a las 22:33:57
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `u143332576_colegio`
+-- Base de datos: `colegio`
 --
 
 -- --------------------------------------------------------
@@ -58,7 +58,7 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`id`, `nombre`, `apellido`, `fnacimiento`, `genero`, `dni`, `email`, `cod_area`, `telefono`, `contacto_mail`, `cod_area_cont`, `telefonocont`, `direccion`, `provincia`, `localidad`, `titulos`, `fe_alta`, `estado`, `observaciones`, `pasaporte`, `fk_carrera_id`, `pass`, `rol`) VALUES
-(46, 'ana', 'lopez', '1900-12-31', 'Femenino', '45212135', '', '221', '4528812', 'ana@gmail.com', '011', '1653434', 'lavalle perez 4532 aldana lopez entre / 1900 aldanaaaaaafgkfdgdfkggrgktkkt56546456hy6th56y5', 'Buenos Aires', 'la plata', 'analista', '0000-00-00', 'Noregular', '.............', '', 2, NULL, 'Alumno'),
+(46, 'ana', 'lopez', '1900-12-31', 'Femenino', '45212135', 'lopez@lopez.com', '221', '4528812', 'ana@gmail.com', '011', '1653434', 'lavalle perez 4532 aldana lopez entre / 1900 ', 'Buenos Aires', 'la plata', 'analista', '0000-00-00', 'Noregular', '.............', '', 2, NULL, 'Alumno'),
 (47, 'Antonella', 'Giordano', '0000-00-00', 'Femenino', '1', 'antonella_giordano@hotmail.com', '', '', '', '', '', '', 'Cordoba', '', '', '0000-00-00', 'Noregular', '', '', 1, NULL, 'Alumno'),
 (48, 'andrea', 'martinez', '0000-00-00', '', '33999123', 'andre@hotmail.com', '', '', '', '', '', '', '', '', '', '0000-00-00', '', NULL, '', 2, NULL, 'Alumno'),
 (49, 'borrar', 'borrado', '0000-00-00', 'Femenino', '1111111', 'sehent@hotmail.com', '', '', '', '', '', '', 'Cordoba', '', '', '0000-00-00', 'Noregular', '', '', 1, NULL, 'Alumno');
@@ -71,8 +71,8 @@ INSERT INTO `alumno` (`id`, `nombre`, `apellido`, `fnacimiento`, `genero`, `dni`
 
 CREATE TABLE `carrera` (
   `id` int(11) NOT NULL,
+  `ESTADO` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ESTADO` tinyint(1) NOT NULL,
   `codigo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `duracion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `resolucion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -88,12 +88,12 @@ CREATE TABLE `carrera` (
 -- Volcado de datos para la tabla `carrera`
 --
 
-INSERT INTO `carrera` (`id`, `nombre`, `ESTADO`, `codigo`, `duracion`, `resolucion`, `anio_caducidad`, `anio_resolucion`, `alta`, `comentarios`, `cursada`, `plan`) VALUES
-(1, 'Analista de sistemas', 1, '003', '1', '1515', '10/10/2025', '10/10/2000', '10/10/2021', NULL, 'lun vier 18hs-20hs.', ''),
-(2, 'Desarrollador de software', 1, '002', '8', '1515', '10/10/2028', '10/10/2005', '10/10/2018', NULL, 'lun vier 18hs-20hs.', ''),
-(3, 'Seguridad e higiene', 1, '001', '3', '1508', '10/10/2029', '10/10/2001', '10/10/2015', NULL, 'lun vier 18hs-20hs.', ''),
-(8, 'Alienologia', 0, '004', ' 2', '132', '2022-10-11', '2022-10-04', '2022-10-04', 'estructurada desde luego. ', 'lun vier 18hs-20hs.', ''),
-(9, 'lauftologia', 0, '006', '2', '156', '10/10/2025', '10/10/2000', '10/10/2011', '', 'lun vier 18hs-20hs.', '');
+INSERT INTO `carrera` (`id`, `ESTADO`, `nombre`, `codigo`, `duracion`, `resolucion`, `anio_caducidad`, `anio_resolucion`, `alta`, `comentarios`, `cursada`, `plan`) VALUES
+(1, 'on', 'electrocutacion', '009', '6', '12', '10/10/2029', '10/10/2015', '10/10/2015', '1234', 'todos los dabados', '677'),
+(2, '', 'Desarrollador de software', '002', '10', '1515', '10/10/2028', '10/10/2005', '10/10/2018', NULL, 'lun vier 18hs-20hs.', '555'),
+(3, 'on', 'Seguridad e higiene', '001', '34', '1508', '10/10/2029', '10/10/2001', '10/10/2015', NULL, 'lun vier 18hs-20hs.', '666'),
+(8, '', 'Alienologia', '004', ' 2', '132', '2022-10-11', '2022-10-04', '2022-10-04', 'estructurada desde luego. ', 'lun vier 18hs-20hs.', '555'),
+(9, 'on', 'Nombre', '003', '12', '1508', 'Caducidad', '10/12/2003', '10/12/2004', '', 'lun a vier 16hs a 18hs', '666');
 
 -- --------------------------------------------------------
 
@@ -294,7 +294,7 @@ ALTER TABLE `alumno`
 -- AUTO_INCREMENT de la tabla `carrera`
 --
 ALTER TABLE `carrera`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`

@@ -16,7 +16,7 @@
 	<header><i>Inscripción</i> </header>
 	
 	<div class="imgHome">
-       <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"></a>
+       <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"width="90" height="90" ; ></a>
 
     </div>
 

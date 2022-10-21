@@ -48,7 +48,7 @@ error_reporting(0);
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"></a>
+                  <a aria-current="page" href="AdminLogueado.php"><img src="../img/home3.png" alt="Inicio"></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -59,7 +59,7 @@ error_reporting(0);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item menuli">
-                      <a href="altaAdmin.php">ALTA DE ADMINISTRADOR</a>
+                      <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="administrar_alumnos.php">ALUMNOS</a>
@@ -126,13 +126,15 @@ error_reporting(0);
 
                   <div class=". "'" . "espacioBlanco". "'". ">  
 
-                  <div class=". "'". info. "'" ." id= " . "'" .nover."'"." > <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $id . "'" ."required name=". "'"."id". "'". "></div>
+                  <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $id . "'" ."required name=". "'"."id". "'". "></div>
 
-                  <div class=". "'". info. "'" ."> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $nombre . "'" ."required name=". "'"."nombre". "'". "></div>
-                  <div class=". "'". info. "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[0-9]{1,100}" . "'". "value=". "'". $duracion . "'" ."required name=". "'"."duracion". "'". "></div>
-                  <div class=". "'". info. "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $cursada . "'" ."required name=". "'"."cursada". "'". "></div>
+                  <div class=". "'". "info". "'" ."> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $nombre . "'" ."required name=". "'"."nombre". "'". "></div>
+
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $duracion . "'" ."required name=". "'"."duracion". "'". "></div>
+
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $cursada . "'" ."required name=". "'"."cursada". "'". "></div>
                   
-                  <div class=". "'". info. "'" . ">" . "<a href=". "'" . enConstruccion.php ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Mas"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
+                  <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Mas"."'"." class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
   
                   <input class=" . "'" . "btn btn-secondary" . "'".  "type=". "'" . "submit".  "'" . "name=". "'" . "envio". "'" .  "value=". "'" . "Realizar  Cambios" . "' " . "><br><br> 
                   
@@ -145,12 +147,7 @@ error_reporting(0);
 
                   ";  
 
-                  
 
-
-                /*UPDATE carrera
-                SET alta= "10/10/2021", anio_caducidad ="10/10/2025" ,  anio_resolucion ="10/10/2000",  codigo ="003",  duracion ="6",  resolucion ="1515"
-                WHERE id = 3;     */
               }
             ?>
         </div>
