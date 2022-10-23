@@ -33,9 +33,7 @@
             <option value="D">DNI</option>
             <option value="P">Pasaporte</option>
           </select>
-  
-         
-  
+
         </div>
 
         <div class="campos2">

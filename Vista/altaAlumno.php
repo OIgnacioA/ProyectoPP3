@@ -1,290 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pre-inscripcion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-	<title>Inscripcion Alumno</title>
-	<link rel="stylesheet" href="../css/estiloAltaparro.css">
+
+    <link rel="stylesheet" href="../css/pre-inscripcion.css">  
+    <link rel="stylesheet" href="../css/index.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
+<header>
+    <div id="titulo">
+      <h1 style= "color: #f38618;">INSTITUTOS</h1>
+  </div>
+  <div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="moveL" aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio" width="90" height="90"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item menuli">
+              <a  href="vistaCarrera.php">CARRERAS</a>
+            </li>
+            <li class="nav-item menuli">
+              <a  href="altaAlumno.php">INSCRIPCION</a>
+            </li>
+            
+            <li class="nav-item menuli">
+              <a href="IngresoPlataforma.php">INGRESO A LA PLATAFORMA</a>
+            </li>
+
+
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button  type="submit"><img src="../img/search.png" alt="search" width="70%"></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+      
+          
+      
+      </div>
+  </header>
+
+
 
 <body>
-	<header><i>Inscripción</i> </header>
-	
-	<div class="imgHome">
-       <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"width="90" height="90" ; ></a>
+    <!-- ***** INICIO FORM ***** -->
+    <form action="altaAlumno.php" class="contenedorExt"   method="post">
 
-    </div>
+        <div class= "header"> <h1>Datos del alumno</h1> </div>
+            
+        <div class="columna1">
+                    
+            <div> <label for="nombres" id="etiqueta" >Nombres</label> </div>
+                        
+            <div> <input type="text" name="nombre" placeholder="#Nombres" id="nombre" maxlength="100" required  
+                    style=width:200px;height:20px;> 
+            </div>
 
-	<main>	
+            <div> <label for="apellidos" id="etiqueta">Apellidos</label> </div>
 
-		<form action="altaAlumno.php"  method="post">
+            <div> <input type="text" name="apellido" placeholder="#Apellidos" id="apellidos" maxlength="100" required style=width:200px;height:20px;> 
+            </div>
 
-	
-		<h3><i> Datos del alumno</i></h3><br><br>
+            <div> <label for="fechaNac" id="etiqueta">Fecha de nacimiento</label> </div>
 
+            <div> <input type="date" value= "dd-mm-aaaa" min= "1930-01-01" name="calendarioN" id="fechaNac" style=width:202px;height:22px;> 
+            </div>
 
-		<div class="contenedor">
+            <div> <label for="genero" id="etiqueta">Genero</label> </div>
+                        
+            <div> <select name="genero" style=width:207px;height:25px;>
+                    <option value="Seleccione una opción">Seleccione una opción</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+            </div>
 
-			<div class="etiquetas">
-				<p><label for="nombre" class="formulario__label">Nombres</label><br></p>
-				<p><label for="nombre" class="formulario__label">Apellidos</label><br></p>
-				<p><label for="fechanac" class="formulario__label">Fecha de nacimiento</label><br></p>
-				<p><label for="genero" class="formulario__label">Genero</label><br></p>
-				<p><label for="dni" class="formulario__label">DNI/Pasaporte</label><br></p>
-				<p><label for="email" class="formulario__label">E-Mail</label><br></p>
-				<p><label for="celular" class="formulario__label">Celular</label><br></p>
-				<p><label for="celular" class="formulario__label">Tel de un Contacto</label><br></p>
-			</div>
+            <div> <label for="documento" id="etiqueta">DNI/Pasaporte</label> </div>
 
-			<div class="cajas">
-				<!-- Grupo: Nombres -->
-				<div class="campos" id="grupo__nombre">
-					<div>
-						<input id="inputt" type="text" name="nombre" id="nombre" maxlength="100"
-							pattern="[a-zA-Z\s]{1,100}" placeholder="Nombres">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<!-- <p class="formulario__input-error">Los nombres tienen que tener hasta 100 caracteres y no puede contener numeros.
-					</p> -->
-				</div>
+            <div> <select name="DNIPassT" style=width:90px;height:25px; id="selecDocumento" onchange="verificarOpcion()">
+                    <option>Tipo</option>
+                    <option value="Dni">Dni</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                  </select>
+                      
+                  <input type="text" onkeypress="return segunSeleccion(event);" minlength="8"  maxlength="9"  required name="dniP" placeholder="#Numero" id="documento" style=width:106px;height:20px; disabled>   
+            </div>
 
-				<!-- Grupo: Apellidos -->
-				<div class="campos" id="grupo__apellidos">
+            <div> <label for="email" id="etiqueta">E-mail</label> </div>                         
 
-					<div>
-						<input id="inputt" type="text" class="formulario__input" name="apellido" id="apellidos"
-							pattern="[a-zA-Z\s]{1,100}" placeholder="Apellidos">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<!-- <p class="formulario__input-error">Los apellidos tiene que tener hasta 100 caracteres y no puede contener numeros.
-					</p> -->
-				</div>
+            <div> <input type="email" name="email" placeholder="#Email" id="email" style=width:200px;height:20px; required> </div>
 
-				<!-- Grupo: Fecha nacimiento -->
-				<div class="campos" id="grupo__fechanac">
+            <div> <label for="celular" id="etiqueta">Celular</label> </div>                            
+                    
+            <div> <input type="tel" name="cod" placeholder="#CodArea" id="codArea" style=width:85px;height:20px; required> 
+                          
+                 <input type="tel" name="tele" placeholder="#Numero" id="celular" style=width:106px;height:20px; required>
+            </div>
+                    
+        </div>
 
-					<div>
-						<input id="inputt" type="date" value= "dd-mm-aaaa"min= "1930-01-01" name="calendarioN" id="fechanac">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-						
-						
-						
-						
-						
-					</div>
+        <div class="columna2">
 
-				</div>
+            <div> <label for="telContacto" id="etiqueta" >Tel de un contacto</label> </div>
+                        
+            <div> <input type="text" name="codC" placeholder="#CodArea" id="codArea" style=width:85px;height:20px;> 
+                          
+                  <input type="text" name="telC" placeholder="#Numero" id="telContacto" style=width:103px;height:20px;></div>
 
-				<!-- Grupo: Genero -->
-				<div class="campos" id="grupo__genero">
+            <div> <label for="emailContacto" id="etiqueta">E-mail de un contacto</label> </div>                          
+                    
+            <div> <input type="email" name="emailC" placeholder="#Email" id="emailContacto" style=width:200px;height:20px;> </div>
 
-					<div>
-						<select id="inputt" name="genero">
-							<option value="Masculino">Masculino</option>
-							<option value="Femenino" selected>Femenino</option>
-							<option value="Otro">Otro</option>
-						</select>
-					</div>
-				</div>
+            <div> <label for="direccion" id="etiqueta">Dirección</label> </div>
+                                                
+            <div> <input type="text" name="direccion" placeholder="#Direccion" id="direccion" maxlength="50" 
+                    style=width:200px;height:20px;> </div>
 
+            <div> <label for="provincia" id="etiqueta">Provincia</label> </div>    
 
-				<div class="campos" id="grupo__dni">
+            <div> <select name="provincia" style=width:207px;height:25px;>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Cordoba">Cordoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Entre Rios">Entre Rios</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquen">Neuquen</option>
+                        <option value="Rio Negro">Rio Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="San Juan">San Juan</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Santiago del Estero">Santiago del Estero</option>
+                        <option value="Tierra del Fuego">Tierra del Fuego</option>
+                        <option value="Tucuman">Tucuman</option>
+                  </select>
+            </div>
 
-					<select id="corto" name="DNIPassT">
-						<option value="D">DNI</option>
-						<option value="P">Pasaporte</option>
-					</select>
+            <div> <label for="localidad" id="etiqueta">Localidad</label> </div>
+                        
+            <div> <input type="text" name="localidad" placeholder="#Localidad" id="localidad" style=width:200px;height:20px;> </div>
 
-					<div class="Display">
-						<input id="inputtCorto" type="text" name="dniP"  placeholder="4491234567"
-							pattern="[0-9]{1,8}">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
+            <div> <label for="anioEgreso" id="etiqueta">Año de egreso del secundario</label> </div>  
+                    
+            <div> <input type="number" name="egreso" placeholder="#Año" id="anioEgreso" style=width:200px;height:20px; oninput="javascript: 
+                    if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type= "number" maxlength = "4"> 
+            </div>
 
-				</div>
+            <div> <label for="tituloSec" id="etiqueta">Titulo del secundario</label> </div>
 
-				<!-- Grupo: E-Mail -->
-				<div>
+            <div> <input type="text" name="titulo" placeholder="#Titulo" id="tituloSec" style=width:200px;height:20px;> </div>
+                    
+            <div> <label for="carrera" id="etiqueta">Carrera</label> </div>
 
-					<div class="campos">
-						<input id="inputt" type="email" name="email" id="mailcontacto" placeholder="correo@correo.com">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<!-- <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p> -->
-				</div>
-
-				<!-- Grupo: Teléfono -->
-				<div class="campos2" id="grupo__telefono">
-
-					<div class="Display">
-						<input id="corto" type="text" name="cod" placeholder="Cod" pattern="[0-9]{1,5}">
-					</div>
-					<div class="Display">
-						<input id="inputtCorto" type="text" name="tel" placeholder="4491234567"
-							pattern="[0-9]{1,14}">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-
-				</div>
-
-				<!--codigo area  y celular contaco -->
-
-				<div class="campos2" id="grupo__telefono">
-
-					<div class="Display">
-						<input id="corto" type="text" name="codC" placeholder="Cod" pattern="[0-9]{1,5}">
-					</div>
-					<div class="Display">
-						<input id="inputtCorto" type="text" name="telC" id="telefono" placeholder="4491234567"
-							pattern="[0-9]{1,14}">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-
-		<div class="contenedor">
-
-			<div class="etiquetas2">
-
-
-				<p><label for="mailcontacto" class="formulario__label">Mail de un contacto</label><br></p>
-				<p><label for="direccion" class="formulario__label">Direccion</label><br></p>
-				<p><label for="provincia" class="formulario__label">Provincia</label><br></p>
-				<p><label for="localidad" class="formulario__label">Localidad</label><br></p>
-				<p><label for="egreso" class="formulario__label">Año de Egreso al Secundario</label><br></p>
-				<p><label for="titulo_secundario" class="formulario__label">Titulo del secundario</label><br></p>
-				<p><label for="genero" class="formulario__label">Carrera</label><br></p>
-				
-
-			</div>
-
-			<div class="cajas">
-
-				<!-- Grupo: Mail de un contacto -->
-				<div class="campos">
-
-					<div id="inputt">
-						<input type="email" id="inputt" name="emailC" placeholder="correo@correo.com">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<!-- <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion
-						bajo.</p> -->
-				</div>
-
-				<!-- Grupo: Direccion -->
-				<div class="campos" id="grupo__direccion">
-
-					<div id="inputt">
-						<input type="text" id="inputt" name="direccion" placeholder="Ingrese direccion" pattern="[a-zA-Z\s]{9,50}">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<!-- <p class="formulario__input-error">.</p> -->
-				</div>
-
-				<!-- Grupo: Provincia -->
-				<div class="campos">
-
-					<div>
-						<select id="inputt" name="provincia">
-							<option value="Buenos Aires">Buenos Aires</option>
-							<option value="Cordoba" selected>Cordoba</option>
-							<option value="Santa Fe">Santa Fe</option>
-							<option value="Catamarca">Catamarca</option>
-							<option value="Chaco">Chaco</option>
-							<option value="Chubut">Chubut</option>
-							<option value="Corrientes">Corrientes</option>
-							<option value="Entre Ríos">Entre Ríos</option>
-							<option value="Formosa">Formosa</option>
-							<option value="Jujuy">Jujuy</option>
-							<option value="La Pampa">La Pampa</option>
-							<option value="La Rioja">La Rioja</option>
-							<option value="Mendoza">Mendoza</option>
-							<option value="Misiones">Misiones</option>
-							<option value="Neuquén">Neuquén</option>
-							<option value="Río Negro">Río Negro</option>
-							<option value="Salta">Salta</option>
-							<option value="San Juan">San Juan</option>
-							<option value="San Luis">San Luis</option>
-							<option value="Santa Cruz">Santa Cruz</option>
-							<option value="Santiago del Estero">Santiago del Estero</option>
-							<option value="Tierra del Fuego, Antártida e Islas del Atlántico Sur">Tierra del Fuego,
-								Antártida e
-								Islas del Atlántico Sur</option>
-							<option value="Tucumán">Tucumán</option>
-						</select>
-					</div>
-				</div>
-				<!-- Grupo: Localidad -->
-				<div class="campos">
-
-					<div>
-						<input id="inputt" type="text" name="localidad" maxlength="50"placeholder="Localidad">
-					</div>
-				</div>
-
-				<!-- Grupo: Año egreso -->
-				<div class="campos" id="egreso">
-
-					<div>
-						<input id="inputt" type="text" name="egreso" id="egreso" placeholder="Ingrese Año"
-							pattern="[0-9]{4}">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<!-- <p class="formulario__input-error">El año solo puede contener numeros y el maximo son 14 dígitos.</p> -->
-				</div>
-
-
-				<!-- Grupo: Titulo del secundario -->
-				<div class="campos">
-
-					<div class="formulario__grupo-input">
-						<input id="inputt" type="text" name="titulo" pattern="[a-zA-Z\s]{1,100}" placeholder="Titulo">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<!-- <p class="formulario__input-error">El titulo tiene que tener hasta 100 caracteres y no puede contener
-						numeros.</p> -->
-				</div>
-
-				<!-- Grupo: Carrera -->
-				<div class="campos">
-
-					<select id="inputt" Name="carrera">
-						<option value='1'>Analista de sistemas</option>
+            <div> <select name="carrera" style=width:207px;height:25px;>
+            <option value='1'>Analista de sistemas</option>
 						<option value='2'>Desarrollador de software</option>
 						<option value='3'>Seguridad e higiene</option>
-					</select>
+                  </select>
+            </div>
+        </div>
 
-				</div>
+                
+        <div class="button">
+            <div> <input type="submit" value="GUARDAR CAMBIOS" id="btn_guardar" name="send" > </div>
+                
+            <div> <input type="button" value="CANCELAR" id="btn_cancelar"> </div>
+        </div> 
+               
+    </form>
 
 
-			
 
-			</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
 
-		</div><br>
-
-		
-
-		
-
-		<input class="boton" type="submit" name="send" value="Inscripcion"><br><br>
-     
-
-	    </form>
-	</main>
-	
-	<!--<script src="../js/formulario.js"></script>
-	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>-->
 
 
 <?php
@@ -292,11 +210,12 @@
 
 if ( isset($_POST["send"]))  {
 
+
   require_once("../Controlador/ingresarAlumno.php");
   
 }
 
 ?>
 
-</body>
+<script src="../js/pre-inscripcion.js"></script>
 </html>
