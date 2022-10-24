@@ -160,7 +160,7 @@ error_reporting(0);
           </div>
 
           <br><br>
-          <input class=" btn btn-secondary" type="submit" name="envio" value="Dar Alta"><br><br> 
+           <a href="../Vista/Admin_AltaAlumno.php" > <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br>
           
 
       </form>  
