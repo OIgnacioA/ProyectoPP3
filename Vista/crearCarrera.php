@@ -104,7 +104,7 @@ error_reporting(0);
           <div class="col-12 d-flex justify-content-center">
 
 
-            <form id="bodyprincipal" action="crearCarrera.php" method="post">
+            <form id="bodyprincipal" action="crearCarrera.php" method="post" enctype='multipart/form-data'>
 
               <div class="container">
                 <div class="row">
@@ -160,11 +160,19 @@ error_reporting(0);
                         style="background-color: #4a8d9ec5;">
 
                     </div>
+                    
+                    
+                    <!-- trabajo con files ------------------------------------------------->
+                    
                     <div class="mb-3 campoCarrera">
                       <label>PLAN DE ESTUDIOS</label>
                       <input class="form-control" style="background-color: #4a8d9ec5;" type="file" id="formFileMultiple"
-                        multiple>
+                        multiple    name='f'>
                     </div>
+                    
+                    
+                    <!---------------------------------------------------------------------->
+                    
 
                   </div>
                   <div class="col-12 col-md-4">
@@ -283,7 +291,28 @@ error_reporting(0);
 <!-- //------PHP------------------------------------------------------------------ -->
 
 
-  <?php if ( isset($_POST["enviar"])){require_once("../Controlador/C_crearCarrera.php");}?> 
+  <?php if ( isset($_POST["enviar"])){
+  
+  
+    
+    $name = $_FILES['f']['name'];
+    
+    $tmp_name =$_FILES['f']['tmp_name'];
+    
+    $ruta = 'Archivos/'. $name;
+    
+    move_uploaded_file($tmp_name, $ruta);
+   
+    
+    echo "nombre : ".$namee; 
+    echo "nombreTemp: : ".$tmp_name; 
+  
+  require_once("../Controlador/C_crearCarrera.php");
+  
+  
+  
+  
+  }?> 
 
 <!-- //--------------------------------------------------------------------------- -->
 

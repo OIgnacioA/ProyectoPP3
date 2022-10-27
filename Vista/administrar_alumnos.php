@@ -149,9 +149,7 @@ error_reporting(0);
 
                   <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "value=". "'". $Carrera . "'" ."required name=". "'"."carrera". "'". "></div>
                 
-                  <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>";
-
-             
+                       <div class=". "'". "info". "'". "><a href=". "'". "https://drive.google.com/file/d/1Mb-TiHWj4du0EmX9Cf3E3uKoDG0xibxM/view?usp=sharing". "'" . " target=". "'". "_blank". "'". " ><input type =". "'". "button". "'" . "value= ". "'" . "VER" . "'" . "name=". "'". "envio" . "'" . "class=" . "'" . "btn btn-secondary". "'". "></a></div>";
 
               }
             ?>
@@ -160,7 +158,9 @@ error_reporting(0);
           </div>
 
           <br><br>
-          <input class=" btn btn-secondary" type="submit" name="envio" value="Dar Alta"><br><br> 
+        
+          <a href="../Vista/Admin_AltaAlumno.php" > <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
+          <br><br> 
           
 
       </form>  

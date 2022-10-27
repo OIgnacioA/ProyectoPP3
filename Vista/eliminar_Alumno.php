@@ -33,14 +33,16 @@
             <option value="D">DNI</option>
             <option value="P">Pasaporte</option>
           </select>
-
+  
+         
+  
         </div>
 
         <div class="campos2">
 
         <input type="text" name="dniP" placeholder="xxxxxxxxx" pattern="[0-9]{1,8}">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
-
+          
         </div>
 
       </div>
@@ -49,7 +51,7 @@
   
       <div class="boton">
         <button type="submit" id=button type="button" name="enviar"
-          style="background-color: #000000; text-align: center ;color: #ffffff">Eliminar USUARIO</button>
+          style="background-color: #000000; text-align: center ;color: #ffffff">Eliminar Usuario</button>
       </div>
   
   

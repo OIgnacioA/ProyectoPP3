@@ -39,7 +39,12 @@ if ( isset($_POST["enviar"]) || isset($_POST["envio"]) )  {
         }else {echo '<script>alert( "no se pudo realizar el alta")</script>' ; }
 
     }
+    
+    
+  
+    
+    }
 
-}
+
 
 ?>
