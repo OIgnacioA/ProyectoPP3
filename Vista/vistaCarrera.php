@@ -108,8 +108,7 @@ error_reporting(0);
 
                 <div class=". "'". "info" . "'" ."> <label id=" . "'" . "inputt" . "'" .">". $cursada."</label></div>
 
-                <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Mas"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
-  
+                 <div class=". "'". "info". "'". "><a href=". "'". "https://drive.google.com/file/d/1Mb-TiHWj4du0EmX9Cf3E3uKoDG0xibxM/view?usp=sharing". "'" . " target=". "'". "_blank". "'". " ><input type =". "'". "button". "'" . "value= ". "'" . "VER" . "'" . "name=". "'". "envio" . "'" . "class=" . "'" . "btn btn-secondary". "'". "></a></div>
                 </div> 
                 </form> ";
 
