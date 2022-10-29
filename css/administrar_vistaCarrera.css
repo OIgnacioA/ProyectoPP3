@@ -17,13 +17,13 @@ input{border: none;}
     background-color: #dddedf00;
 
     display: grid;
-    grid-template-columns:350px 300px 300px  300px 150px;
+    grid-template-columns:  300px 100px 200px  400px 150px 1px;
     overflow: hidden;
     width:fit-content;
     height:fit-content;
 }
 
-.titulos {
+.titulos {  
     color: #f38618;
     text-decoration: none;
     font-size: 1rem;
@@ -51,7 +51,7 @@ input{border: none;}
 
 .info{
 
-    max-width: 250px;
+    max-width: 400px;
     max-height: 100px;
     padding:0.5rem;
     margin-bottom: 5px;
@@ -293,4 +293,9 @@ tbody tr td{
 #cerrarS button a{
     text-decoration: none;
     color: aliceblue;
+}
+
+.btn-secondary {
+    height: 40px;
+    margin-top: 5px;
 }

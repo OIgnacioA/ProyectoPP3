@@ -5,9 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/UpDate_Alumno.css">
+
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="../css/UpDate_Alumno.css">
+
+  
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Document</title>
 </head>
@@ -114,7 +120,9 @@ error_reporting(0);
 
               include("../Modelo/Conexion.php");
 
-              $consultaAl = "SELECT * FROM alumno";  
+              $consultaAl = "SELECT a.nombre, a.apellido, a.email, a.dni,  C.nombre as CNombre FROM alumno As a
+
+              join carrera C on (a.fk_carrera_id = C.id)";
 
               $resultado = mysqli_query($conexion,$consultaAl);
 
@@ -131,7 +139,14 @@ error_reporting(0);
 
                 }else {$Dni_pass = $consulta["dni"];}
 
-                $Carrera =  $consulta["fk_carrera_id"];
+
+
+
+
+                $Carrera =  $consulta["CNombre"];
+
+
+
                 $Historia =  $consulta["observaciones"];
              
              
@@ -160,7 +175,7 @@ error_reporting(0);
           <br><br>
         
           <a href="../Vista/Admin_AltaAlumno.php" > <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
-          <br><br> 
+          <a href="eliminar_Alumno.php"> <button type="button" class=" btn btn-secondary">Baja Alumno</button></a><br><br> <br><br> 
           
 
       </form>  

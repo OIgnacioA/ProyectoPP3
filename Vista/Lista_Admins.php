@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/Lista_Admins.css">
+
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../css/ListasAdmin.css">
+
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Document</title>
 </head>
@@ -59,7 +63,7 @@ error_reporting(0);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item menuli">
-                      <a href="#">ALTA DE ADMINISTRADOR</a>
+                      <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="administrar_alumnos.php">ALUMNOS</a>
@@ -112,6 +116,7 @@ error_reporting(0);
                 
                     $nombre =  $consulta["nombre"];
                     $Apellido =  $consulta["apellido"];
+                    $dni =  $consulta["dni"];
                     
 
                     if (($consulta["rol"] == "Director")|| ($consulta["rol"] == "Secretario") || ($consulta["rol"] == "Vicedirector") ){ 
@@ -120,7 +125,13 @@ error_reporting(0);
                         echo 
                         "<div class=". "'". "info". "'" . "><label id=" . "'" . "inputt" . "'" .">" . $nombre .  "</label></div>
 
-                        <div class=". "'". "info". "'" . "><label id=" . "'" . "inputt" . "'" .">" . $Apellido .  "</label></div>";
+                        <div class=". "'". "info". "'" . "><label id=" . "'" . "inputt" . "'" .">" . $Apellido .  "</label></div>
+                        
+                        <div class=". "'". "info". "'" . "><label id=" . "'" . "inputt" . "'" .">" . $dni .  "</label></div>
+                        
+                        
+                        
+                        ";
 
 
                     }
@@ -135,7 +146,7 @@ error_reporting(0);
 
          <a href="altaAdmin.php"> <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
          
-         <a href="eliminar_Alumno.php"> <button type="button" class=" btn btn-secondary">Eliminar</button></a><br><br> 
+         <a href="eliminar_Admin.php"> <button type="button" class=" btn btn-secondary">Eliminar</button></a><br><br> 
           
 
       </form>  

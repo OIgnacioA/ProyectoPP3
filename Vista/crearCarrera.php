@@ -304,8 +304,7 @@ error_reporting(0);
     move_uploaded_file($tmp_name, $ruta);
    
     
-    echo "nombre : ".$namee; 
-    echo "nombreTemp: : ".$tmp_name; 
+   
   
   require_once("../Controlador/C_crearCarrera.php");
   

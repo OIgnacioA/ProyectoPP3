@@ -11,7 +11,7 @@
 <body>
   <header>
       <div id="titulo">
-        <h1 style= "color: #f38618;">Eliminar Alumno</h1>
+        <h1 style= "color: #f38618;">Eliminar Usuario</h1>
     </div>
 
  
@@ -61,7 +61,7 @@
   
   </header>
 
-  <form action="eliminar_Alumno.php" method="post">
+  <form action="eliminar_Admin.php" method="post">
   
     <div class="principal">
   
@@ -90,7 +90,7 @@
   
       <div class="boton">
         <button type="submit" id=button type="button" name="enviar"
-          style="background-color: #000000; text-align: center ;color: #ffffff">Eliminar Alumno</button>
+          style="background-color: #000000; text-align: center ;color: #ffffff">Eliminar Usuario</button>
       </div>
   
   
@@ -107,20 +107,20 @@
 
        if ($DNIPASS == "D"){
 
-        $consult = "SELECT * FROM alumno WHERE dni = '$ID_P' "; 
+        $consult = "SELECT * FROM personal WHERE dni = '$ID_P' "; 
 
-       }else { $consult = "SELECT * FROM alumno WHERE pasaporte = '$ID_P' "; }
+       }else { $consult = "SELECT * FROM personal WHERE pasaporte = '$ID_P' "; }
 
 
       $resultados = mysqli_query($conexion,$consult);
-     
+      
       while($consulta = mysqli_fetch_array($resultados)){
 
-         $cont += 1; 
-          
+        $cont += 1; 
+ 
         echo "
         <br><br>
-        <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "eliminar_Alumno.php". "'" . "method=". "'" . "post" . "'" . "> 
+        <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "eliminar_Admin.php". "'" . "method=". "'" . "post" . "'" . "> 
 
 
           <div class=". "'" . "espacioBlanco". "'". "> 
@@ -146,8 +146,8 @@
 
             <td><center>".$consulta['nombre']."</center></td>
             <td><center>".$consulta['email']."</center></td>
-            <td><center>".$consulta['fk_carrera_id']."</center></td>
-            <td><center>".$consulta['estado']."</center></td>
+            <td><center>".$consulta['id_carrera']."</center></td>
+            <td><center>".$consulta['rol']."</center></td>
           
            </tr>
           </table>
@@ -170,7 +170,7 @@
       if ($cont == 0) {
         echo "<center> <table border=\"3\">
           <tr><td><font color='red'><b><center>warning:</center></b></font></td><tr>
-          <tr><td><b><center>There is  no such student ...</center></b></td></tr>
+          <tr><td><b><center>There is  no such Admin...</center></b></td></tr>
         </table></center> ";
       }
 
@@ -189,7 +189,7 @@
   <!-- //------PHP------------------------------------------------------------------ -->
 
 
-  <?php if ( isset($_POST["confirmar"])){require_once("../Controlador/Eliminar_Alumno.php");}
+  <?php if ( isset($_POST["confirmar"])){require_once("../Controlador/Eliminar_admin.php");}
   
         if ( isset($_POST["cancelar"])){echo '<script>alert( "Se ha cancelado la baja")</script>' ;}
   ?>

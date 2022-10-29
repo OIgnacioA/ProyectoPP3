@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/administrar_vistaCarrera.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../css/administrar_vistaCarrera.css">
+
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Document</title>
 </head>
@@ -122,7 +124,7 @@ error_reporting(0);
                   echo 
 
                   "
-                  <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "administrar_vistaCarrera.php". "'" . "method=". "'" . "post" . "'" . "> 
+                  <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "administrar_vistaCarrera.php". "'" . "method=". "'" . "post" . "'" . "enctype=". "'". "multipart/form-data". "'". "> 
 
                   <div class=". "'" . "espacioBlanco". "'". ">  
 
@@ -134,7 +136,7 @@ error_reporting(0);
 
                   <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $cursada . "'" ."required name=". "'"."cursada". "'". "></div>
                   
-                  <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Mas"."'"." class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
+                  <div class=". "'". "info". "'" . ">" . "<input type="."'". "file"."'"."value="."'". "Ver Mas"."'"."  name="."'"."f"."'"."/></div>
   
                   <input class=" . "'" . "btn btn-secondary" . "'".  "type=". "'" . "submit".  "'" . "name=". "'" . "envio". "'" .  "value=". "'" . "Realizar  Cambios" . "' " . "><br><br> 
                   
@@ -158,7 +160,23 @@ error_reporting(0);
   <!-- //------PHP------------------------------------------------------------------ -->
 
 
-  <?php if ( isset($_POST["envio"])){require_once("../Controlador/C_UPDateVistaCarrera.php");}?>
+  <?php if ( isset($_POST["envio"])){
+    
+    
+    $name = $_FILES['f']['name'];
+    
+    $tmp_name =$_FILES['f']['tmp_name'];
+    
+    $ruta = 'Archivos/'. $name;
+    
+    move_uploaded_file($tmp_name, $ruta);
+    
+    
+    
+    
+    
+    
+    require_once("../Controlador/C_UPDateVistaCarrera.php");}?>
 
   <!-- //--------------------------------------------------------------------------- -->
 
