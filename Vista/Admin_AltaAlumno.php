@@ -91,7 +91,7 @@
 
 	<main>	
 
-		<form action="altaAlumno.php"  method="post">
+		<form action="Admin_AltaAlumno.php"  method="post">
 
 	
 		<h3><i> Datos del amlumno</i></h3><br><br>

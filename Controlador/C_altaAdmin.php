@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Inicio</title>
-</head>
-<body>
 
 <?php
  error_reporting(0);
@@ -20,47 +10,50 @@
 
     include("../Modelo/Conexion.php");
 
-    $Nombre = $_POST["nombre"];
-    $Apellido =  $_POST["apellido"];
-    $tipo = $_POST["DNIPassT"];
-    $email =  $_POST["email"];
+    include("Personal.php");
+
+    $nuevoAgente = new Personal(); 
+
+    $Nom = $_POST["nombre"];
+    $Ape =  $_POST["apellido"];
+    $mail =  $_POST["email"];
     $rol=  $_POST["roll"];
-    $carrera=  $_POST["carrera"];
+    $carr=  $_POST["carrera"];
+
+    $DNIP = $_POST["dniPass"];//valor
+    $tip = $_POST["DNIPassT"];//tipo
    
 
-    // asignacion por defecto. 
-   $pass="NULL";
-   $DNI="NULL";
 
-//------------------------------------------DNI o Pass? 
+    $exi = $nuevoAgente->comprobarExistencia($DNIP,$tip);
    
-$DNI_P =  $_POST["dniPass"];
 
- 
-  if ($tipo == 'D') {
+    if ($tip =='P') {
+      $nuevoAgente->setPasaporte($DNIP);
+    }else {$nuevoAgente->setDNI($DNIP);}
 
-    $_SESSION['dni'] =  $DNI_P; //para comprobacion
-    $DNI =  $DNI_P;//asignacion local
 
-  }else {
 
-    $_SESSION['pass']=  $GLOBALS['$DNI_P'];//para comprobacion
-    
-    $pass = $DNI_P;//asignacion local
- 
-  }
-    
-    //comprobacion existente-no (retorno) -
-
-    include("ControlDNI.php");
+    $nuevoAgente->setNombre($Nom);
+    $nuevoAgente->setApellido($Ape);
+    $nuevoAgente->setMail($mail);
+    $nuevoAgente->setRol($rol);
+    $nuevoAgente->setCarrera($carr);
    
-    $DNINuevo = $_SESSION['$checkeoDNI'];
+    $Nombre = $nuevoAgente->getNombre();
+    $Apellido = $nuevoAgente->getApellido();
+    $DNI = $nuevoAgente->getDNI();
+    $pass = $nuevoAgente->getPasaporte();
+    $email = $nuevoAgente->getMail();
+    $rol = $nuevoAgente->getRol();
+    $carrera = $nuevoAgente->getCarrera();
    
-  
+
   //-------------------------------------------------
 
+   
 
-    if ($DNINuevo == 0){
+    if ($exi == 0){
 
       switch ($rol) {
 
@@ -74,9 +67,9 @@ $DNI_P =  $_POST["dniPass"];
 
         break;
 
-        case "Profesor":
+        case "Docente":
           
-          if (mysqli_query($conexion, " INSERT INTO  profesor (nombre, apellido, dni,  email, rol) values ('$Nombre', '$Apellido','$DNI','$email','$rol')")){ 
+          if (mysqli_query($conexion, " INSERT INTO  profesor (nombre, apellido, dni,  email,pasaporte, rol) values ('$Nombre', '$Apellido','$DNI','$email','$pass','$rol')")){ 
 
             echo '<script>alert( "Se realizó el ingreso exitosamente")</script>' ;
               

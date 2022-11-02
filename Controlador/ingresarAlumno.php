@@ -11,69 +11,97 @@
 
    include("../Modelo/Conexion.php");
 
-    $Nombre = $_POST["nombre"];
-    $Apellido =  $_POST["apellido"];
-    $genero = $_POST["genero"];
-    $carrera = $_POST["carrera"];
-    $FechaNac = $_POST["calendarioN"];
-    $tipo = $_POST["DNIPassT"];
-    $email =  $_POST["email"];
-    $emailC =  $_POST["emailC"];
-    $codA = $_POST["cod"];
-    $codAC =  $_POST["codC"];
-    $tel = $_POST["tele"];
-    $telC =  $_POST["telC"];
-    $direccion =  $_POST["direccion"];
-    $provincia = $_POST["provincia"];
-    $localidad = $_POST["localidad"];
-    $titulo = $_POST["titulo"]; 
+   include("Alumno.php");
+
+
+    $nuevoAlumno = new Alumno(); 
+
+     
+
+    $Nom = $_POST["nombre"];
+    $Ape =  $_POST["apellido"];
+    $gen = $_POST["genero"];
+    $carr = $_POST["carrera"];
+    $FechaN = $_POST["calendarioN"];
+    $mail =  $_POST["email"];
+    $mailC =  $_POST["emailC"];
+    $cod_A = $_POST["cod"];
+    $cod_AC =  $_POST["codC"];
+    $phone = $_POST["tele"];
+    $tel_C =  $_POST["telC"];
+    $dir =  $_POST["direccion"];
+    $prov = $_POST["provincia"];
+    $loc = $_POST["localidad"];
+    $tit = $_POST["titulo"]; 
+    $cal_Alt = "01/01/2000";
+    $est = "NULL";
+    $obs =  "NULL";
+    $egr = $_POST["egreso"];
+
+
+    $tip = $_POST["DNIPassT"];//tipo
+    $DNIP = $_POST["dniP"];//valor
+
+   
+  
+    //_______________________________________GET and SET: 
+   
+    $exi = $nuevoAlumno->comprobarExistencia($DNIP, $tip);
+
+    
+
+
+    if ($tip =='P') {
+      $nuevoAlumno->setPasaporte($DNIP);
+    }else {$nuevoAlumno->setDNI($DNIP);}
+
+   
+
+    $nuevoAlumno->setNombre($Nom);
+    $nuevoAlumno->setApellido($Ape);
+    $nuevoAlumno->setMail($mail);
+    $nuevoAlumno->setTelefono($phone);
+    $nuevoAlumno->setCarrera($carr);
+    $nuevoAlumno->setGenero($gen);
+    $nuevoAlumno->setFechaNac($FechaN);
+    $nuevoAlumno->setEmailC($mail);
+    $nuevoAlumno->setCodA($cod_A);
+    $nuevoAlumno->setTelC($tel_C);
+    $nuevoAlumno->setDireccion($dir);
+    $nuevoAlumno->setProvincia($prov);
+    $nuevoAlumno->setLocalidad($loc);
+    $nuevoAlumno->setTitulo($tit);
+    $nuevoAlumno->setCalendarioAlt($cal_Alt);
+    $nuevoAlumno->setEstado($est);
+    $nuevoAlumno->setObservacion($obs);
+    $nuevoAlumno->setEgreso($egr);
+
+    
+
+    $Nombre = $nuevoAlumno->getNombre();
+    $Apellido = $nuevoAlumno->getApellido();
+    $DNI = $nuevoAlumno->getDNI();
+    $pass = $nuevoAlumno->getPasaporte();
+    $email = $nuevoAlumno->getMail();
+    $tel = $nuevoAlumno->getTelefono();
+    $genero = $nuevoAlumno->getGenero();
+    $carrera = $nuevoAlumno->getCarrera();
+    $FechaNac = $nuevoAlumno->getFechaNac();
+    $emailC =  $nuevoAlumno->getEmailC();
+    $codA = $nuevoAlumno->getCodA();
+    $codAC =  $nuevoAlumno->getCodAC();
+    $telC =  $nuevoAlumno->getTelC();
+    $direccion =  $nuevoAlumno->getDireccion();
+    $provincia = $nuevoAlumno->getProvincia();
+    $localidad = $nuevoAlumno->getLocalidad();
+    $titulo = $nuevoAlumno->getTitulo();
     $calendarioAlt = "01/01/2000";
     $estado = "NULL";
     $observacion =  "NULL";
-    $egreso = $_POST["egreso"];
+    $egreso = $nuevoAlumno->getEgreso();
 
-    $DNI_P = $_POST["dniP"];
-    
-    
-    // asignacion por defecto. 
-    $_GLOBALS['$pass']="NULL";
-    $_GLOBALS['$dni']="NULL";
-
-    //------------------------------------------DNI o Pass? 
-    
-
-    if ($DNI_P !=""){
-    
-
-      if ($tipo == 'Dni')  {
-        
-        $_GLOBALS['$dni'] =  $DNI_P; //para comprobacion
-        $DNI =  $DNI_P;//asignacion local
-        $pass = "NULL";
-
-      }else {
-
-        $_GLOBALS['$pass']= $DNI_P;//para comprobacion  existente en BBDD -no 
-        
-        $pass = $DNI_P;//asignacion local
-        $DNI = "NULL";
-
-      }
-        
-      //comprobacion existente-no (retorno) -
-      
-
-      include("ControlDNI.php");
-
-
-      //-------------------------------------------------
-
-      $exi = $_GLOBALS['$existe']; 
 
       if ($exi == 0){
-
-        
-
 
         if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id, rol) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DNI','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$pass',  '$carrera', 'Alumno')")){
       
@@ -98,8 +126,5 @@
 
     session_destroy();
 
-  }
-
- 
   
 ?>

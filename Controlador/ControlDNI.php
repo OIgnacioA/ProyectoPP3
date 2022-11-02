@@ -8,7 +8,6 @@ $pass = $_GLOBALS['$pass'];
 $_GLOBALS['$existe'] = 0; 
 
 
-
 include("../Modelo/Conexion.php");
 
     if ($dni !="NULL") {
@@ -66,16 +65,12 @@ include("../Modelo/Conexion.php");
     if ($pass!="NULL") {
 
 
-       
-
         $consultaAl = "SELECT alumno.pasaporte FROM alumno";  
         $resultado = mysqli_query($conexion,$consultaAl);
 
       
         while($consulta = mysqli_fetch_array($resultado)){
-
-            
-
+           
             if( $consulta['pasaporte'] == $pass){
 
              $_GLOBALS['$existe'] = 1; 

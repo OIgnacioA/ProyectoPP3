@@ -99,8 +99,8 @@
 
             <div> <select name="DNIPassT" style=width:90px;height:25px; id="selecDocumento" onchange="verificarOpcion()">
                     <option>Tipo</option>
-                    <option value="Dni">Dni</option>
-                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="D">Dni</option>
+                    <option value="P">Pasaporte</option>
                   </select>
                       
                   <input type="text" onkeypress="return segunSeleccion(event);" minlength="8"  maxlength="9"  required name="dniP" placeholder="#Numero" id="documento" style=width:106px;height:20px; disabled>   
