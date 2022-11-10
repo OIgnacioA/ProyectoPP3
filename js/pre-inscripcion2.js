@@ -20,20 +20,27 @@ function fechaActual () {
 */
 
 /*segun la opcion seleccionada en selector "documento" se habilita o no el ingreso de datos en el input*/
+
+
+
 function verificarOpcion() { 
-        
-        if (document.getElementById ('selecDocumento').value == "Dni" || document.getElementById ('selecDocumento').value == "Pasaporte") {
+
+
+
+        if (document.getElementById ('selecDocumento').value == "D" || document.getElementById ('selecDocumento').value == "P") {
 
             document.getElementById("documento").disabled=false;
-            
+
         }else {
+
             document.getElementById("documento").disabled=true;
+
         }
 }
 
 function segunSeleccion(evt) { /*Si se selecciona como documento Dni --> solo se puede ingresar números*/
 
-    if (document.getElementById ('selecDocumento').value == "Dni") {        
+    if (document.getElementById ('selecDocumento').value == "D") {        
 
         if (window.event) {
             
@@ -52,3 +59,4 @@ function segunSeleccion(evt) { /*Si se selecciona como documento Dni --> solo se
         }
     }
 }
+

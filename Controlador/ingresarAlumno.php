@@ -106,8 +106,34 @@
         if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id, rol) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DNI','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$pass',  '$carrera', 'Alumno')")){
       
           echo '<script>alert( "Se realizó el ingreso exitosamente")</script>' ;
-          session_destroy();
 
+          ////////////////MAil: 
+
+            $header = ' From: noreply@example.com'  . " \r\n";
+            $header .='Reply-To: webmaster@example.com' . "\r\n" .
+            $header .= "X-Mailer: PHP/" .phpversion() . " \r\n";
+          
+
+
+            $message= " Por medio de la presente se le informa que su preinscripción ha sido recepcionada. Por favor, hágase presente en la institución con la documentación requerida en los horarios de xxxx hs a xxxx hs.  ". " \r\n" .
+
+            "Saludos cordiales.". " \r\n" .
+            
+            "La Administración" . " \r\n" .
+            
+            "Instituto XXXXXXX". " \r\n" ;
+
+            $para = $email ; 
+            $asunto = "Pre-inscripcion recepcionada";
+
+            mail($para, $asunto, $message, $header);
+
+             
+
+           
+          ////////////////////echo("mensaje: " . $message. "<br>". "Mail: " . $para );
+
+          session_destroy();
         }else  {
 
           echo '<script>alert( "no se pudo realizar el ingreso")</script>' ; 
@@ -126,5 +152,4 @@
 
     session_destroy();
 
-  
 ?>

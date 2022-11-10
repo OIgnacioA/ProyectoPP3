@@ -59,9 +59,13 @@
       </div>
   </header>
 
-
+ 
 
 <body>
+
+
+
+
     <!-- ***** INICIO FORM ***** -->
     <form action="altaAlumno.php" class="contenedorExt"   method="post">
 
@@ -97,7 +101,7 @@
 
             <div> <label for="documento" id="etiqueta">DNI/Pasaporte</label> </div>
 
-            <div> <select name="DNIPassT" style=width:90px;height:25px; id="selecDocumento" onchange="verificarOpcion()">
+            <div> <select name="DNIPassT" style=width:90px;height:25px; id="selecDocumento" onchange="verificarOpcion()" onclick="verificarOpcion()" onkeyup="verificarOpcion()">
                     <option>Tipo</option>
                     <option value="D">Dni</option>
                     <option value="P">Pasaporte</option>
@@ -191,16 +195,19 @@
 
                 
         <div class="button">
-            <div> <input type="submit" value="GUARDAR CAMBIOS" id="btn_guardar" name="send" > </div>
+
+             <div> <input type="submit" value="GUARDAR CAMBIOS" id="btn_guardar" name="send" > </div> 
                 
             <div> <input type="button" value="CANCELAR" id="btn_cancelar"> </div>
         </div> 
                
     </form>
 
-
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="../js/pre-inscripcion2.js"> </script> 
 </body>
 
 
@@ -217,5 +224,5 @@ if ( isset($_POST["send"]))  {
 
 ?>
 
-<script src="../js/pre-inscripcion.js"></script>
+
 </html>
