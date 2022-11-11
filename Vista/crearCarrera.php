@@ -24,7 +24,7 @@ error_reporting(0);
   <center> <p><a href="AdminLogueado.php">inicio</a></p></center>
 
     <div id="cerrarS">
-      <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="./login">Cerrar Sesion</a></button>
+      <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="enConstruccion.php">Cerrar Sesion</a></button>
     </div>
     <div class="container">
       <div class="row d-flex flex-row">
