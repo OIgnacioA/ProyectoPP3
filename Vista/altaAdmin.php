@@ -123,7 +123,7 @@
                             <option  value="D">DNI</option>
                             <option value="P">Pasaporte</option>
                         </select>
-                        <input type="text" id="passa"  maxlength={cambiar} placeholder="Numero"  name="dniPass" pattern="[0-9]{1,8}">
+                        <input type="text" id="passa"  maxlength={cambiar} placeholder="Numero"  name="dniPass" pattern="[0-9]{1,9}">
                 </div>
 
                 <div class="campos">

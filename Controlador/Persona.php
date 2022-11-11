@@ -10,8 +10,6 @@ class Persona  {
     private  $rol; 
     private  $telefono; 
     
-   
-
 
     function persona() {
 

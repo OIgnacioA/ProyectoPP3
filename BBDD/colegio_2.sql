@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 11-11-2022 a las 16:55:46
--- Versión del servidor: 10.5.15-MariaDB-cll-lve
--- Versión de PHP: 7.2.34
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 21-10-2022 a las 22:33:57
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `u143332576_colegio`
+-- Base de datos: `colegio`
 --
 
 -- --------------------------------------------------------
@@ -58,12 +58,10 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`id`, `nombre`, `apellido`, `fnacimiento`, `genero`, `dni`, `email`, `cod_area`, `telefono`, `contacto_mail`, `cod_area_cont`, `telefonocont`, `direccion`, `provincia`, `localidad`, `titulos`, `fe_alta`, `estado`, `observaciones`, `pasaporte`, `fk_carrera_id`, `pass`, `rol`) VALUES
-(46, 'ana', 'lopez', '1900-12-31', 'Femenino', '45212135', 'lopez@lopez', '221', '4528812', 'ana@gmail.com', '011', '1653434', 'lavalle perez 4532 aldana lopez entre / 1900', 'Buenos Aires', 'la plata', 'analista', '0000-00-00', 'Noregular', '.............', 'NULL', 2, NULL, 'Alumno'),
-(50, 'solano', 'lopez', '2022-10-22', 'Otro', '31462893', 'sehent@hotmail.com', '445', '5525126', 'sehent@hotmail.com', '223', '34534577', 'los potrillos', 'San Juan', 'Los Hornos', 'Abogado', '0000-00-00', '', '', 'NULL', 2, NULL, 'Alumno'),
-(54, 'leonard', 'coporello', '0000-00-00', 'Masculino', '12345987', 'solano@hotmail.com', '4400', '2215525126', '', '', '', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', 'NULL', 'NULL', 1, NULL, 'Alumno'),
-(56, 'matias', 'altaparro', '1995-02-17', 'Masculino', '38865358', 'muribe1@abc.gob.ar', '2222', '222222', 'matttt@hotmail.com', '223', '77666677', '123123', 'Buenos Aires', 'la plata', '', '0000-00-00', 'NULL', 'NULL', 'NULL', 1, NULL, 'Alumno'),
-(62, 'Antonella', 'Giordano', '0000-00-00', 'Seleccione una opción', '66666666', 'sehent@hotmail.com', '221', '2215525126', 'sehent@hotmail.com', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', 'NULL', '', 1, NULL, 'Alumno'),
-(63, 'Antonella', 'Giordano', '0000-00-00', 'Femenino', '18934445', 'sehent@hotmail.com', '9221', '542215923054', 'sehent@hotmail.com', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', 'NULL', '', 1, NULL, 'Alumno');
+(46, 'ana', 'lopez', '1900-12-31', 'Femenino', '45212135', 'lopez@lopez.com', '221', '4528812', 'ana@gmail.com', '011', '1653434', 'lavalle perez 4532 aldana lopez entre / 1900 ', 'Buenos Aires', 'la plata', 'analista', '0000-00-00', 'Noregular', '.............', '', 2, NULL, 'Alumno'),
+(47, 'Antonella', 'Giordano', '0000-00-00', 'Femenino', '1', 'antonella_giordano@hotmail.com', '', '', '', '', '', '', 'Cordoba', '', '', '0000-00-00', 'Noregular', '', '', 1, NULL, 'Alumno'),
+(48, 'andrea', 'martinez', '0000-00-00', '', '33999123', 'andre@hotmail.com', '', '', '', '', '', '', '', '', '', '0000-00-00', '', NULL, '', 2, NULL, 'Alumno'),
+(49, 'borrar', 'borrado', '0000-00-00', 'Femenino', '1111111', 'sehent@hotmail.com', '', '', '', '', '', '', 'Cordoba', '', '', '0000-00-00', 'Noregular', '', '', 1, NULL, 'Alumno');
 
 -- --------------------------------------------------------
 
@@ -91,14 +89,11 @@ CREATE TABLE `carrera` (
 --
 
 INSERT INTO `carrera` (`id`, `ESTADO`, `nombre`, `codigo`, `duracion`, `resolucion`, `anio_caducidad`, `anio_resolucion`, `alta`, `comentarios`, `cursada`, `plan`) VALUES
-(1, 'on', 'Analista de sistemass', '003', '6', '1515', '10/10/2025', '10/10/2000', '10/10/2021', NULL, 'lun vier 17hs-20hs.', '333'),
-(2, 'on', 'Desarrollador de software', '002', '8', '1515', '10/10/2028', '10/10/2005', '10/10/2018', NULL, 'lun vier 18hs-20hs.', '555'),
-(3, 'on', 'inseguridad', '001', '3', '1508', '10/10/2029', '10/10/2001', '10/10/2015', NULL, 'lun vier 18hs-20hs.', '555'),
-(8, 'on', 'Alienologia', '004', ' 2', '132', '2022-10-11', '2022-10-04', '2022-10-04', 'estructurada desde luego. ', 'lun vier 18hs-20hs.', '666'),
-(9, '', 'lauftologia', '006', '2', '156', '10/10/2025', '10/10/2000', '10/10/2011', '', 'lun vier 18hs-20hs.', '555'),
-(25, 'on', 'Equinoterapia', '009', ' 3', '1', 'kjnjn', 'asd', 'asd', '', 'knkjnkj', 'asd'),
-(26, '', 'Desarrollo', '859', ' 3', '1234', '2026-07-08', '2022-11-01', '2022-11-01', 'hola ', 'Lunes', '66'),
-(27, '', 'asa', '454', ' Seleccione', 'dasdasd', '', '', '', '', '', '');
+(1, 'on', 'electrocutacion', '009', '6', '12', '10/10/2029', '10/10/2015', '10/10/2015', '1234', 'todos los dabados', '677'),
+(2, '', 'Desarrollador de software', '002', '10', '1515', '10/10/2028', '10/10/2005', '10/10/2018', NULL, 'lun vier 18hs-20hs.', '555'),
+(3, 'on', 'Seguridad e higiene', '001', '34', '1508', '10/10/2029', '10/10/2001', '10/10/2015', NULL, 'lun vier 18hs-20hs.', '666'),
+(8, '', 'Alienologia', '004', ' 2', '132', '2022-10-11', '2022-10-04', '2022-10-04', 'estructurada desde luego. ', 'lun vier 18hs-20hs.', '555'),
+(9, 'on', 'Nombre', '003', '12', '1508', 'Caducidad', '10/12/2003', '10/12/2004', '', 'lun a vier 16hs a 18hs', '666');
 
 -- --------------------------------------------------------
 
@@ -181,7 +176,6 @@ CREATE TABLE `personal` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
-  `telefono` varchar(255) NOT NULL,
   `dni` varchar(255) NOT NULL,
   `pasaporte` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -193,17 +187,14 @@ CREATE TABLE `personal` (
 -- Volcado de datos para la tabla `personal`
 --
 
-INSERT INTO `personal` (`id`, `nombre`, `apellido`, `telefono`, `dni`, `pasaporte`, `email`, `rol`, `id_carrera`) VALUES
-(38, 'nicol', 'Cruz', '', '45000000', '45000000', 'elenan@jklalkja', 'Director', 2),
-(41, 'andres', 'fernandez', '', '34050123', '', 'juanf@gmail.com', 'Director', 1),
-(42, 'Andy ', 'Perez', '', '22345543', '', 'andy@gmail.com', 'Secretario', 1),
-(43, 'Gerardo', 'Lauff', '', '28671163', '', 'gerlauff@hotmail.com', 'Director', 1),
-(45, 'john', 'Doe', '', '123456789', '', 'login@login', 'Director', 1),
-(46, 'aldana', ' lopez', '', '11222333', '', 'aldana_tam_lopez@hotmail.com', 'Director', 1),
-(48, 'hgfhgfh', 'hgfhgfh', '', '11222333', '', '', '', 1),
-(49, 'andy', 'garcia', '', '11122233', '', '', '', 1),
-(50, 'andres', 'garcia', '', '12312312', '', 'andres@andres', 'Director', 1),
-(51, 'aldana', 'lopez', '', '12312312', '', 'muribe1@abc.gob.ar', 'Director', 1);
+INSERT INTO `personal` (`id`, `nombre`, `apellido`, `dni`, `pasaporte`, `email`, `rol`, `id_carrera`) VALUES
+(4, 'Antonella', 'Leguizamon', '31422222', '31423345', 'ejemplo@esomismo', 'Director', 1),
+(38, 'nicol', 'Cruz', '45000000', '45000000', 'elenan@jklalkja', 'Director', 2),
+(41, 'andres', 'fernandez', '34050123', '', 'juanf@gmail.com', 'Director', 1),
+(42, 'Andy ', 'Perez', '22345543', '', 'andy@gmail.com', 'Secretario', 1),
+(43, 'Gerardo', 'Lauff', '28671163', '', 'gerlauff@hotmail.com', 'Director', 1),
+(45, 'john', 'Doe', '123456789', '', 'login@login', 'Director', 1),
+(46, 'aldana', ' lopez', '11222333', '', 'aldana_tam_lopez@hotmail.com', 'Director', 1);
 
 -- --------------------------------------------------------
 
@@ -297,13 +288,13 @@ ALTER TABLE `profesor`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `carrera`
 --
 ALTER TABLE `carrera`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
@@ -321,7 +312,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `profesor`

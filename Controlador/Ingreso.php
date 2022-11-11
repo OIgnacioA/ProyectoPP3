@@ -13,6 +13,7 @@ if ( isset($_POST["enviar"]))  {
 
    $mail =  $_POST['email'];
    $alta2 = false; 
+   $alta3 = false; //preceptor
 
    include("../Modelo/Conexion.php");
 
@@ -27,7 +28,7 @@ if ( isset($_POST["enviar"]))  {
     //-----------------------------------paso 2 [ROL CORRECTO]
 
 
-   $arr = array("Preceptor","Director", "Vicedirector","Secretario"); #roles
+   $arr = array("Director", "Vicedirector","Secretario"); #roles admin
  
    $consultaAl = "SELECT rol FROM personal WHERE email =" . "'" . $mail . "'". "AND dni =  '".$_POST['contrasenia']."'" ;
 
@@ -48,18 +49,28 @@ if ( isset($_POST["enviar"]))  {
 
    }
   
+   if($consulta['rol'] == "Preceptor"){$alta3 = true; }// rol preceptor
+
+
 
     if(($alta1 == 1)){
 
-        if ($alta2 == false ){  
+        if (($alta2 == false ) && ($alta3 == false )){  
         echo "<center>  <p style=color:red> El usuario no cuenta con permisos para ingresar a esta página </p></center>";  
-        }else {
+        }else if ($alta2 == true ) {
             
            header ("location:../Vista/AdminLogueado.php"); 
      
             //  $_SESSION["Logueado!"] = true; 
             //  $_SESSION["Usuario_N"] = $_POST["email"];  
             echo "entrada----en: ".$alta2. "<br>";
+
+        }else if ($alta3 == true ){
+
+
+         header ("location:../Vista/Preceptor_admin.php"); 
+
+
         }
 
     }else {  echo "<center>  <p style=color:red> EL USUARIO Y O CONTRASEÑA NO SON CORRECTOS </p></center>"; }
