@@ -14,6 +14,7 @@ if ( isset($_POST["enviar"]))  {
    $mail =  $_POST['email'];
    $alta2 = false; 
    $alta3 = false; //preceptor
+   $alta4 = false; //super
 
    include("../Modelo/Conexion.php");
 
@@ -51,13 +52,15 @@ if ( isset($_POST["enviar"]))  {
   
    if($consulta['rol'] == "Preceptor"){$alta3 = true; }// rol preceptor
 
+   if($consulta['rol'] == "super"){$alta4 = true;}// rol super
 
+   
 
     if(($alta1 == 1)){
 
-        if (($alta2 == false ) && ($alta3 == false )){  
-        echo "<center>  <p style=color:red> El usuario no cuenta con permisos para ingresar a esta página </p></center>";  
-        }else if ($alta2 == true ) {
+        echo"titititi--------------t";
+
+        if ($alta2 == true ) {
             
            header ("location:../Vista/AdminLogueado.php"); 
      
@@ -71,15 +74,19 @@ if ( isset($_POST["enviar"]))  {
          header ("location:../Vista/Preceptor_admin.php"); 
 
 
-        }
+        }else if ($alta4 == true ){
 
-    }else {  echo "<center>  <p style=color:red> EL USUARIO Y O CONTRASEÑA NO SON CORRECTOS </p></center>"; }
+
+            header ("location:../Vista/SuperAdmin.php"); 
+   
+   
+        }else {  echo "<center>  <p style=color:red> EL USUARIO Y O CONTRASEÑA NO SON CORRECTOS </p></center>"; }
 
     
 
    
 
+     }
+
 }
-
-
 ?>

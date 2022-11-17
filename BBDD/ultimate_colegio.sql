@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 11-11-2022 a las 16:55:46
+-- Tiempo de generación: 17-11-2022 a las 21:17:21
 -- Versión del servidor: 10.5.15-MariaDB-cll-lve
 -- Versión de PHP: 7.2.34
 
@@ -91,12 +91,12 @@ CREATE TABLE `carrera` (
 --
 
 INSERT INTO `carrera` (`id`, `ESTADO`, `nombre`, `codigo`, `duracion`, `resolucion`, `anio_caducidad`, `anio_resolucion`, `alta`, `comentarios`, `cursada`, `plan`) VALUES
-(1, 'on', 'Analista de sistemass', '003', '6', '1515', '10/10/2025', '10/10/2000', '10/10/2021', NULL, 'lun vier 17hs-20hs.', '333'),
+(1, 'on', 'Analista de sistemass', '003', '5', '1515', '10/10/2025', '10/10/2000', '10/10/2021', NULL, 'lun vier 17hs-20hs.', '333'),
 (2, 'on', 'Desarrollador de software', '002', '8', '1515', '10/10/2028', '10/10/2005', '10/10/2018', NULL, 'lun vier 18hs-20hs.', '555'),
 (3, 'on', 'inseguridad', '001', '3', '1508', '10/10/2029', '10/10/2001', '10/10/2015', NULL, 'lun vier 18hs-20hs.', '555'),
 (8, 'on', 'Alienologia', '004', ' 2', '132', '2022-10-11', '2022-10-04', '2022-10-04', 'estructurada desde luego. ', 'lun vier 18hs-20hs.', '666'),
-(9, '', 'lauftologia', '006', '2', '156', '10/10/2025', '10/10/2000', '10/10/2011', '', 'lun vier 18hs-20hs.', '555'),
-(25, 'on', 'Equinoterapia', '009', ' 3', '1', 'kjnjn', 'asd', 'asd', '', 'knkjnkj', 'asd'),
+(9, 'on', 'lauftologia', '006', '2', '156', '10/10/2025', '10/10/2000', '10/10/2011', '', 'lun vier 18hs-20hs.', '555'),
+(25, 'on', 'Equinoterapia', '009', ' 3', '1', 'kjnjn', 'asd', 'asd', '', 'mie jue', 'asd'),
 (26, '', 'Desarrollo', '859', ' 3', '1234', '2026-07-08', '2022-11-01', '2022-11-01', 'hola ', 'Lunes', '66'),
 (27, '', 'asa', '454', ' Seleccione', 'dasdasd', '', '', '', '', '', '');
 
@@ -198,12 +198,14 @@ INSERT INTO `personal` (`id`, `nombre`, `apellido`, `telefono`, `dni`, `pasaport
 (41, 'andres', 'fernandez', '', '34050123', '', 'juanf@gmail.com', 'Director', 1),
 (42, 'Andy ', 'Perez', '', '22345543', '', 'andy@gmail.com', 'Secretario', 1),
 (43, 'Gerardo', 'Lauff', '', '28671163', '', 'gerlauff@hotmail.com', 'Director', 1),
-(45, 'john', 'Doe', '', '123456789', '', 'login@login', 'Director', 1),
 (46, 'aldana', ' lopez', '', '11222333', '', 'aldana_tam_lopez@hotmail.com', 'Director', 1),
-(48, 'hgfhgfh', 'hgfhgfh', '', '11222333', '', '', '', 1),
+(48, 'Pablo', 'Lescano', '', '123456799', '', 'super@super', 'super', 1),
 (49, 'andy', 'garcia', '', '11122233', '', '', '', 1),
 (50, 'andres', 'garcia', '', '12312312', '', 'andres@andres', 'Director', 1),
-(51, 'aldana', 'lopez', '', '12312312', '', 'muribe1@abc.gob.ar', 'Director', 1);
+(51, 'aldana', 'lopez', '', '12312312', '', 'muribe1@abc.gob.ar', 'Director', 1),
+(52, 'Hector', 'Caputo', '', '123456788', '', 'preceptor@preceptor', 'Preceptor', 1),
+(53, 'persona', 'prueba', '', '123456789', '', 'login@login', 'Director', 1),
+(54, 'jjk', 'jkjk', '', '123123', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -321,7 +323,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `profesor`
