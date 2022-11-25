@@ -48,7 +48,7 @@ error_reporting(0);
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio"></a>
+                  <a aria-current="page" href="index.html"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

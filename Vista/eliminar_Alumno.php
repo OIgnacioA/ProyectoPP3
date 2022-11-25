@@ -1,14 +1,39 @@
+<?php 
+
+  session_start();
+
+  $nombre = $_SESSION['usuario'] ;
+  $psswrd = $_SESSION['Psswrd'] ;
+
+
+  if($nombre == null || $psswrd == null){
+
+    die(); 
+
+  }
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/eliminar_Alumno.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Eliminar Alumno</title>
+
+    <link rel="stylesheet" href="../css/eliminar_Alumno.css">
+    <link rel="stylesheet" href="../css/UpDate_Alumno.css">
+    
 </head>
 <body>
+
+  <div id="cerrarS">
+    <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+  </div>
+
+
   <header>
       <div id="titulo">
         <h1 style= "color: #f38618;">Eliminar Alumno</h1>
@@ -23,7 +48,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="AdminLogueado.php"><img src="../img/home3.png" alt="Inicio" width="90" height="90" ></a>
+                  <a aria-current="page" href="AdminLogueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40" ></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

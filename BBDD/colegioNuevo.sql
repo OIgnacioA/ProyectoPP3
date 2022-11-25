@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 17-11-2022 a las 21:17:21
+-- Tiempo de generación: 25-11-2022 a las 15:38:20
 -- Versión del servidor: 10.5.15-MariaDB-cll-lve
 -- Versión de PHP: 7.2.34
 
@@ -62,7 +62,7 @@ INSERT INTO `alumno` (`id`, `nombre`, `apellido`, `fnacimiento`, `genero`, `dni`
 (50, 'solano', 'lopez', '2022-10-22', 'Otro', '31462893', 'sehent@hotmail.com', '445', '5525126', 'sehent@hotmail.com', '223', '34534577', 'los potrillos', 'San Juan', 'Los Hornos', 'Abogado', '0000-00-00', '', '', 'NULL', 2, NULL, 'Alumno'),
 (54, 'leonard', 'coporello', '0000-00-00', 'Masculino', '12345987', 'solano@hotmail.com', '4400', '2215525126', '', '', '', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', 'NULL', 'NULL', 1, NULL, 'Alumno'),
 (56, 'matias', 'altaparro', '1995-02-17', 'Masculino', '38865358', 'muribe1@abc.gob.ar', '2222', '222222', 'matttt@hotmail.com', '223', '77666677', '123123', 'Buenos Aires', 'la plata', '', '0000-00-00', 'NULL', 'NULL', 'NULL', 1, NULL, 'Alumno'),
-(62, 'Antonella', 'Giordano', '0000-00-00', 'Seleccione una opción', '66666666', 'sehent@hotmail.com', '221', '2215525126', 'sehent@hotmail.com', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', 'NULL', '', 1, NULL, 'Alumno'),
+(62, 'Antonella', 'Giordano', '0000-00-00', 'Seleccione una opciÃƒÂ³n', '66666666', 'sehent@hotmail.com', '221', '2215525126', 'sehent@hotmail.com', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', 'NULL', '', 1, NULL, 'Alumno'),
 (63, 'Antonella', 'Giordano', '0000-00-00', 'Femenino', '18934445', 'sehent@hotmail.com', '9221', '542215923054', 'sehent@hotmail.com', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', 'NULL', '', 1, NULL, 'Alumno');
 
 -- --------------------------------------------------------
@@ -120,10 +120,10 @@ CREATE TABLE `materia` (
 
 INSERT INTO `materia` (`id`, `nombre`, `descripcion`, `codigo`, `profesor_id`) VALUES
 (2, 'Logica', 'propedeutica', '001', NULL),
-(4, 'MatemÃ¡ticas', 'Propedeutica', '002', 2),
+(4, 'MatemÃƒÆ’Ã‚Â¡ticas', 'Propedeutica', '002', 2),
 (9, 'Practicas Profecionalizantes', 'Propedeutica', '011', 3),
 (10, 'Historia', 'Propedeutica', '007', 1),
-(11, 'rectangulologÃ­a basica', 'Correlativa', '013', 3);
+(11, 'rectangulologÃƒÆ’Ã‚Â­a basica', 'Correlativa', '013', 3);
 
 -- --------------------------------------------------------
 
@@ -199,13 +199,11 @@ INSERT INTO `personal` (`id`, `nombre`, `apellido`, `telefono`, `dni`, `pasaport
 (42, 'Andy ', 'Perez', '', '22345543', '', 'andy@gmail.com', 'Secretario', 1),
 (43, 'Gerardo', 'Lauff', '', '28671163', '', 'gerlauff@hotmail.com', 'Director', 1),
 (46, 'aldana', ' lopez', '', '11222333', '', 'aldana_tam_lopez@hotmail.com', 'Director', 1),
-(48, 'Pablo', 'Lescano', '', '123456799', '', 'super@super', 'super', 1),
 (49, 'andy', 'garcia', '', '11122233', '', '', '', 1),
 (50, 'andres', 'garcia', '', '12312312', '', 'andres@andres', 'Director', 1),
-(51, 'aldana', 'lopez', '', '12312312', '', 'muribe1@abc.gob.ar', 'Director', 1),
-(52, 'Hector', 'Caputo', '', '123456788', '', 'preceptor@preceptor', 'Preceptor', 1),
-(53, 'persona', 'prueba', '', '123456789', '', 'login@login', 'Director', 1),
-(54, 'jjk', 'jkjk', '', '123123', '', '', '', 1);
+(51, 'aldana', 'lopez', '', '12345699', '', 'super@super', 'super', 1),
+(52, 'Hector', 'Caputo', '', '12345677', '', 'preceptor@preceptor', 'Preceptor', 1),
+(53, 'persona', 'prueba', '', '12345678', '', 'login@login', 'Director', 1);
 
 -- --------------------------------------------------------
 
@@ -234,7 +232,7 @@ INSERT INTO `profesor` (`id`, `nombre`, `apellido`, `titulo`, `email`, `telefono
 (2, 'Eugenia', 'Benitez', 'Investigadora ', 'eugeniaBB@araucaria.com', '221345654', '45999999', '', ''),
 (3, 'Antonio', 'Yanini', 'Progrmador', 'antoniofagot@hothot.com', '2216666666', '54678876', '', ''),
 (4, 'Mauro', 'Gonzales', 'Ciencias Politicas', 'mauroGon83@jaleuolo.com', '2213334455', '18900334', '', ''),
-(5, 'Oscar', 'AvendaÃ±o', 'terciario', 'elefantopolis@saraza.com', '2218526598', '32666555', '', ''),
+(5, 'Oscar', 'AvendaÃƒÆ’Ã‚Â±o', 'terciario', 'elefantopolis@saraza.com', '2218526598', '32666555', '', ''),
 (6, 'profe', 'borrar', '', 'sehent@hotmail.com', '', '555', '', 'Docente');
 
 --

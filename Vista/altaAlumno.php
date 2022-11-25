@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="moveL" aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio" width="90" height="90"></a>
+        <a class="moveL" aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,10 +47,7 @@
 
 
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button  type="submit"><img src="../img/search.png" alt="search" width="70%"></button>
-          </form>
+        
         </div>
       </div>
     </nav>
@@ -75,13 +73,13 @@
                     
             <div> <label for="nombres" id="etiqueta" >Nombres</label> </div>
                         
-            <div> <input type="text" name="nombre" placeholder="#Nombres" id="nombre" maxlength="100" required  
-                    style=width:200px;height:20px;> 
+            <div> <input type="text" name="nombre" placeholder="#Nombres" id="nombre" required pattern="[A-Za-z]{2,254}"
+            required style=width:200px;height:20px;> 
             </div>
 
             <div> <label for="apellidos" id="etiqueta">Apellidos</label> </div>
 
-            <div> <input type="text" name="apellido" placeholder="#Apellidos" id="apellidos" maxlength="100" required style=width:200px;height:20px;> 
+            <div> <input type="text" name="apellido" placeholder="#Apellidos" id="apellidos" required pattern="[A-Za-z]{2,254}" required style=width:200px;height:20px;> 
             </div>
 
             <div> <label for="fechaNac" id="etiqueta">Fecha de nacimiento</label> </div>
@@ -116,7 +114,7 @@
 
             <div> <label for="celular" id="etiqueta">Celular</label> </div>                            
                     
-            <div> <input type="tel" name="cod" placeholder="#CodArea" id="codArea" style=width:85px;height:20px; required> 
+            <div> <input type="tel" name="cod" placeholder="#CodArea" id="codArea" style=width:85px;height:20px;  required pattern="[0-9]{1,5}> 
                           
                  <input type="tel" name="tele" placeholder="#Numero" id="celular" style=width:106px;height:20px; required>
             </div>
@@ -127,7 +125,7 @@
 
             <div> <label for="telContacto" id="etiqueta" >Tel de un contacto</label> </div>
                         
-            <div> <input type="text" name="codC" placeholder="#CodArea" id="codArea" style=width:85px;height:20px;> 
+            <div> <input type="text" name="codC" placeholder="#CodArea" id="codArea" style=width:85px;height:20px; required pattern="[0-9]{1,5}> 
                           
                   <input type="text" name="telC" placeholder="#Numero" id="telContacto" style=width:103px;height:20px;></div>
 

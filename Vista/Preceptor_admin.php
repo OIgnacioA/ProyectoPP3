@@ -1,5 +1,21 @@
+<?php 
+
+  session_start();
+
+  $nombre = $_SESSION['usuario'] ;
+  $psswrd = $_SESSION['Psswrd'] ;
+
+
+  if($nombre == null || $psswrd == null){
+
+    die(); 
+
+  }
+ 
+?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +31,7 @@
 <body>
     <header>  
         <div id="cerrarS">
-            <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="enConstruccion.php">CERRAR SESION</a></button>
+            <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">CERRAR SESION</a></button>
         </div>
 
         <div class="container-fluid">
@@ -54,7 +70,7 @@
                             <div class="container-fluid ">
                     
                                 <div class="imgHome">
-                                    <a  aria-current="page" href="Preceptor_admin.php"><img src="../img/home3.png" alt="Inicio" ></a>
+                                    <a  aria-current="page" href="Preceptor_admin.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40" ></a>
                                 </div>
 
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

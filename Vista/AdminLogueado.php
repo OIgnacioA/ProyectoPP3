@@ -1,3 +1,22 @@
+
+<?php 
+
+  session_start();
+
+  $nombre = $_SESSION['usuario'] ;
+  $psswrd = $_SESSION['Psswrd'] ;
+
+
+  if($nombre == null || $psswrd == null){
+
+    die(); 
+
+  }
+ 
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +36,13 @@
 </head>
 
 <body>
+
+
+
   <header>
 
-  
-
     <div id="cerrarS">
-      <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="./login">Cerrar Sesion</a></button>
+      <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
     </div>
     <div class="container">
       <div class="row d-flex flex-row">
@@ -53,7 +73,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio"></a>
+                  <a aria-current="page" href="#"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

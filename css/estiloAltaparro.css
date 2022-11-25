@@ -88,3 +88,23 @@ margin-left: 30%;
 }
 
 .boton {font-family: 'Inter', sans-serif;font-size: 0.8rem;padding:0.2rem;color:#e4e4ec;width: 12rem;background-color: black;border-color: black;margin-left: 30%;}
+
+#cerrarS{
+    display: flex;
+    width: 150px;
+    margin-left: 90%;
+    margin-right: 0%;
+
+}
+
+#cerrarS button a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+#cerrarS button{
+    background-color: #4F4F4F;
+    font-weight: bold;
+}

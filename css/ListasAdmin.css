@@ -293,3 +293,11 @@ tbody tr td{
     color: aliceblue;
 }
 
+
+#cerrarS{
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: -2rem;
+    width: 100%;
+}

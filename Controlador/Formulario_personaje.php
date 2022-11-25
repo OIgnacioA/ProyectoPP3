@@ -78,7 +78,7 @@ echo "<center>" . 'Hola '  . $_SESSION['Usuario_N'] . '!' . "</center>";
     <br><br>
 
 
-    <label><a href="Cerrar_sesion.php">Cerrar Sesion</a></label>
+    <label><a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></label>
     
   </form>
   
