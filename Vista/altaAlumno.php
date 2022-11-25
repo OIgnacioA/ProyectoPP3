@@ -114,7 +114,7 @@
 
             <div> <label for="celular" id="etiqueta">Celular</label> </div>                            
                     
-            <div> <input type="tel" name="cod" placeholder="#CodArea" id="codArea" style=width:85px;height:20px;  required pattern="[0-9]{1,5}> 
+            <div> <input type="tel" name="cod" placeholder="#CodArea" id="codArea" style=width:85px;height:20px;  required pattern="[0-9]{1,5}"> 
                           
                  <input type="tel" name="tele" placeholder="#Numero" id="celular" style=width:106px;height:20px; required>
             </div>
@@ -125,7 +125,7 @@
 
             <div> <label for="telContacto" id="etiqueta" >Tel de un contacto</label> </div>
                         
-            <div> <input type="text" name="codC" placeholder="#CodArea" id="codArea" style=width:85px;height:20px; required pattern="[0-9]{1,5}> 
+            <div> <input type="text" name="codC" placeholder="#CodArea" id="codArea" style=width:85px;height:20px; required pattern="[0-9]{1,5}"> 
                           
                   <input type="text" name="telC" placeholder="#Numero" id="telContacto" style=width:103px;height:20px;></div>
 
