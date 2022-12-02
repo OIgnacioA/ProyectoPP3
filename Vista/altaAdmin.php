@@ -125,31 +125,31 @@
             <div class="cajas">
                 <div class="campos">
                     
-                    <input id="inputt" type="text" maxlength="100"  pattern="[a-zA-Z\s]{1,100}"placeholder="Ingrese Nombres" required name="nombre";>
+                    <input id="inputt" type="text" maxlength="100"  pattern="[a-zA-Z\s]{1,100}"placeholder="Ingrese Nombres" required name="nombre"; required>
                 </div>
 
                 <div class="campos">
                     
-                    <input id="inputt" type="text" maxlength="100" pattern="[a-zA-Z\s]{1,100}" placeholder="Ingrese Apellidos" required name="apellido">
+                    <input id="inputt" type="text" maxlength="100" pattern="[a-zA-Z\s]{1,100}" placeholder="Ingrese Apellidos" required name="apellido" required>
                 </div>        
 
                 <div class="campos2">
 
-                        <select name="DNIPassT">
+                        <select name="DNIPassT" required>
                             <option  value="D">DNI</option>
                             <option value="P">Pasaporte</option>
                         </select>
-                        <input type="text" id="passa"  maxlength={cambiar} placeholder="Numero"  name="dniPass" pattern="[0-9]{1,9}">
+                        <input type="text" id="passa"  maxlength={cambiar} placeholder="Numero"  name="dniPass" pattern="[0-9]{1,9}" required>
                 </div>
 
                 <div class="campos">
                     
-                    <input id="inputt" type="email" placeholder="Ingrese E-Mail" name="email">
+                    <input id="inputt" type="email" placeholder="Ingrese E-Mail" name="email" required>
                 </div>
 
                 <div  class="campos">
                     
-                    <select id="inputt" name="roll">
+                    <select id="inputt" name="roll" required>
                         <option value="">Seleccione una opción</option>
                         <option value="Preceptor">Preceptor</option>
                         <option value="Director">Director</option>

@@ -24,6 +24,9 @@
     $est = $_POST["estado"];
     $fechaCambio = $_POST["FechaCambio"];
 
+
+
+
  ///set
 
     if ($tip != "true") {
@@ -51,13 +54,13 @@
     $fechaC =  $nuevoAlumno->getFechaCambio();
 
 
-    echo "-----". $fechaC ;
+
 
     if ($tip != "true") {//si es pasaporte
 
         
 
-        if (mysqli_query($conexion, "  UPDATE alumno SET  estado = '$estado' , nombre = '$Nombre', apellido = '$Apellido', pasaporte = '$pass', email = '$email', FechaCambio = $fechaC
+        if (mysqli_query($conexion, "  UPDATE alumno SET  estado = '$estado' , nombre = '$Nombre', apellido = '$Apellido', pasaporte = '$pass', email = '$email', FechaCambio = '$fechaC'
         WHERE id = $id;")){ 
 
             echo '<script>alert( "se realizó el Update ")</script>)' ; 
@@ -71,7 +74,7 @@
 
       
 
-        if (mysqli_query($conexion, "  UPDATE alumno SET  estado = '$estado' , nombre = '$Nombre', apellido = '$Apellido', dni = '$DNI', email = '$email', FechaCambio = $fechaC
+        if (mysqli_query($conexion, "  UPDATE alumno SET  estado = '$estado' , nombre = '$Nombre', apellido = '$Apellido', dni = '$DNI', email = '$email', FechaCambio = '$fechaC'
         WHERE id = $id;")){ 
 
             echo '<script>alert( "se realizó el Update ")</script>)' ; 

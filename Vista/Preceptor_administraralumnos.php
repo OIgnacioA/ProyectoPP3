@@ -4,9 +4,11 @@
 
   $nombre = $_SESSION['usuario'] ;
   $psswrd = $_SESSION['Psswrd'] ;
+  $rol = $_SESSION['Rol'];
 
+  echo "Su rol es: ". $rol; 
 
-  if($nombre == null || $psswrd == null){
+  if($nombre == null || $psswrd == null || $rol != 'Preceptor'){
 
     die(); 
 
@@ -26,11 +28,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-
-    
-    <link rel="stylesheet" href="../css/administradorPreceptor.css">
+   
     <link rel="stylesheet" href="../css/UpDate_Alumno.css">
-  
+    
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Document</title>
@@ -79,6 +79,7 @@ error_reporting(0);
                 <div class="row">
                     
                     <div class="col">
+
                         <nav class="navbar navbar-expand-lg navbar-light bg-white">
                         
                             <div class="container-fluid ">
@@ -116,9 +117,12 @@ error_reporting(0);
   <main>
     <section>
 
-      <div class="row d-flex justify-content-center align-items-center">
+      
 
-        <form id="bodyprincipal" action="Preceptor_administraralumnos.php" method="post">
+       
+      <div class="Marco">
+
+        <div class="Lamina">
 
           <div class="titulos">
             <p>Alumnos Activos</p>
@@ -137,8 +141,9 @@ error_reporting(0);
 
           </div>
 
-          <div class="espacioBlanco">
-            <?php
+        
+
+          <?php
 
               include("../Modelo/Conexion.php");
 
@@ -173,92 +178,108 @@ error_reporting(0);
 
                 //variables ocultas: 
 
+                " 
+               
 
-                "<form action=". "'" . "Preceptor_administraralumnos.php". "'" . "method=". "'" . "post" . "'" . "> 
+              <form class=" . "'" . "formulario" . "'" . "  action=". "'" . "Preceptor_administraralumnos.php". "'" . "method=". "'" . "post" . "'" . "> 
 
-                
+                <div class=". "'" . "espacioBlanco". "'". ">
 
-                  <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > 
-                  <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $dniToF. "'" ."name=". "'"."dniOPas". "'". ">
-                  </div>
-
-                  <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > 
-                  <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $id . "'" ."name=". "'"."id". "'". ">
-                  </div>
-
-
-
-
-
-                  <div class=". "'". "info". "'" . ">
-
-                  <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $nombre . "'" ." name=". "'"."nombre". "'". ">
-
-                  </div>
-
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $Apellido . "'" ." name=". "'"."apellido". "'". "></div>
-
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" ."value=". "'". $Mail . "'" ." name=". "'"."email". "'". "></div>
-
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" .  "value=". "'". $Dni_pass . "'" ."name=". "'"."dniPass". "'". "></div>
-   
-
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "value=". "'". $Carrera . "'" ."name=". "'"."carrera". "'". "></div>
-
-
-                  <div class=". "'". "info". "'" . "> 
-
-              
-                    <select id=". "'" . "inputt". "'" . " Name=". "'" . "estado". "'" . ">
-                      <option value=". "'" . "Egresado". "'" . ">Egresado</option>
-                      <option value=". "'" . "Regular". "'" . " selected>Regular</option>
-                      <option value=". "'" . "Inscripto". "'" . "selected>Inscripto</option>
-                      <option value=". "'" . "Noregular". "'" . "selected>No regular</option>
-                      <option value=". "'" . "$estado". "'" . "selected>$estado</option>
-
-                    </select>
-                
-                    <p>Desde:</p>
-                    <div class=". "'". "info". "'" . "> 
-                    
-                    <input id=" . "'" . "inputt" . "'" . "type=". "'" . "date". "'" . "min=" . "'". "1930-01-01" . "'" . "maxlength=". "'"."100". "'" . "value=". "'". $tiempo . "'" ." name=". "'"."FechaCambio". "'". ">
-                      
+                    <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > 
+                    <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $dniToF. "'" ."name=". "'"."dniOPas". "'". ">
                     </div>
 
-                  </div>
+                    <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > 
+                    <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $id . "'" ."name=". "'"."id". "'". ">
+                    </div>
 
 
-                  <div class=". "'". "info". "'". ">
-                    <a href=". "'". "https://drive.google.com/file/d/1Mb-TiHWj4du0EmX9Cf3E3uKoDG0xibxM/view?usp=sharing". "'" . " target=". "'". "_blank". "'". " >
-                    <input type =". "'". "button". "'" . "value= ". "'" . "VER" . "'" . "name=". "'". "envio" . "'" . "class=" . "'" . "btn btn-secondary". "'". ">
-                    </a>
-                  </div>
+
+
+
+                    <div class=". "'". "info". "'" . ">
+
+                     <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $nombre . "'" ." name=". "'"."nombre". "'". ">
+
+                    </div>
+
+                    <div class=". "'". "info". "'" . "> 
+                      <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $Apellido . "'" ." name=". "'"."apellido". "'". ">
+                    </div>
+
+                    <div class=". "'". "info". "'" . ">
+
+                     <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" ."value=". "'". $Mail . "'" ." name=". "'"."email". "'". ">
+
+                    </div>
+
+                    <div class=". "'". "info". "'" . "> 
+                      <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" .  "value=". "'". $Dni_pass . "'" ."name=". "'"."dniPass". "'". ">
+                    </div>
+      
+
+                    <div class=". "'". "info". "'" . "> 
+                      <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "value=". "'". $Carrera . "'" ."name=". "'"."carrera". "'". ">
+                    </div>
+
+
+                    <div class=". "'". "info". "'" . "> 
+
+                
+                      <select id=". "'" . "inputt". "'" . " Name=". "'" . "estado". "'" . ">
+                        <option value=". "'" . "Egresado". "'" . ">Egresado</option>
+                        <option value=". "'" . "Regular". "'" . " selected>Regular</option>
+                        <option value=". "'" . "Inscripto". "'" . "selected>Inscripto</option>
+                        <option value=". "'" . "Noregular". "'" . "selected>No regular</option>
+                        <option value=". "'" . "$estado". "'" . "selected>$estado</option>
+
+                      </select>
                   
-                  <div class=". "'". "info". "'". ">
-                  
-                    <input class=" . "'" . "btn btn-secondary" . "'".  "type=". "'" . "submit".  "'" . "name=". "'" . "UpDate". "'" .  "value=". "'" . "Realizar  Cambios" . "' " . "><br><br> 
+                      <p>Desde:</p>
+                      <div class=". "'". "info". "'" . "> 
+                      
+                       <input id=" . "'" . "inputt" . "'" . "type=". "'" . "date". "'" . "min=" . "'". "1930-01-01" . "'" . "maxlength=". "'"."100". "'" . "value=". "'". $tiempo . "'" ." name=". "'"."FechaCambio". "'". ">
+                        
+                      </div>
+
+                    </div>
+
+
+                    <div class=". "'". "info". "'". ">
+                      <a href=". "'". "https://drive.google.com/file/d/1Mb-TiHWj4du0EmX9Cf3E3uKoDG0xibxM/view?usp=sharing". "'" . " target=". "'". "_blank". "'". " >
+                      <input type =". "'". "button". "'" . "value= ". "'" . "VER" . "'" . "name=". "'". "envio" . "'" . "class=" . "'" . "btn btn-secondary". "'". ">
+                      </a>
+                    </div>
                     
-                  </form></div>
-                  
-                  
-                  ";
+                    <div class=". "'". "info". "'". ">
+                    
+                      <input class=" . "'" . "btn btn-secondary" . "'".  "type=". "'" . "submit".  "'" . "name=". "'" . "UpDate". "'" .  "value=". "'" . "Realizar  Cambios" . "' " . "><br><br> 
+                    </div>  
+
+                  </div>
+
+                </form>
+                
+                ";
 
               }
-            ?>
+          ?>
 
          
-          </div>
 
           <br><br>
         
           <!-- <a href="../Vista/Admin_AltaAlumno.php" > <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
           <a href="eliminar_Alumno.php"> <button type="button" class=" btn btn-secondary">Baja Alumno</button></a><br><br> <br><br> 
            -->
-
-      </form>  
+        
+        </div>
 
       </div>
 
+
+
+     
   
     </section>
 

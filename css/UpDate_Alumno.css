@@ -28,6 +28,8 @@ margin: 0;
   
 }
 
+
+
 #nover{
 
     display:none;
@@ -50,7 +52,7 @@ margin: 0;
     font-family: 'Roboto',Arial, Helvetica, sans-serif;
     font-weight: bold;
     display: grid;
-    grid-template-columns:  150px 150px 170px 160px 200px 110px 120px 120px  ;
+    grid-template-columns:  150px 150px 190px 160px 200px 110px 150px 120px  ;
     overflow: hidden;
    
     min-width: 50rem;
@@ -293,4 +295,30 @@ tbody tr td{
 #cerrarS button a{
     text-decoration: none;
     color: aliceblue;
+}
+
+.Marco{
+
+    padding-left: 12%;
+    padding-right: 15%;
+
+}
+
+.Lamina{
+   
+    background-color: #e6e6e6;
+}
+
+.formulario{
+
+padding: 10px ;
+
+
+}
+
+.col{
+
+padding-left: 30%;
+
+
 }

@@ -164,17 +164,17 @@ error_reporting(0);
                     <div class="mb-3 campoCarrera">
                       <label>AÑO DE CADUCIDAD</label>
                       <input id="caducidad" name="caducidad" type="date" class="form-control"
-                        style="background-color: #4a8d9ec5;">
+                        style="background-color: #4a8d9ec5;" required>
                     </div>
                     <div class="mb-3 campoCarrera">
                       <label>AÑO DE RESOLUCION</label>
                       <input id="aResol" name="anioResolucion" type="date" class="form-control"
-                        style="background-color: #4a8d9ec5;">
+                        style="background-color: #4a8d9ec5;" required>
                     </div>
                     <div class="mb-3 campoCarrera">
                       <label>FECHA DE ALTA DE SISTEMA</label>
                       <input id="fechaAlta" name="alta" type="date" class="form-control"
-                        style="background-color: #4a8d9ec5;">
+                        style="background-color: #4a8d9ec5;" required>
 
                     </div>
                     
@@ -184,7 +184,7 @@ error_reporting(0);
                     <div class="mb-3 campoCarrera">
                       <label>PLAN DE ESTUDIOS</label>
                       <input class="form-control" style="background-color: #4a8d9ec5;" type="file" id="formFileMultiple"
-                        multiple    name='f'>
+                        multiple    name='f' required>
                     </div>
                     
                     
@@ -198,11 +198,11 @@ error_reporting(0);
                         <label>MATERIAS</label>
                         <div class="campoM d-flex flex-column">
                           <input id="materias" name="materias" type="text" maxlength="50" class="form-control"
-                            style="background-color: #4a8d9ec5;">
+                            style="background-color: #4a8d9ec5;" required>
                         </div>
                         <div>
                           <select id="selectAñoM" name="selectAñoM" class="form-select "
-                            aria-label=".form-select-lg example" style="background-color: #4a8d9ec5;">
+                            aria-label=".form-select-lg example" style="background-color: #4a8d9ec5;" required>
                             <option selected>Seleccione</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -216,7 +216,7 @@ error_reporting(0);
                     <div class="mb-3 campoCarrera">
                       <label>COMENTARIOS</label>
                       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="200"
-                        style="background-color: #4a8d9ec5;"  name="comentarios"></textarea>
+                        style="background-color: #4a8d9ec5;"  name="comentarios"></textarea required>
 
                     </div>
 
