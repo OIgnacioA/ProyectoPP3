@@ -73,6 +73,7 @@ if ( isset($_POST["enviar"]))  {
 
         $_SESSION['usuario'] = $mail;
         $_SESSION['Psswrd'] = $contrasenia;
+        $_SESSION['Rol'] = $consulta['rol'];
 
         if ($alta2 == true ) {
 

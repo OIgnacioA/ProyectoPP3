@@ -86,7 +86,7 @@
                         <a href="crearCarrera.php">CREAR CARRERA</a>
                       </li>
                       <li class="nav-item menuli">
-                        <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
+                        <a href="Super_administrar_Carrera.php">ADMINISTRAR CARRERA</a>
                       </li>
                       <li class="nav-item menuli">
                         <a href="administrar_vistaCarrera.php">VISTA CARRERAS</a>

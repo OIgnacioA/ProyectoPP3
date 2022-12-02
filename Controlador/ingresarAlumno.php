@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Css/index.css">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>l
+
+
 
 <?php
 
@@ -105,7 +120,42 @@
 
         if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id, rol) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DNI','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$pass',  '$carrera', 'Alumno')")){
       
-          echo '<script>alert( "Se realizó el ingreso exitosamente")</script>' ;
+
+          
+
+
+          ///respuesta: 
+
+
+
+          if ($DNI != ""){ 
+
+            $consulta = " SELECT * FROM alumno WHERE dni = $DNI" ;
+            
+         
+          } else if ( $pass != ""){
+
+            $consulta = " SELECT * FROM alumno WHERE dni = $pass" ;
+          }
+
+          
+
+          $resultado = mysqli_query($conexion, $consulta);
+          $con = mysqli_fetch_array($resultado);     
+          $idd =  $con["id"];
+          
+          //echo "<script>alert(" . $idd.")</script>";
+
+          echo "<div class=" . "mensaje" . ">  Número de inscripción: <b><br>". $idd
+          . "</b><br>La lista de documentos que el alumno debe acercar 
+              al instituto para terminar el registro, en la misma se encuentra:<br>
+          ->  fotocopia del Dni<br>
+          ->  fotocopia del titulo del secundario/polimodal<br>
+          ->  foto carnet<br>
+          ->  certificado médico<br>
+          ->  número de inscripción </div>" ; 
+
+        
 
           ////////////////MAil: 
 
@@ -128,28 +178,23 @@
 
             mail($para, $asunto, $message, $header);
 
-             
 
-           
-          ////////////////////echo("mensaje: " . $message. "<br>". "Mail: " . $para );
-
-          session_destroy();
+       
         }else  {
 
           echo '<script>alert( "no se pudo realizar el ingreso")</script>' ; 
-          session_destroy();
-          
+
+
         }
 
 
       } else {   echo '<script>alert( "El contacto ya existe")</script>)'; 
 
-         //die(); ; 
-         session_destroy();
+      
          
       }
     }
 
-    session_destroy();
+ 
 
 ?>

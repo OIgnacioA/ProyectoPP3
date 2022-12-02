@@ -134,7 +134,7 @@
 
         $consult = "SELECT * FROM alumno WHERE dni = '$ID_P' "; 
 
-       }else { $consult = "SELECT * FROM alumno WHERE pasaporte = '$ID_P' "; }
+      }else { $consult = "SELECT * FROM alumno WHERE pasaporte = '$ID_P' "; }
 
 
       $resultados = mysqli_query($conexion,$consult);
