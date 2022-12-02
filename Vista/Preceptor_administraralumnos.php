@@ -26,8 +26,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css//administradorPreceptor.css">
-   <link rel="stylesheet" href="../css/UpDate_Alumno.css">
+
+    
+    <link rel="stylesheet" href="../css/administradorPreceptor.css">
+    <link rel="stylesheet" href="../css/UpDate_Alumno.css">
   
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -116,7 +118,7 @@ error_reporting(0);
 
       <div class="row d-flex justify-content-center align-items-center">
 
-        <form id="bodyprincipal" action="" method="post">
+        <form id="bodyprincipal" action="Preceptor_administraralumnos.php" method="post">
 
           <div class="titulos">
             <p>Alumnos Activos</p>
@@ -130,6 +132,7 @@ error_reporting(0);
             <div><p>Mail</p></div>
             <div><p>Dni/Pass</p></div>
             <div><p>Carrera</p></div>
+            <div><p>Estado</p></div>
             <div><p>Hist. academica</p></div>
 
           </div>
@@ -139,7 +142,7 @@ error_reporting(0);
 
               include("../Modelo/Conexion.php");
 
-              $consultaAl = "SELECT a.nombre, a.apellido, a.email, a.dni,  C.nombre as CNombre FROM alumno As a
+              $consultaAl = "SELECT a.nombre, a.apellido, a.email, a.dni, a.estado, a.FechaCambio, a.id, a.pasaporte,  C.nombre as CNombre FROM alumno As a
 
               join carrera C on (a.fk_carrera_id = C.id)";
 
@@ -151,39 +154,94 @@ error_reporting(0);
                 $nombre =  $consulta["nombre"];
                 $Apellido =  $consulta["apellido"];
                 $Mail =  $consulta["email"];
+                $estado =  $consulta["estado"];
+                $tiempo = $consulta["FechaCambio"];
+                $id = $consulta["id"];
+                $dniToF = "true";
 
                 if ($consulta["dni"] == "") { 
 
                   $Dni_pass = $consulta["pasaporte"];
-
+                  $dniToF = "false" ;
                 }else {$Dni_pass = $consulta["dni"];}
-
-
-
-
 
                 $Carrera =  $consulta["CNombre"];
 
-
-
                 $Historia =  $consulta["observaciones"];
-             
-             
-             
 
                   echo 
-                  "<div class=". "'". "info". "'" . "><input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $nombre . "'" ."required name=". "'"."nombre". "'". "></div>
 
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $Apellido . "'" ."required name=". "'"."apellido". "'". "></div>
+                //variables ocultas: 
 
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" ."value=". "'". $Mail . "'" ."required name=". "'"."mail". "'". "></div>
 
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" .  "value=". "'". $Dni_pass . "'" ."required name=". "'"."apellido". "'". "></div>
+                "<form action=". "'" . "Preceptor_administraralumnos.php". "'" . "method=". "'" . "post" . "'" . "> 
+
+                
+
+                  <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > 
+                  <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $dniToF. "'" ."name=". "'"."dniOPas". "'". ">
+                  </div>
+
+                  <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > 
+                  <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $id . "'" ."name=". "'"."id". "'". ">
+                  </div>
+
+
+
+
+
+                  <div class=". "'". "info". "'" . ">
+
+                  <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $nombre . "'" ." name=". "'"."nombre". "'". ">
+
+                  </div>
+
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $Apellido . "'" ." name=". "'"."apellido". "'". "></div>
+
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" ."value=". "'". $Mail . "'" ." name=". "'"."email". "'". "></div>
+
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" .  "value=". "'". $Dni_pass . "'" ."name=". "'"."dniPass". "'". "></div>
    
 
-                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "value=". "'". $Carrera . "'" ."required name=". "'"."carrera". "'". "></div>
+                  <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "value=". "'". $Carrera . "'" ."name=". "'"."carrera". "'". "></div>
+
+
+                  <div class=". "'". "info". "'" . "> 
+
+              
+                    <select id=". "'" . "inputt". "'" . " Name=". "'" . "estado". "'" . ">
+                      <option value=". "'" . "Egresado". "'" . ">Egresado</option>
+                      <option value=". "'" . "Regular". "'" . " selected>Regular</option>
+                      <option value=". "'" . "Inscripto". "'" . "selected>Inscripto</option>
+                      <option value=". "'" . "Noregular". "'" . "selected>No regular</option>
+                      <option value=". "'" . "$estado". "'" . "selected>$estado</option>
+
+                    </select>
                 
-                       <div class=". "'". "info". "'". "><a href=". "'". "https://drive.google.com/file/d/1Mb-TiHWj4du0EmX9Cf3E3uKoDG0xibxM/view?usp=sharing". "'" . " target=". "'". "_blank". "'". " ><input type =". "'". "button". "'" . "value= ". "'" . "VER" . "'" . "name=". "'". "envio" . "'" . "class=" . "'" . "btn btn-secondary". "'". "></a></div>";
+                    <p>Desde:</p>
+                    <div class=". "'". "info". "'" . "> 
+                    
+                    <input id=" . "'" . "inputt" . "'" . "type=". "'" . "date". "'" . "min=" . "'". "1930-01-01" . "'" . "maxlength=". "'"."100". "'" . "value=". "'". $tiempo . "'" ." name=". "'"."FechaCambio". "'". ">
+                      
+                    </div>
+
+                  </div>
+
+
+                  <div class=". "'". "info". "'". ">
+                    <a href=". "'". "https://drive.google.com/file/d/1Mb-TiHWj4du0EmX9Cf3E3uKoDG0xibxM/view?usp=sharing". "'" . " target=". "'". "_blank". "'". " >
+                    <input type =". "'". "button". "'" . "value= ". "'" . "VER" . "'" . "name=". "'". "envio" . "'" . "class=" . "'" . "btn btn-secondary". "'". ">
+                    </a>
+                  </div>
+                  
+                  <div class=". "'". "info". "'". ">
+                  
+                    <input class=" . "'" . "btn btn-secondary" . "'".  "type=". "'" . "submit".  "'" . "name=". "'" . "UpDate". "'" .  "value=". "'" . "Realizar  Cambios" . "' " . "><br><br> 
+                    
+                  </form></div>
+                  
+                  
+                  ";
 
               }
             ?>
@@ -210,7 +268,15 @@ error_reporting(0);
   <!-- //------PHP------------------------------------------------------------------ -->
 
 
-  <?php if ( isset($_POST["enviar"])){require_once("");}?>
+  <?php if ( isset($_POST["UpDate"])){
+    
+    
+    require_once("../Controlador/UpDateAlumno.php");
+    
+    
+    
+    
+    }?>
 
   <!-- //--------------------------------------------------------------------------- -->
 

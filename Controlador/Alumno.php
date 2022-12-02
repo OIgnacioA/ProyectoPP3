@@ -22,6 +22,7 @@ class Alumno extends Persona {
     private $estado = "Null";
     private $observacion = "Null";
     private $egreso = "Null";
+    private $FechaCambio = "Null";
    
 
     function Alumno(){ 
@@ -44,6 +45,7 @@ class Alumno extends Persona {
         $this->$estado = "Null";
         $this->$observacion = "Null";
         $this->$egreso = "Null";
+        $this->$FechaCambio = "Null";
        
 
     }
@@ -409,6 +411,26 @@ class Alumno extends Persona {
         }
 
      
+
+    /**
+     * Get the value of FechaCambio
+     */ 
+    public function getFechaCambio()
+    {
+        return $this->FechaCambio;
+    }
+
+    /**
+     * Set the value of FechaCambio
+     *
+     * @return  self
+     */ 
+    public function setFechaCambio($FechaCambio)
+    {
+        $this->FechaCambio = $FechaCambio;
+
+        return $this;
+    }
 }
 
 

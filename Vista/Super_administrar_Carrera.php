@@ -172,7 +172,7 @@ error_reporting(0);
 
                 echo 
                 "
-                <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "administrar_Carrera.php". "'" . "method=". "'" . "post" . "'" . "> 
+                <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "Super_administrar_Carrera.php". "'" . "method=". "'" . "post" . "'" . "> 
 
                 <div class=". "'" . "espacioBlanco". "'". ">  
 
@@ -286,7 +286,7 @@ error_reporting(0);
 
                 echo 
                 "
-                <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "administrar_Carrera.php". "'" . "method=". "'" . "post" . "'" . "> 
+                <form id=". "'" . "bodyprincipal". "'" . "action=". "'" . "Super_administrar_Carrera.php". "'" . "method=". "'" . "post" . "'" . "> 
 
                 <div class=". "'" . "espacioBlanco". "'". ">  
 
@@ -295,38 +295,41 @@ error_reporting(0);
 
                 <div class=". "'". "info". "'" . "> 
 
-                    <input id=" . "'" . "inputt" . "'" . "type=". "'" . "checkbox". "'" .  "required name=". "'"."estado". "'".">
+                    <input id=" . "'" . "inputt" . "'" . "type=". "'" . "checkbox". "'" .  "name=". "'"."estado". "'".">
 
                 </div>
                 
                 <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "[a-zA-Z\s]{1,100}" . "'". "value=". "'". $nombre . "'" ." name=". "'"."nombre". "'". "></div>
 
-                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,2}" . "'". "value=". "'". $duracion . "'" ."required name=". "'"."duracion". "'". "></div>
+                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,2}" . "'". "value=". "'". $duracion . "'" ." name=". "'"."duracion". "'". "></div>
 
-                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $resolucion . "'" ."required name=". "'"."resolucion". "'". "></div>
+                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $resolucion . "'" ." name=". "'"."resolucion". "'". "></div>
 
-                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $codigo . "'" ."required name=". "'"."codigo". "'". "></div>
+                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $codigo . "'" ." name=". "'"."codigo". "'". "></div>
 
-                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $anioCaducidad . "'" ."required name=". "'"."anioCaducidad". "'". "></div>
+                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $anioCaducidad . "'" ." name=". "'"."anioCaducidad". "'". "></div>
 
-                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $anioresolucion . "'" ."required name=". "'"."anioResolucion". "'". "></div>
-
-                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'".
-                $Alta . "'" ."required name=". "'"."alta". "'". "></div>
-
+                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $anioresolucion . "'" ." name=". "'"."anioResolucion". "'". "></div>
 
                 <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'".
-                $cursada . "'" ."required name=". "'"."cursada". "'". "></div>
+                $Alta . "'" ." name=". "'"."alta". "'". "></div>
+
 
                 <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'".
-                $plan . "'" ."required name=". "'"."plan". "'". "></div>
+                $cursada . "'" ." name=". "'"."cursada". "'". "></div>
+
+                <div class=". "'". "info". "'" . "> <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'".
+                $plan . "'" ." name=". "'"."plan". "'". "></div>
                 
                 
                 <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Materias"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
 
 
-                <div class=". "'". "info". "'" . "><a aria-current= ". '"' . 'page' . '"' . "href=" . "'" . "AdminLogueado.php" . "'" . "><img src=". "'".  "../img/cruz.png" . "'" . "alt=" . "'" . "Inicio" . "'" . "width=". "'" . "40" . "'" . "height=". "'" . "40" . "'" . " ></a></div>
+                <div class=". "'". "info". "'" . ">
+                  <input id=" . "'" . "inputt" . "'" . "type=". "'" . "checkbox". "'" .  " name=". "'"."eliminar". "'".">
+                  <button  type=". "'" . " button" . "'" . "name=". "'" . "Delete". "'" . " value=" . "'" . "Envio" . "'" .  ">" . " ". "X" . " " .  "</button>
 
+                </div>
 
 
                 <input class=" . "'" . "btn btn-secondary" . "'".  "type=". "'" . "submit".  "'" . "name=". "'" . "UpDate". "'" .  "value=". "'" . "Realizar  Cambios" . "' " . "><br><br> 
@@ -334,7 +337,24 @@ error_reporting(0);
                 
 
                 </form>  
-                </div>";
+                
+                </div>
+
+                <script type=". "'" . "text/javascript" . "'" . ">
+        
+                form = document.getElementById(" . "'" . "form" . "'" . ");
+        
+                function submitear(){ 
+                
+                  
+                  form.submit();
+        
+        
+                }
+                
+                </script>
+
+                ";
 
 
 
@@ -357,10 +377,16 @@ error_reporting(0);
 
       
 
-     if ( isset($_POST["UpDate"])){
+      if ( isset($_POST["UpDate"])){
       
        
-      require_once("../Controlador/UpdateCarrera.php");}
+        require_once("../Controlador/UpdateCarrera.php");}
+
+
+      if ( isset($_POST["Delete"])){
+      
+       
+        require_once("../Controlador/DeleteCarrera.php");} 
      
      
      ?>
@@ -387,6 +413,11 @@ error_reporting(0);
   </style>
 
 
+<!-- <a aria-current= ". '"' . 'page' . '"' . "href=" . "'" . "'" . "     onclick=" . "'" . "submitear()" . "'" . ">
+
+<img src=". "'".  "../img/cruz.png" . "'" . "alt=" . "'" . "Inicio" . "'" . "width=". "'" . "40" . "'" . "height=". "'" . "40" . "'" . " >
+
+</a> -->
 
 </body>
 

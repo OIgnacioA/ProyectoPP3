@@ -11,16 +11,28 @@ body{
 input{border: none;}
 /*--------------------------------------------------N */
 
+p{
+margin: 0;
 
+
+}
 .espacioBlanco{
+  
     height: 60px;
     background-color: #fff;
     display: grid;
-    grid-template-columns:  150px 150px 150px 150px 200px 150px;
+    grid-template-columns:   150px 150px 200px 130px 200px 200px 80px 160px ;
     overflow: hidden;
     width:fit-content;
     height:fit-content;
+  
 }
+
+#nover{
+
+    display:none;
+    
+} 
 
 .titulos {
     color: #f38618;
@@ -38,7 +50,7 @@ input{border: none;}
     font-family: 'Roboto',Arial, Helvetica, sans-serif;
     font-weight: bold;
     display: grid;
-    grid-template-columns:  150px 150px 150px 130px 150px 100px;
+    grid-template-columns:  150px 150px 170px 160px 200px 110px 120px 120px  ;
     overflow: hidden;
    
     min-width: 50rem;
