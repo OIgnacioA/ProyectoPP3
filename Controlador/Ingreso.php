@@ -77,7 +77,7 @@ if ( isset($_POST["enviar"]))  {
 
         if ($alta2 == true ) {
 
-           header ("location:../Vista/AdminLogueado.php"); 
+           header ("location:../Vista/Admin_Logueado.php"); 
      
         }else if ($alta3 == true ){
 

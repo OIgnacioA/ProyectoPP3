@@ -36,24 +36,20 @@ main {
 .contenedor{
     display: flex;
     justify-content: center;
-    height: 500px;
+    height: 200px;
 }
 
 .etiquetas p  {margin: 0px 25px 6px 25px ;}
 
 .cajas {
-    
-  
+
     height: 300px;
-
-
 }
 
 .campos {
-    margin: 100px;
     display: flex;
     width: 11rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
 }
 
 .campos2 {

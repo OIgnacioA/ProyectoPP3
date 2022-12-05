@@ -4,7 +4,9 @@
 
   $nombre = $_SESSION['usuario'] ;
   $psswrd = $_SESSION['Psswrd'] ;
+  $rol = $_SESSION['Rol'];
 
+  echo "Su rol es:  ". $rol; 
 
   if($nombre == null || $psswrd == null){
 
@@ -81,7 +83,7 @@
                       <a href="AltaAdmin.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="administrar_alumnos.php">ALUMNOS</a>
+                      <a href="Admin_administrarAlumnos.php">ALUMNOS</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="crearCarrera.php">CREAR CARRERA</a>

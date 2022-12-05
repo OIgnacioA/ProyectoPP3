@@ -14,7 +14,7 @@ input{border: none;}
 
 .espacioBlanco{
     height: 60px;
-    background-color: #fff;
+    background-color: rgb(238, 236, 236);
     display: grid;
     grid-template-columns:   30px 200px 80px 90px 60px 100px 100px 100px 160px 60px 150px 60px 150px  2px;
     overflow: hidden;
@@ -230,7 +230,7 @@ form{
 }
 
 #cuadroPrevis{
- border: solid 2px rgb(255, 0, 0);
+ border: solid 2px rgb(226, 217, 217);
  width: 100%;
     
 

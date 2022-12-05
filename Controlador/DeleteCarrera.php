@@ -6,6 +6,8 @@
   $psswrd = $_SESSION['Psswrd'] ;
   $rol = $_SESSION['Rol'];
 
+  echo "Su rol es:  ". $rol;   $rol = $_SESSION['Rol'];
+
 
   if($nombre == null || $psswrd == null || $rol != 'super'){
 

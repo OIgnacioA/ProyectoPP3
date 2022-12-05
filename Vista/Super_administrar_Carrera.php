@@ -6,7 +6,7 @@
   $psswrd = $_SESSION['Psswrd'] ;
   $rol = $_SESSION['Rol'];
 
-  echo "Su rol es: ". $rol; 
+  echo "Su rol es:  ". $rol;  
 
   if($nombre == null || $psswrd == null || $rol != 'super'){
 
@@ -29,7 +29,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
-  <link rel="stylesheet" href="../css/Super_administrar_Carrera.css">
+  <link rel="stylesheet" href="../css/Super_Administrar_Carrera.css">
 
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -72,7 +72,7 @@ error_reporting(0);
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid ">
                 <div class="imgHome">
-                  <a aria-current="page" href="AdminLogueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+                  <a aria-current="page" href="Admin_Logueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -86,7 +86,7 @@ error_reporting(0);
                       <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
                     </li>
                     <li class="nav-item menuli">
-                      <a href="administrar_alumnos.php">ALUMNOS</a>
+                      <a href="Admin_administrarAlumnos.php">ALUMNOS</a>
                     </li>
                     <li class="nav-item menuli">
                       <a href="crearCarrera.php">CREAR CARRERA</a>
@@ -206,7 +206,7 @@ error_reporting(0);
                 <div class=". "'". "info". "'" . ">" . "<a href=". "'" . "enConstruccion.php" ."'" . "><input type="."'". "submit"."'"."value="."'". "Ver Materias"."'"."name="."'"."envio"."'". " class=" . "'" .  " btn btn-secondary" ."'" ." /></a></div>
 
 
-                <div class=". "'". "info". "'" . "><a aria-current=' ". '"' . 'page' . '"' . "href=" . "'" . "AdminLogueado.php" . "'" . "></a></div>
+                <div class=". "'". "info". "'" . "><a aria-current=' ". '"' . 'page' . '"' . "href=" . "'" . "Admin_Logueado.php" . "'" . "></a></div>
 
 
                 <input class=" . "'" . "btn btn-secondary" . "'".  "type=". "'" . "submit".  "'" . "name=". "'" . "UpDate". "'" .  "value=". "'" . "Realizar  Cambios" . "' " . "><br><br> 

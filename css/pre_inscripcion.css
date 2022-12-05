@@ -15,7 +15,7 @@
 .contenedorExt {
     display: grid;
     width: 95%;
-    height: 500px;
+    height: 700px;
     background-color: #E6E6EB;
     margin: auto;
     margin-top: 5%;
@@ -30,12 +30,13 @@
     text-align: center;
     margin: auto;
     margin-top: 10px;
-    margin-bottom: -40px;
+    margin-bottom: 40px;
+
 }
 
 h1 {
     font-size: 45px;    
-    margin: 0px;
+   
 }
 
 .columna1 {
@@ -44,6 +45,7 @@ h1 {
     grid-column: 1/3;
     grid-auto-rows: 35px;
     text-align: center;
+  
 }
 
 .columna2 {

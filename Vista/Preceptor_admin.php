@@ -6,7 +6,7 @@
   $psswrd = $_SESSION['Psswrd'] ;
   $rol = $_SESSION['Rol'];
 
-  echo "Tu rol es : " . $rol ;
+  echo "Su rol es:  ". $rol;  
 
   if($nombre == null || $psswrd == null|| $rol != 'Preceptor'){
 

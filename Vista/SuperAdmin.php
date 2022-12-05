@@ -4,7 +4,9 @@
 
   $nombre = $_SESSION['usuario'] ;
   $psswrd = $_SESSION['Psswrd'] ;
+  $rol = $_SESSION['Rol'];
 
+  echo "Su rol es:  ". $rol; 
 
   if($nombre == null || $psswrd == null){
 
@@ -66,7 +68,7 @@
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid ">
                   <div class="imgHome">
-                    <a aria-current="SuperAdmi.html" href="SuperAdmi.html"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+                    <a aria-current="SuperAdmi.php" href="SuperAdmin.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
   
                   </div>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -80,7 +82,7 @@
                         <a href="altaAdmin.php">ALTA DE ADMINISTRADOR</a>
                       </li>
                       <li class="nav-item menuli">
-                        <a href="administrar_alumnos.php">ALUMNOS</a>
+                        <a href="Super_administrarAlumnos.php">ALUMNOS</a>
                       </li>
                       <li class="nav-item menuli">
                         <a href="crearCarrera.php">CREAR CARRERA</a>
