@@ -77,3 +77,13 @@ height: 1.4rem;
 .boton {font-family: 'Inter', sans-serif;font-size: 0.8rem;padding:0.2rem;color:#e4e4ec;width: 12rem;background-color: black;border-color: black;margin-left: 50%;}
 
 
+#cerrarS{
+    margin-left: 90%;
+ }
+ 
+ #cerrarS button a{
+     text-decoration: none;
+     color: aliceblue;
+ }
+
+ 

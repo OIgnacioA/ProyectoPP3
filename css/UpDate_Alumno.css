@@ -286,15 +286,6 @@ tbody tr td{
 }
 
 
-#cerrarS{
-   margin-left: 90%;
-}
-
-#cerrarS button a{
-    text-decoration: none;
-    color: aliceblue;
-}
-
 
 
 .Marco{
@@ -328,5 +319,25 @@ margin-left: 35%;
   width: 30px;
   height: 150px;
 
+}
 
+#cerrarS{
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: -2rem;
+    width: 100%;
+}
+#cerrarS button a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+#cerrarS{
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: -2rem;
+    width: 100%;
 }

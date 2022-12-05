@@ -45,7 +45,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
    
-    <link rel="stylesheet" href="../css/UpDate_Alumno.css">
+    <link rel="stylesheet" href="../css/upDate_alumno.css">
     
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -60,9 +60,9 @@ error_reporting(0);
 
 ?>
  <header>  
-        <div id="cerrarS">
-            <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">CERRAR SESION</a></button>
-        </div>
+ <div id="cerrarS">
+      <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+    </div>
 
         <div class="container-fluid">
             
