@@ -26,7 +26,7 @@
     <title>Página principal - Preceptor</title>
 
 
-    <link rel="stylesheet" href="../css//administradorPreceptor.css">
+    <link rel="stylesheet" href="../css/MenuPreceptor.css">
 
 
     
@@ -37,75 +37,67 @@
 </head>
 
 <body>
-    <header>  
-        <div id="cerrarS">
-            <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">CERRAR SESION</a></button>
+<header>
+    <br>
+    <div class="kontainer">
+
+      <div>
+        <div id="plataforma" >
+          <h2>Plataforma</h2>
+          <p>Entraste como <br> Preceptor</p>
         </div>
+      </div>
 
-        <div class="container-fluid">
-            
-            <div class="row d-flex flex-row">
-              
-                <div class="col-12 col-md-2 inferior">
-              
-                    <div id="plataforma" class="d-flex flex-column ">
-                        <h2>Plataforma</h2>
-                        <p >Entraste como</p>
-                        <p id="preceptor">Preceptor</p>
-                    </div>
-    
-                </div>
+      <div >
+        <div id="titulo">
+          <h1>Nombre del Instituto</h1> 
+        </div>
+      </div>
 
-                <div class="col superior d-flex justify-content-center align-content-center  "> 
-                  
-                    <div id="titulo">
-                        <h1>Nombre del Instituto</h1>
-                    </div>
-    
-                </div>
+      <div id="botonDer"> 
+        <button id="btnCerrarS" type="button" > <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+      </div>
+        
+    </div>
+
+    <div class="MenuContainer">
+
+      <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+
+        <div class="container-fluid ">
           
-            </div>
-        </div> 
-    
-        <div>
-            <div class="container-fluid">
-                
-                <div class="row">
-                    
-                    <div class="col">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                        
-                            <div class="container-fluid ">
-                    
-                                <div class="imgHome">
-                                    <a  aria-current="page" href="Preceptor_admin.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40" ></a>
-                                </div>
+          <div class="imgHome">
+            <a aria-current="page" href="SuperAdmin.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
 
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
+          </div>
 
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      
-                                        <li class="nav-item menuli">
-                                        <a href="Preceptor_administraralumnos.php">ALUMNOS</a>
-                                        </li>
-                                        <li class="nav-item menuli">
-                                        <a href="Preceptor_administrarCarrera.php">ADMINISTRAR CARRERA</a>
-                                        </li>
-                                    </ul>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <li class="nav-item menuli">
+                <a href="Preceptor_administrarAlumnos.php">Alumnos</a>
+              </li>
+
+              <li class="nav-item menuli">
+                <a href="Preceptor_administrarCarrera.php">Administrar Carrera</a>
+              </li>
+
+            </ul>
+
+          </div>
         </div>
+      </nav>
+    </div>
+    
 
-    </header>
+<br><br>
+  </header>
 
     <main>
         <section >

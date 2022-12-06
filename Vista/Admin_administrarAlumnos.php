@@ -45,94 +45,105 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
    
-    <link rel="stylesheet" href="../css/upDate_alumno.css">
-    
+   
+    <link rel="stylesheet" href="../css/MenuPrincipal.css">
+    <link rel="stylesheet" href="../css/upDate_Alumno.css">
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Document</title>
 </head>
 
+
+
+
 <body>
-
-
 <?php
 error_reporting(0);
 
 ?>
- <header>  
- <div id="cerrarS">
-      <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+  <header>
+    <br>
+    <div class="Kontainer">
+
+      <div>
+
+        <div id="plataforma" >
+          <h2>Plataforma</h2>
+          <p>Entraste como <br> Administrador</p>
+        </div>
+
+      </div>
+
+      <div >
+
+        <div id="titulo">
+          <h1>Nombre del Instituto</h1> 
+        </div>
+
+      </div>
+
+      <div>
+        
+        <button id="btnCerrarS" type="button" > <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+
+      </div>
+        
     </div>
 
-        <div class="container-fluid">
-            
-            <div class="row d-flex flex-row">
-              
-                <div class="col-12 col-md-2 inferior">
-              
-                    <div id="plataforma" class="d-flex flex-column ">
-                        <h2>Plataforma</h2>
-                        <p >Entraste como</p>
-                        <p id="preceptor">Login</p>
-                    </div>
     
-                </div>
+    <div class="MenuContainer">
 
-                <div class="col superior d-flex justify-content-center align-content-center  "> 
-                  
-                    <div id="titulo">
-                        <h1>Nombre del Instituto</h1>
-                    </div>
-    
-                </div>
-          
-            </div>
-        </div> 
-    
+      <div>
         <div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid ">
-                <div class="imgHome">
-                  <a aria-current="page" href="Admin_Logueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
 
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item menuli">
-                      <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="Admin_administrarAlumnos.php">ALUMNOS</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="crearCarrera.php">CREAR CARRERA</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="administrar_vistaCarrera.php">VISTA CARRERAS</a>
-                    </li>
-                  </ul>
+          <nav class="navbar navbar-expand-lg  navbar-light bg-light">
 
-                </div>
+            <div class="container-fluid ">
+              
+              <div class="imgHome">
+                <a aria-current="page" href="Admin_Logueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+
               </div>
-            </nav>
-          </div>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item menuli">
+                    <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="Admin_administrarAlumnos.php">ALUMNOS</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="crearCarrera.php">CREAR CARRERA</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="administrar_vistaCarrera.php">VISTA CARRERAS</a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </nav>
         </div>
       </div>
     </div>
 
-    </header>
-
+  </header>
+  
   <main>
     <section>
 
@@ -303,7 +314,6 @@ error_reporting(0);
     </section>
 
   </main>
-
 
   <!-- //------PHP------------------------------------------------------------------ -->
 

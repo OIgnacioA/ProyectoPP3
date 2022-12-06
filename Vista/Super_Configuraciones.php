@@ -6,7 +6,7 @@
   $psswrd = $_SESSION['Psswrd'] ;
   $rol = $_SESSION['Rol'];
 
-  echo "Su rol es:  ". $rol; 
+  echo "Su rol es:  ". $rol;  
 
   if($nombre == null || $psswrd == null || $rol !='super'){
 
@@ -19,27 +19,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css/SuperAdmiLogin.css">
-    <link rel="stylesheet" href="../css/MenuSuper.css">
+  <link rel="stylesheet" href="../css/Configuraciones.css">
+  <link rel="stylesheet" href="../css/MenuSuper.css">
 
-    <script src="js\scriptCarrera.js"></script>
-    <title>Document</title>
-  </head>
+  <script src="js\scriptCarrera.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
   
-  <body>
-  <?php
-error_reporting(0);
-
-?>
-  <header>
+<header>
     <br>
     <div class="kontainer">
 
@@ -94,7 +91,7 @@ error_reporting(0);
               </li>
 
               <li class="nav-item menuli">
-                <a href="Admin_administrarAlumnos.php">Alumnos</a>
+                <a href="Super_administrarAlumnos.php">Alumnos</a>
               </li>
 
               <li class="nav-item menuli">
@@ -102,11 +99,11 @@ error_reporting(0);
               </li>
 
               <li class="nav-item menuli">
-                <a href="administrar_Carrera.php">Administrar Carrera</a>
+                <a href="Super_administrar_Carrera.php">Administrar Carrera</a>
               </li>
 
               <li class="nav-item menuli">
-                <a href="administrar_vistaCarrera.php">Vista Carreras</a>
+                <a href="Super_AdministrarVistaCarrera.php">Vista Carreras</a>
               </li>
 
               <li class="nav-item menuli">
@@ -121,27 +118,17 @@ error_reporting(0);
 <br><br>
   </header>
   
-  
-  
-    <main>
-      <section>
-        <div class="container">
-          <div class="row d-flex justify-content-center align-items-center">
-           
-  
-          </div>
-  
-        </div>
-        </div>
-  
-      </section>
-  
-  
-  
-    </main>
-  
 
-  
-  </body>
-  
-  </html>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+
+
+          <h1>Edita los distintos componentes de este sistema</h1>
+          <p>La siguiente tabla resume todos los elementos editables hasta el momento</p>
+          
+</body>
+
+</html>

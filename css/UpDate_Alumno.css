@@ -11,17 +11,13 @@ body{
 input{border: none;}
 /*--------------------------------------------------N */
 
-p{
-margin: 0;
 
-
-}
 .espacioBlanco{
   
     height: 60px;
     background-color: #fff;
     display: grid;
-    grid-template-columns:   150px 150px 200px 130px 200px 200px 80px 160px ;
+    grid-template-columns:   100px 130px 190px 100px 230px 190px 70px 180px ;
     overflow: hidden;
     width:fit-content;
     height:fit-content;
@@ -36,13 +32,14 @@ margin: 0;
     
 } 
 
-.titulos {
+ .titulos {
     color: #f38618;
     text-decoration: none;
     font-size: 1rem;
     font-family: 'Roboto',Arial, Helvetica, sans-serif;
     font-weight: bold;
-}
+} 
+
 
 .titulosChicos {
     background-color:#fff ;
@@ -52,7 +49,7 @@ margin: 0;
     font-family: 'Roboto',Arial, Helvetica, sans-serif;
     font-weight: bold;
     display: grid;
-    grid-template-columns:  150px 150px 190px 160px 200px 110px 150px 120px  ;
+    grid-template-columns:  100px 100px 150px 100px 200px 120px 160px ;
     overflow: hidden;
    
     min-width: 50rem;
@@ -62,6 +59,12 @@ margin: 0;
 
 .titulosChicos div p { margin-left: 10%;  }
 
+#inputt{
+
+max-width: 200px;
+
+}
+
 
 .info{
 
@@ -69,14 +72,13 @@ margin: 0;
     max-height: 100px;
     padding:0.5rem;
     margin-bottom: 5px;
-    border: 2.5px solid rgb(58, 58, 60);
-    border-radius: 15px;
+    border: 0.5px solid rgb(125, 125, 128);
+    border-radius: 5px;
     overflow: hidden;
 }
+.info p {
 
-#inputt{
-
-max-width: 200px;
+margin:0px;
 
 }
 
@@ -147,13 +149,13 @@ max-width: 200px;
    
    
 }
-#titulo{
+/*#titulo{
    
     width: 100%;
 }
 
 #titulo h1{
-   /*  font-size: 4.5em; */
+  
     font-size: 6vw;
 
     font-weight: bold;
@@ -161,7 +163,7 @@ max-width: 200px;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
 }   
-#plataforma{
+/* #plataforma{
     
     padding-top: 1rem;
     padding-left: 1rem;
@@ -169,7 +171,7 @@ max-width: 200px;
 
 }
 #plataforma h4{
-    /* font-size: 56px; */
+    
     font-size: vw;
 
     font-style: italic;
@@ -178,7 +180,7 @@ max-width: 200px;
 
 }
 #plataforma p{
-  /*   font-size: 1.8rem; */
+  
     font-size: 2vw;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
@@ -186,11 +188,12 @@ max-width: 200px;
     position: relative;
    
     left: 1rem;
-}
+} 
 .superior{
     display: flex;
     
 }
+*/
 form{
     padding-top: 2rem;
     padding-bottom: 3rem;
@@ -290,8 +293,8 @@ tbody tr td{
 
 .Marco{
 
-    padding-left: 12%;
-    padding-right: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
 
 }
 
@@ -313,14 +316,14 @@ margin-left: 35%;
 
 
 }
-
+/*
 #plataforma{
 
   width: 30px;
   height: 150px;
 
 }
-
+*/
 #cerrarS{
     position: absolute;
     display: flex;

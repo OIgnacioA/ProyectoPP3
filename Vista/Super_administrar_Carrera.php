@@ -8,7 +8,7 @@
 
   echo "Su rol es:  ". $rol;  
 
-  if($nombre == null || $psswrd == null || $rol != 'super'){
+  if($nombre == null || $psswrd == null || $rol !='super'){
 
     die(); 
 
@@ -30,7 +30,7 @@
 
 
   <link rel="stylesheet" href="../css/Super_Administrar_Carrera.css">
-
+  <link rel="stylesheet" href="../css/MenuSuper.css">
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Document</title>
@@ -44,71 +44,87 @@ error_reporting(0);
 
 ?>
   <header>
+    <br>
+    <div class="kontainer">
 
-    <div id="cerrarS">
-      <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
-    </div>
-    <div class="container">
-      <div class="row d-flex flex-row">
-        <div class="col-10 col-md-2 superior">
-          <div id="plataforma" class="d-flex flex-column ">
-            <h2>Plataforma</h2>
-            <p>Entraste como Administrador</p>
-          </div>
-        </div>
-        <div class="col superior d-flex justify-content-center align-content-center  ">
-          <div id="titulo">
-            <h1 style="color: #f38618;">Nombre del Instituto</h1> 
-          </div>
+      <div>
 
+        <div id="plataforma" >
+          <h2>Plataforma</h2>
+          <p>Entraste como <br> super</p>
         </div>
+
       </div>
+
+      <div >
+
+        <div id="titulo">
+          <h1>Nombre del Instituto</h1> 
+        </div>
+
+      </div>
+
+      <div>
+        
+        <button id="btnCerrarS" type="button" > <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+
+      </div>
+        
     </div>
 
-    <div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid ">
-                <div class="imgHome">
-                  <a aria-current="page" href="Admin_Logueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+    
+    <div class="MenuContainer">
 
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item menuli">
-                      <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="Admin_administrarAlumnos.php">ALUMNOS</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="crearCarrera.php">CREAR CARRERA</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
-                    </li>
-                    <li class="nav-item menuli">
-                      <a href="administrar_vistaCarrera.php">VISTA CARRERAS</a>
-                    </li>
-                  </ul>
+      <nav class="navbar navbar-expand-lg  navbar-light bg-light">
 
-                </div>
-              </div>
-            </nav>
+        <div class="container-fluid ">
+          
+          <div class="imgHome">
+            <a aria-current="page" href="SuperAdmin.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+             <li class="nav-item menuli">
+                <a href="Super_AltaAdmin.php">Alta de Administrador</a>
+              </li>
+
+              <li class="nav-item menuli">
+                <a href="Super_administrarAlumnos.php">Alumnos</a>
+              </li>
+
+              <li class="nav-item menuli">
+                <a href="Super_CrearCarrera.php">Crear Carrera</a>
+              </li>
+
+              <li class="nav-item menuli">
+                <a href="Super_administrar_Carrera.php">Administrar Carrera</a>
+              </li>
+
+              <li class="nav-item menuli">
+                <a href="Super_AdministrarVistaCarrera.php">Vista Carreras</a>
+              </li>
+
+              <li class="nav-item menuli">
+                <a href="Super_Configuraciones.php">Configuraciones</a>
+              </li>
+
+            </ul>
           </div>
         </div>
-      </div>
+      </nav>
     </div>
-
+<br><br>
   </header>
-
+  
 
   <main>
     <section>

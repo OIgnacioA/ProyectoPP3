@@ -30,6 +30,7 @@
 
    
     <link rel="stylesheet" href="../css/UpDate_Alumno.css">
+    <link rel="stylesheet" href="../css/MenuPreceptor.css">
     
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -43,77 +44,67 @@
 error_reporting(0);
 
 ?>
- <header>  
-    <div id="cerrarS">
-        <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">CERRAR SESION</a></button>
-    </div>
+ <header>
+    <br>
+    <div class="kontainer">
 
-    <div class="container-fluid">
-        
-        <div class="row d-flex flex-row">
-          
-            <div class="col-12 col-md-2 inferior" id="plataforma">
-          
-                <div id="plataforma" class="d-flex flex-column ">
-                    <h4>Plataforma Entraste como Preceptor</h4>
-
-                </div>
-
-            </div>
-
-            <div class="col superior d-flex justify-content-center align-content-center  "> 
-              
-                <div id="titulo">
-                    <h1>Nombre del Instituto</h1>
-                </div>
-
-            </div>
-      
-        </div>
-    </div> 
-
-    <div>
-      <div class="container-fluid">
-          
-        <div class="row">
-            
-          <div class="col">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            
-              <div class="container-fluid " id="centrado">
-      
-                <div class="imgHome">
-                  <a  aria-current="page" href="Preceptor_admin.php"><img src="../img/home3.png" alt="Inicio"width="40" height="40" ></a>
-                </div>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
-                    <li class="nav-item menuli">
-                    <a href="Preceptor_administraralumnos.php">ALUMNOS</a>
-                    </li>
-                    <li class="nav-item menuli">
-                    <a href="Preceptor_administrarCarrera.php">ADMINISTRAR CARRERA</a>
-                    </li>
-                  </ul>
-
-                </div>
-                
-              </div>
-            </nav>
-          </div>
+      <div>
+        <div id="plataforma" >
+          <h2>Plataforma</h2>
+          <p>Entraste como <br> Preceptor</p>
         </div>
       </div>
+
+      <div >
+        <div id="titulo">
+          <h1>Nombre del Instituto</h1> 
+        </div>
+      </div>
+
+      <div id="botonDer"> 
+        <button id="btnCerrarS" type="button" > <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+      </div>
+        
     </div>
 
-  </header>
+    <div class="MenuContainer">
 
+      <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+
+        <div class="container-fluid ">
+          
+          <div class="imgHome">
+            <a aria-current="page" href="Preceptor_admin.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <li class="nav-item menuli">
+                <a href="Preceptor_administrarAlumnos.php">Alumnos</a>
+              </li>
+
+              <li class="nav-item menuli">
+                <a href="Preceptor_administrarCarrera.php">Administrar Carrera</a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+
+<br><br>
+  </header>
   <main>
     <section>
 

@@ -53,8 +53,7 @@
     <div class="col-10 col-md-2 superior">
       <div id="plataforma" class="d-flex flex-column ">
         <h2>Plataforma</h2>
-        <p>Entraste como Administrador</p>
-      </div>
+        <p>Entraste como <br>Administrador</p>      </div>
     </div>
     <div class="col superior d-flex justify-content-center align-content-center  ">
       <div id="titulo">
