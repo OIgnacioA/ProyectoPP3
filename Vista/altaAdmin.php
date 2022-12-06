@@ -33,80 +33,98 @@
  
     <title>Alta de Administrador</title>
     
-   <link rel="stylesheet" href="../css/UpDate_Alumno.css"> 
-   
+    <link rel="stylesheet" href="../css/MenuPrincipal.css">
     <link rel="stylesheet" href="../css/altaAdmin.css">
+   
+   
+  
+
+
+
 </head>
 
 <body>
 <header>
+    <br>
+    <div class="kontainer">
 
+      <div>
 
-<div id="cerrarS">
-  <button id="btnCerrarS" type="button" class="btn btn-secondary"> <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
-</div>
+        <div id="plataforma" >
+          <h2>Plataforma</h2>
+          <p>Entraste como <br>Administrador</p>        </div>
 
-
-
-<div class="container">
-  <div class="row d-flex flex-row">
-    <div class="col-10 col-md-2 superior">
-      <div id="plataforma" class="d-flex flex-column ">
-        <h2>Plataforma</h2>
-        <p>Entraste como <br>Administrador</p>      </div>
-    </div>
-    <div class="col superior d-flex justify-content-center align-content-center  ">
-      <div id="titulo">
-        <h1 style="color: #f38618;">Nombre del Instituto</h1> 
       </div>
 
+      <div >
+
+        <div id="titulo">
+          <h1>Nombre del Instituto</h1> 
+        </div>
+
+      </div>
+
+      <div>
+        
+        <button id="btnCerrarS" type="button" > <a href="../Controlador/Cerrar_session.php">Cerrar Sesion</a></button>
+
+      </div>
+        
     </div>
-  </div>
-</div>
 
-<div>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid ">
-            <div class="imgHome">
-              <a aria-current="page" href="Admin_Logueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+    
+    <div class="MenuContainer">
 
+      <div>
+        <div>
+
+          <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+
+            <div class="container-fluid ">
+              
+              <div class="imgHome">
+                <a aria-current="page" href="Admin_Logueado.php"><img src="../img/home3.png" alt="Inicio" width="40" height="40"></a>
+
+              </div>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item menuli">
+                    <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="Admin_administrarAlumnos.php">ALUMNOS</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="crearCarrera.php">CREAR CARRERA</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
+                  </li>
+
+                  <li class="nav-item menuli">
+                    <a href="administrar_vistaCarrera.php">VISTA CARRERAS</a>
+                  </li>
+
+                </ul>
+              </div>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item menuli">
-                  <a href="Lista_Admins.php">ALTA DE ADMINISTRADOR</a>
-                </li>
-                <li class="nav-item menuli">
-                  <a href="Admin_administrarAlumnos.php">ALUMNOS</a>
-                </li>
-                <li class="nav-item menuli">
-                  <a href="crearCarrera.php">CREAR CARRERA</a>
-                </li>
-                <li class="nav-item menuli">
-                  <a href="administrar_Carrera.php">ADMINISTRAR CARRERA</a>
-                </li>
-                <li class="nav-item menuli">
-                  <a href="administrar_vistaCarrera.php">VISTA CARRERAS</a>
-                </li>
-              </ul>
-
-            </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-</header>
+  </header>
 
 
 

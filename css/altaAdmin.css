@@ -1,6 +1,6 @@
 header {
     Color: #F38618;
-    font-size: 4rem;
+    
     margin:0;
     padding: 0.5rem;
     text-align: center;
@@ -8,9 +8,6 @@ header {
 
 input{border: none;}
 select{border: none; }
-
-
-
 
 
 body {
@@ -63,10 +60,7 @@ main {
    width: 8.5rem;
 }
 
-button{
-    text-align:center;
-    margin:auto;
-}
+
 
 #inputt{
 width:13.8rem ;
@@ -76,14 +70,9 @@ height: 1.4rem;
 
 .boton {font-family: 'Inter', sans-serif;font-size: 0.8rem;padding:0.2rem;color:#e4e4ec;width: 12rem;background-color: black;border-color: black;margin-left: 50%;}
 
+#btnCerrarS a{
 
-#cerrarS{
-    margin-left: 90%;
- }
- 
- #cerrarS button a{
-     text-decoration: none;
-     color: aliceblue;
- }
+   font-size: 15px;
 
- 
+}
+

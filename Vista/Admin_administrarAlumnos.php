@@ -47,7 +47,7 @@
    
    
     <link rel="stylesheet" href="../css/MenuPrincipal.css">
-    <link rel="stylesheet" href="../css/upDate_Alumno.css">
+    <link rel="stylesheet" href="../css/UpDate_Alumno.css">
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Document</title>
