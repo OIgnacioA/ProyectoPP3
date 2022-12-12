@@ -13,22 +13,11 @@
     die(); 
 
   }
- 
-  switch ($rol) {
 
-    case "super":
+  $arCategorias = array("Director", "Vicedirector", "Secretario");
 
-      header ("location:../Vista/Super_administrarAlumnos.php"); 
-      break;
+  if(in_array($rol,$arCategorias) ) { } else { die();}
 
-    case "Preceptor":
-
-      header ("location:../Vista/Preceptor_administrarAlumnos.php"); 
-      break;
-
-    default:
-      break;
-  }
 
 ?>
 

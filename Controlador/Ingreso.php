@@ -39,7 +39,7 @@ if ( isset($_POST["enviar"]))  {
     }
 
 
-    //-----------------------------------paso 2 [ROL CORRECTO]
+   //-----------------------------------paso 2 [ROL CORRECTO]
 
 
    $arr = array("Director", "Vicedirector","Secretario"); #roles admin
@@ -48,17 +48,17 @@ if ( isset($_POST["enviar"]))  {
 
    $resultado = mysqli_query($conexion,$consultaAl);
    $consulta = mysqli_fetch_array($resultado);
-  
+   $rol= $consulta['rol'];
 
 
-    for ($i = 0; $i < count($arr); $i++) {
+    if(in_array($rol, $arr)) {   
 
-       if($consulta['rol'] == $arr[$i]){
-                 
-           $alta2 = true; 
-           
-       }
-     
+      $alta2 = true; 
+          
+    }else {
+
+      echo("error"); 
+
     }
 
    }
@@ -78,6 +78,7 @@ if ( isset($_POST["enviar"]))  {
         if ($alta2 == true ) {
 
            header ("location:../Vista/Admin_Logueado.php"); 
+          
      
         }else if ($alta3 == true ){
 

@@ -14,6 +14,10 @@
 
   }
  
+  $arCategorias = array("Director", "Vicedirector", "Secretario");
+
+  if(in_array($rol,$arCategorias) ) { } else { die();}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

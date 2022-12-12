@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Css/index.css">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-</html>l
-
-
 
 <?php
 
@@ -138,7 +123,7 @@
             $consulta = " SELECT * FROM alumno WHERE dni = $pass" ;
           }
 
-          
+    
 
           $resultado = mysqli_query($conexion, $consulta);
           $con = mysqli_fetch_array($resultado);     
@@ -178,7 +163,9 @@
 
             mail($para, $asunto, $message, $header);
 
+          echo '<script>alert( "Ingreso exitoso")</script>' ; 
 
+       //   header("Location:../Vista/MensajeInscripcion.php");
        
         }else  {
 
@@ -190,7 +177,7 @@
 
       } else {   echo '<script>alert( "El contacto ya existe")</script>)'; 
 
-      
+        header("Location:../Vista/MensajeInscripcion.php");
          
       }
     }

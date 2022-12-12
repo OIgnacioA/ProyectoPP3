@@ -8,7 +8,7 @@
 
   echo "Su rol es:  ". $rol; 
 
-  if($nombre == null || $psswrd == null){
+  if($nombre == null || $psswrd == null || $rol != 'Preceptor'){
 
     die(); 
 
