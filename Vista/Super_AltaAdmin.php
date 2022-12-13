@@ -179,9 +179,9 @@ error_reporting(0);
 
           <br><br>
 
-         <a href="altaAdmin.php"> <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
+         <a href="Super_DarAltaAdmin.php"> <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
          
-         <a href="eliminar_Admin.php"> <button type="button" class=" btn btn-secondary">Eliminar</button></a><br><br> 
+         <a href="Super_EliminarAdmin.php"> <button type="button" class=" btn btn-secondary">Eliminar</button></a><br><br> 
           
 
       </form>  

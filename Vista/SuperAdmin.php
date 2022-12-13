@@ -94,7 +94,7 @@ error_reporting(0);
               </li>
 
               <li class="nav-item menuli">
-                <a href="Admin_administrarAlumnos.php">Alumnos</a>
+                <a href="Super_administrarAlumnos.php">Alumnos</a>
               </li>
 
               <li class="nav-item menuli">
@@ -102,11 +102,11 @@ error_reporting(0);
               </li>
 
               <li class="nav-item menuli">
-                <a href="administrar_Carrera.php">Administrar Carrera</a>
+                <a href="Super_administrar_Carrera.php">Administrar Carrera</a>
               </li>
 
               <li class="nav-item menuli">
-                <a href="administrar_vistaCarrera.php">Vista Carreras</a>
+                <a href="Super_AdministrarVistaCarrera.php">Vista Carreras</a>
               </li>
 
               <li class="nav-item menuli">

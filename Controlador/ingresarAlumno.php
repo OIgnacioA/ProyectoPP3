@@ -1,6 +1,7 @@
 
 <?php
-
+  
+  session_start();
   error_reporting(0);
 
   
@@ -38,11 +39,11 @@
     $obs =  "NULL";
     $egr = $_POST["egreso"];
 
-
+    
     $tip = $_POST["DNIPassT"];//tipo
     $DNIP = $_POST["dniP"];//valor
 
-   
+     echo ("----->". $tip. "-------->".$DNIP);
   
     //_______________________________________GET and SET: 
    
@@ -101,86 +102,87 @@
     $egreso = $nuevoAlumno->getEgreso();
 
 
-      if ($exi == 0){
+    if ($exi == 0){
 
-        if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id, rol) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DNI','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$pass',  '$carrera', 'Alumno')")){
-      
-
-          
-
-
-          ///respuesta: 
-
-
-
-          if ($DNI != ""){ 
-
-            $consulta = " SELECT * FROM alumno WHERE dni = $DNI" ;
-            
-         
-          } else if ( $pass != ""){
-
-            $consulta = " SELECT * FROM alumno WHERE dni = $pass" ;
-          }
-
+      if (mysqli_query($conexion, " INSERT INTO alumno (nombre, apellido, fnacimiento, genero, dni, email, cod_area, telefono,contacto_mail,cod_area_cont, telefonocont, direccion, provincia, localidad, titulos, fe_alta, estado, observaciones, pasaporte,fk_carrera_id, rol) values ('$Nombre', '$Apellido', '$FechaNac','$genero', '$DNI','$email', '$codA', '$tel', '$emailC', '$codAC', '$telC','$direccion','$provincia', '$localidad', '$titulo','$calendarioAlt', '$estado', '$observacion', '$pass',  '$carrera', 'Alumno')")){
     
-
-          $resultado = mysqli_query($conexion, $consulta);
-          $con = mysqli_fetch_array($resultado);     
-          $idd =  $con["id"];
-          
-          //echo "<script>alert(" . $idd.")</script>";
-
-          echo "<div class=" . "mensaje" . ">  Número de inscripción: <b><br>". $idd
-          . "</b><br>La lista de documentos que el alumno debe acercar 
-              al instituto para terminar el registro, en la misma se encuentra:<br>
-          ->  fotocopia del Dni<br>
-          ->  fotocopia del titulo del secundario/polimodal<br>
-          ->  foto carnet<br>
-          ->  certificado médico<br>
-          ->  número de inscripción </div>" ; 
 
         
 
-          ////////////////MAil: 
 
-            $header = ' From: noreply@example.com'  . " \r\n";
-            $header .='Reply-To: webmaster@example.com' . "\r\n" .
-            $header .= "X-Mailer: PHP/" .phpversion() . " \r\n";
+        ///respuesta: 
+
+
+
+        if ($DNI != ""){ 
+
+          $consulta = " SELECT * FROM alumno WHERE dni = $DNI" ;
           
+      
+        } else if ( $pass != ""){
 
-
-            $message= " Por medio de la presente se le informa que su preinscripción ha sido recepcionada. Por favor, hágase presente en la institución con la documentación requerida en los horarios de xxxx hs a xxxx hs.  ". " \r\n" .
-
-            "Saludos cordiales.". " \r\n" .
-            
-            "La Administración" . " \r\n" .
-            
-            "Instituto XXXXXXX". " \r\n" ;
-
-            $para = $email ; 
-            $asunto = "Pre-inscripcion recepcionada";
-
-            mail($para, $asunto, $message, $header);
-
-          echo '<script>alert( "Ingreso exitoso")</script>' ; 
-
-       //   header("Location:../Vista/MensajeInscripcion.php");
-       
-        }else  {
-
-          echo '<script>alert( "no se pudo realizar el ingreso")</script>' ; 
-
-
+          $consulta = " SELECT * FROM alumno WHERE dni = $pass" ;
         }
 
+  
 
-      } else {   echo '<script>alert( "El contacto ya existe")</script>)'; 
+        $resultado = mysqli_query($conexion, $consulta);
+        $con = mysqli_fetch_array($resultado);     
+        $idd =  $con["id"];
+        $_SESSION['id'] = $idd;
 
-        header("Location:../Vista/MensajeInscripcion.php");
-         
+        //echo "<script>alert(" . $idd.")</script>";
+
+        echo "<div class=" . "mensaje" . ">  Número de inscripción: <b><br>". $idd
+        . "</b><br>La lista de documentos que el alumno debe acercar 
+            al instituto para terminar el registro, en la misma se encuentra:<br>
+        ->  fotocopia del Dni<br>
+        ->  fotocopia del titulo del secundario/polimodal<br>
+        ->  foto carnet<br>
+        ->  certificado médico<br>
+        ->  número de inscripción </div>" ; 
+
+      
+
+        ////////////////MAil: 
+
+          $header = ' From: noreply@example.com'  . " \r\n";
+          $header .='Reply-To: webmaster@example.com' . "\r\n" .
+          $header .= "X-Mailer: PHP/" .phpversion() . " \r\n";
+        
+
+
+          $message= " Por medio de la presente se le informa que su preinscripción ha sido recepcionada. Por favor, hágase presente en la institución con la documentación requerida en los horarios de xxxx hs a xxxx hs.  ". " \r\n" .
+
+          "Saludos cordiales.". " \r\n" .
+          
+          "La Administración" . " \r\n" .
+          
+          "Instituto XXXXXXX". " \r\n" ;
+
+          $para = $email ; 
+          $asunto = "Pre-inscripcion recepcionada";
+
+          mail($para, $asunto, $message, $header);
+
+        echo '<script>alert( "Ingreso exitoso")</script>' ; 
+
+    //   header("Location:../Vista/MensajeInscripcion.php");
+    
+      }else  {
+
+        echo '<script>alert( "no se pudo realizar el ingreso")</script>' ; 
+
+
       }
+
+
+    } else {   echo '<script>alert( "El contacto ya existe")</script>)'; 
+
+      header("Location:../Vista/MensajeInscripcion.php");
+      
     }
+  }
 
  
 

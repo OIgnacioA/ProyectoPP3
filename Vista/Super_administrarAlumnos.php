@@ -191,7 +191,7 @@ error_reporting(0);
                 " 
                
 
-              <form class=" . "'" . "formulario" . "'" . "  action=". "'" . "Preceptor_administraralumnos.php". "'" . "method=". "'" . "post" . "'" . "> 
+              <form class=" . "'" . "formulario" . "'" . "  action=". "'" . "Preceptor_administrarAlumnos.php". "'" . "method=". "'" . "post" . "'" . "> 
 
                 <div class=". "'" . "espacioBlanco". "'". ">
 

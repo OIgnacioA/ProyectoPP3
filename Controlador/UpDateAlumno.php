@@ -67,7 +67,7 @@
                     
         }else {echo '<script>alert( "no se pudo realizar el UpDate")</script>' ; }
 
-        header('Location:../Vista/Preceptor_administraralumnos.php');
+        header('Location:../Vista/Preceptor_administrarAlumnos.php');
         
 
     }else{//si es dni
@@ -81,7 +81,7 @@
                     
         }else {echo '<script>alert( "no se pudo realizar el UpDate")</script>' ; }
 
-            header('Location:../Vista/Preceptor_administraralumnos.php');
+            header('Location:../Vista/Preceptor_administrarAlumnos.php');
 
 
         

@@ -18,6 +18,7 @@
 
   if(in_array($rol,$arCategorias) ) { } else { die();}
 
+  
 ?>
 
 <!DOCTYPE html>
@@ -363,17 +364,18 @@ error_reporting(0);
   </main>
 
 
-    <?php 
+  <?php 
 
+    if ( isset($_POST["UpDate"])){
       
+      include("../Controlador/UpdateCarrera.php");
+      header("refresh: 1;"); 
+      echo "aqui";
+    
+    }
+   
 
-     if ( isset($_POST["UpDate"])){
-      
-       
-      require_once("../Controlador/UpdateCarrera.php");}
-     
-     
-     ?>
+  ?>
 
 
 

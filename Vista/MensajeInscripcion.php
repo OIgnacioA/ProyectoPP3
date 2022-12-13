@@ -1,7 +1,9 @@
 <?php
  error_reporting(0);
-
-$iid = $_SESSION['id'] ;
+ 
+ session_start();
+ 
+ $iid = $_SESSION['id'] ;
 
 ?>
 
