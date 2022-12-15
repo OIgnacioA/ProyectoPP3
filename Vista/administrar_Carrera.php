@@ -369,12 +369,8 @@ error_reporting(0);
     if ( isset($_POST["UpDate"])){
       
       include("../Controlador/UpdateCarrera.php");
-      header("refresh: 1;"); 
-      echo "aqui";
-    
-    }
    
-
+    }
   ?>
 
 
