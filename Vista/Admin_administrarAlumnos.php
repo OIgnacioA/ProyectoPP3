@@ -187,7 +187,7 @@ error_reporting(0);
               $tiempo = $consulta["FechaCambio"];
               $dniToF = "true";
               $Carrera =  $consulta["CNombre"];
-             
+              $Carrera.=";";
               if ($consulta["dni"] == "") { 
 
                 $Dni_pass = $consulta["pasaporte"];
@@ -196,13 +196,10 @@ error_reporting(0);
          
 
 
-
-
-
               if($IdAux == $id) {
-               
-                $CarreraAux .= ", ".$Carrera;
-             
+
+                $CarreraAux .= $Carrera;
+          
               } else {
 
                 if($pass == 1){
@@ -216,7 +213,6 @@ error_reporting(0);
                 $MailAux =  $Mail;
                 $estadoAux =  $estado;
                 $tiempoAux = $tiempo;
-                $idAux = $id;
                 $dniToFAux = $dniToF;
                 $CarreraAux =  $Carrera;
                 $Dni_passAux = $Dni_pass;
@@ -230,7 +226,7 @@ error_reporting(0);
 
 
               function Impresion($id, $nombre, $Apellido, $Mail, $estado, $tiempo, $dniToF,$Carrera, $Dni_pass){
-
+              
                echo 
                " 
               

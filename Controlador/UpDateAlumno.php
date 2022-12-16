@@ -23,7 +23,109 @@
     $DNIP = $_POST["dniPass"];
     $est = $_POST["estado"];
     $fechaCambio = $_POST["FechaCambio"];
+    $Carr = $_POST["carrera"];
 
+    
+    
+ 
+   $CarrArr=[];
+    for ($i = 0; $i<strlen($Carr);$i++){
+
+        if($Carr[$i] !=";"){
+           
+            $var .=$Carr[$i];
+           
+        }else { 
+
+        
+         array_push($CarrArr, $var);
+        
+         $var="";
+            
+        }
+
+    }
+
+
+    /////////////////////////////////////////eliminacion de carrera: 
+
+  
+    $CarrerasDDBB = [];
+    $CarreraDeAlumno =[];
+
+    $consultar = "  SELECT ca.nombre, ca.id  FROM `carrera` as ca 
+
+    join carreras_alumnos C on (ca.id = C.ID_Carrera)
+    join alumno a on (a.id = C.ID_Alumno)
+    where a.id = $id ";
+
+    $result =mysqli_query($conexion, $consultar);
+
+    while($consult = mysqli_fetch_array($result)){
+
+
+        $NombreCarrera= $consult["nombre"];
+        $IdCarrera =  $consult["id"];
+        
+        
+        $CarreraDic = ['Nom' => $NombreCarrera, 'ID'=>$IdCarrera];
+
+        array_push($CarrerasDDBB, $CarreraDic);
+        array_push($CarreraDeAlumno, $NombreCarrera);
+    
+    }
+
+
+    for($i = 0; $i<count($CarrerasDDBB);$i++){
+        
+
+        if(in_array($CarrerasDDBB[$i]['Nom'], $CarrArr)){} else {
+
+            $IIDD=$CarrerasDDBB[$i]['ID'];
+
+            mysqli_query($conexion, "  DELETE FROM carreras_alumnos where  ID_Carrera = $IIDD  AND ID_Alumno = $id ;");
+
+
+        }
+    }
+
+
+   ///////////////////////////////////////////////Agregar carrera: 
+
+
+    $Diferencia= array_diff($CarrArr, $CarreraDeAlumno);
+    $Diferente = $Diferencia[1];
+    
+    $NombreDeCarreras= [];
+
+    $consultar = "  SELECT ca.nombre, ca.id FROM carrera as ca ";
+    $result =mysqli_query($conexion, $consultar);
+    while($consult = mysqli_fetch_array($result)){
+
+
+        $NombreCarrera= $consult["nombre"];
+        $IdCarrera =  $consult["id"];
+
+        $CarreraDic2 = ['Nom' => $NombreCarrera, 'ID'=>$IdCarrera];
+
+        array_push($NombreDeCarreras, $CarreraDic2);
+    
+    }
+
+
+    for($i=0; $i<count($NombreDeCarreras); $i++){
+
+ 
+
+        if ($Diferente == $NombreDeCarreras[$i]['Nom']) {
+          
+            $idC = $NombreDeCarreras[$i]['ID'];
+            
+            mysqli_query($conexion, "INSERT INTO  carreras_alumnos (ID_Carrera, ID_Alumno) values ( $idC, $id)");
+
+        }
+
+    }
 
 
 

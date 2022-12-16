@@ -1,10 +1,10 @@
 <?php
 
 
- //$host = "localhost";
- //$DataBase = "u143332576_colegio" ;
- //$Name = "u143332576_admin";
- //$password = "Ludobica666!";
+//$host = "localhost";
+//$DataBase = "u143332576_colegio" ;
+//$Name = "u143332576_admin";
+//$password = "Ludobica666!";
 
 
 $host = "localhost";
