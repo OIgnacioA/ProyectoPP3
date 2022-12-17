@@ -174,7 +174,7 @@
                     <option value="P">Pasaporte</option>
                   </select>
                       
-                  <input type="text" onkeypress="return segunSeleccion(event);" minlength="8"  maxlength="9"  required name="dniP" placeholder="#Numero" id="documento" style=width:106px;height:20px; disabled>   
+                  <input type="text" onkeypress="return segunSeleccion(event);" minlength="8"  maxlength="9"  required name="dniP" placeholder="#Numero" id="documento" style=width:106px;height:20px; disabled require>   
             </div>
 
             <div> <label for="email" id="etiqueta">E-mail</label> </div>                         

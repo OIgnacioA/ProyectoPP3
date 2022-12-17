@@ -160,7 +160,7 @@
           
           "Instituto XXXXXXX". " \r\n" ;
 
-          $para = $email ; 
+          $para = $email; 
           $asunto = "Pre-inscripcion recepcionada";
 
           mail($para, $asunto, $message, $header);
