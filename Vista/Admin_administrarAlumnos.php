@@ -20,7 +20,11 @@
 
 
 ?>
-
+<?php 
+if ( isset($_POST["UpDate"])){
+require_once("../Controlador/UpDateAlumno.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -176,9 +180,12 @@ error_reporting(0);
             $resultado = mysqli_query($conexion,$consultaAl);
 
             $pass=0;
+            $cont = 0;
  
             while($consulta = mysqli_fetch_array($resultado)){
           
+              $cont +=1;
+
               $id = $consulta["id"];
               $nombre =  $consulta["nombre"];
               $Apellido =  $consulta["apellido"];
@@ -194,17 +201,21 @@ error_reporting(0);
                 $dniToF = "false" ;
               }else {$Dni_pass = $consulta["dni"];}
          
-
+             
 
               if($IdAux == $id) {
 
                 $CarreraAux .= $Carrera;
-          
+              
               } else {
+
+                
 
                 if($pass == 1){
                  
                   Impresion($IdAux, $nombreAux, $ApellidoAux, $MailAux, $estadoAux, $tiempoAux, $dniToFAux,$CarreraAux, $Dni_passAux);
+
+                 
                 }
                 
                 $IdAux = $id; 
@@ -217,16 +228,25 @@ error_reporting(0);
                 $CarreraAux =  $Carrera;
                 $Dni_passAux = $Dni_pass;
                 $pass=1;
-              }
-            
-
                
+            
+              }
+                         
             }
 
+            //el ultimo: 
+
+            Impresion($IdAux, $nombreAux, $ApellidoAux, $MailAux, $estadoAux, $tiempoAux, $dniToFAux,$CarreraAux, $Dni_passAux);
+
+            ////si solo hay un alumno.
+            if($cont == 1 ){
+              Impresion($IdAux, $nombreAux, $ApellidoAux, $MailAux, $estadoAux, $tiempoAux, $dniToFAux,$CarreraAux, $Dni_passAux);
+            }
+            /////
 
 
               function Impresion($id, $nombre, $Apellido, $Mail, $estado, $tiempo, $dniToF,$Carrera, $Dni_pass){
-              
+                
                echo 
                " 
               
@@ -350,15 +370,7 @@ error_reporting(0);
   <!-- //------PHP------------------------------------------------------------------ -->
 
 
-  <?php if ( isset($_POST["UpDate"])){
-    
-    
-    require_once("../Controlador/UpDateAlumno.php");
-    
-    
-    
-    
-    }?>
+
 
   <!-- //--------------------------------------------------------------------------- -->
 

@@ -15,10 +15,9 @@ include("../Modelo/Conexion.php");
  
         $consultaAl = "SELECT alumno.dni FROM alumno";  
         $resultado = mysqli_query($conexion,$consultaAl);
-
+  
         while($consulta = mysqli_fetch_array($resultado)){
      
-            
 
             if( $consulta['dni'] == $dni){
                 
@@ -34,7 +33,7 @@ include("../Modelo/Conexion.php");
             $resultado = mysqli_query($conexion,$consultaAl);
 
             while($consulta = mysqli_fetch_array($resultado)){
-
+           
                 if( $consulta['dni'] == $dni){
     
                  $_GLOBALS['$existe'] = 1; 
@@ -64,13 +63,13 @@ include("../Modelo/Conexion.php");
     
     if ($pass!="NULL") {
 
-
+        
         $consultaAl = "SELECT alumno.pasaporte FROM alumno";  
         $resultado = mysqli_query($conexion,$consultaAl);
-
-      
+     
+       
         while($consulta = mysqli_fetch_array($resultado)){
-           
+            
             if( $consulta['pasaporte'] == $pass){
 
              $_GLOBALS['$existe'] = 1; 
