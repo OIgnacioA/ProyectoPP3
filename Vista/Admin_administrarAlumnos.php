@@ -54,7 +54,7 @@ require_once("../Controlador/UpDateAlumno.php");
 
 <body>
 <?php
-error_reporting(0);
+
 
 ?>
   <header>
