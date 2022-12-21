@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-12-2022 a las 19:57:50
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Tiempo de generación: 21-12-2022 a las 00:58:35
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,7 +49,6 @@ CREATE TABLE `alumno` (
   `FechaCambio` date DEFAULT NULL,
   `observaciones` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pasaporte` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fk_carrera_id` int(11) NOT NULL,
   `pass` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `rol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -58,13 +57,11 @@ CREATE TABLE `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `nombre`, `apellido`, `fnacimiento`, `genero`, `dni`, `email`, `cod_area`, `telefono`, `contacto_mail`, `cod_area_cont`, `telefonocont`, `direccion`, `provincia`, `localidad`, `titulos`, `fe_alta`, `estado`, `FechaCambio`, `observaciones`, `pasaporte`, `fk_carrera_id`, `pass`, `rol`) VALUES
-(46, 'ana', 'lopez', '1900-12-31', 'Femenino', '45212135', '', '221', '4528812', 'ana@gmail.com', '011', '1653434', 'lavalle perez 4532 aldana lopez entre / 1900', 'Buenos Aires', 'la plata', 'analista', '0000-00-00', 'Inscripto', '0000-00-00', '.............', 'NULL', 2, NULL, 'Alumno'),
-(50, 'solano', 'lopez', '2022-10-22', 'Otro', '31462893', 'sehent@hotmail.com', '445', '5525126', 'sehent@hotmail.com', '223', '34534577', 'los potrillos', 'San Juan', 'Los Hornos', 'Abogado', '2022-12-01', 'Regular', '2022-12-01', '', 'NULL', 2, NULL, 'Alumno'),
-(54, 'leonardito', 'coporello', '0000-00-00', 'Masculino', '12345987', 'ddddd@dgdfgd', '4400', '2215525126', '', '', '', '', 'Buenos Aires', '', '', '0000-00-00', 'Egresado', '0000-00-00', 'NULL', 'NULL', 1, NULL, 'Alumno'),
-(56, 'matias', 'altaparrozz', '1995-02-17', 'Masculino', '38865358', 'antddddddordano@hd', '2222', '222222', 'matttt@hotmail.com', '223', '77666677', '123123', 'Buenos Aires', 'la plata', '', '0000-00-00', 'Regular', '2022-12-01', 'NULL', 'NULL', 1, NULL, 'Alumno'),
-(62, 'Antonella', 'Giordano', '0000-00-00', 'Seleccione una opciÃƒÆ’Ã‚Â³n', '66666666', 'sehent@hotmail.com', '221', '2215525126', 'sehent@hotmail.com', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', 'Regular', '2022-12-01', 'NULL', '', 1, NULL, 'Alumno'),
-(63, 'Hector', 'Lamborginni', '0000-00-00', 'Femenino', '32165487', 'sehentddddd@hotmail.com', '9221', '542215923054', 'sehent@hotmail.com', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', '$estado', '2022-10-08', 'NULL', '', 1, NULL, 'Alumno');
+INSERT INTO `alumno` (`id`, `nombre`, `apellido`, `fnacimiento`, `genero`, `dni`, `email`, `cod_area`, `telefono`, `contacto_mail`, `cod_area_cont`, `telefonocont`, `direccion`, `provincia`, `localidad`, `titulos`, `fe_alta`, `estado`, `FechaCambio`, `observaciones`, `pasaporte`, `pass`, `rol`) VALUES
+(101, 'Antonella', 'Giordano', '2022-12-02', 'Masculino', '31444493', 'antonella_giordano@hotmail.co', '333', '542215923054', 'antonella_giordano@hotmail.co', 'Null', '', '', 'Buenos Aires', '', '', '0000-00-00', 'Regular', '2022-12-22', 'NULL', '31444493', NULL, 'Alumno'),
+(102, 'caballo', 'Golpeador', '0000-00-00', 'Masculino', '23456987', 'araucariano@hotmail.com', '333', '5923054', 'araucariano@hotmail.com', 'Null', '5923054', ' 62 y 63 8', 'Buenos Aires', 'La Plata, Buenos Aires, Argentina', 'Buenos Aires', '0000-00-00', 'NULL', '0000-00-00', 'NULL', '23456987', NULL, 'Alumno'),
+(113, 'crissshna', 'Giordano', '0000-00-00', 'Seleccione una opción', '31666443', 'iordano@hotmail.com', '333', '2121', 'iordano@hotmail.com', 'Null', '5923054', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', '0000-00-00', 'NULL', '', NULL, 'Alumno'),
+(114, 'paco', 'delucia', '0000-00-00', 'Femenino', '22444555', 't@hotmail.com', '333', '2121', 't@hotmail.com', 'Null', '5923054', '', 'Buenos Aires', '', '', '0000-00-00', 'NULL', NULL, 'NULL', '', NULL, 'Alumno');
 
 -- --------------------------------------------------------
 
@@ -92,12 +89,31 @@ CREATE TABLE `carrera` (
 --
 
 INSERT INTO `carrera` (`id`, `ESTADO`, `nombre`, `codigo`, `duracion`, `resolucion`, `anio_caducidad`, `anio_resolucion`, `alta`, `comentarios`, `cursada`, `plan`) VALUES
-(1, 'on', 'Analista de sistemass', '003', '5', '1515', '10/10/2025', '10/10/2000', '10/10/2021', NULL, 'lun vier 17hs-20hs.', '333'),
-(2, 'on', 'Desarrollador de software', '002', '8', '1515', '10/10/2028', '10/10/2005', '10/10/2018', NULL, 'lun vier 18hs-20hs.', '555'),
-(8, 'on', 'Alienologia', '004', ' 2', '132', '2022-10-11', '2022-10-04', '2022-10-04', 'estructurada desde luego. ', 'lun vier 18hs-20hs.', '666'),
-(9, 'on', 'lauftologia', '006', '2', '156', '10/10/2025', '10/10/2000', '10/10/2011', '', 'lun vier 18hs-20hs.', '555'),
-(25, 'on', 'Equinoterapia', '009', ' 3', '1', 'kjnjn', 'asd', 'asd', '', 'mie jue', 'asd'),
-(26, '', 'Desarrollo', '859', ' 3', '1234', '2026-07-08', '2022-11-01', '2022-11-01', 'hola ', 'Lunes', '66');
+(1, 'on', 'Analista de sistemas', '003', '55', '1515', '10/10/2025', '10/10/2000', '10/10/2021', NULL, 'lun vier 17hs-20hs.', '333'),
+(2, 'on', 'Desarrollador de software', '002', '45', '1515', '10/10/2028', '10/10/2005', '10/10/2018', NULL, 'lun vier 18hs-20hs.', '555'),
+(3, 'on', 'Seguridad e Higiene', '004', ' 2333', '132', '2022-10-11', '2022-10-04', '2022-10-04', 'estructurada desde luego. ', 'lun vier 18hs-20hs.', '666');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carreras_alumnos`
+--
+
+CREATE TABLE `carreras_alumnos` (
+  `ID` int(10) NOT NULL,
+  `ID_Carrera` int(10) NOT NULL,
+  `ID_Alumno` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `carreras_alumnos`
+--
+
+INSERT INTO `carreras_alumnos` (`ID`, `ID_Carrera`, `ID_Alumno`) VALUES
+(25, 1, 113),
+(30, 1, 101),
+(32, 2, 113),
+(33, 2, 101);
 
 -- --------------------------------------------------------
 
@@ -198,7 +214,8 @@ INSERT INTO `personal` (`id`, `nombre`, `apellido`, `telefono`, `dni`, `pasaport
 (50, 'andres', 'garcia', '', '12312312', '', 'andres@andres', 'Director', 1),
 (51, 'aldana', 'lopez', '', '12345699', '', 'super@super', 'super', 1),
 (52, 'Hector', 'Caputo', '', '12345677', '', 'preceptor@preceptor', 'Preceptor', 1),
-(53, 'persona', 'prueba', '', '12345678', '', 'login@login', 'Director', 1);
+(53, 'persona', 'prueba', '', '12345678', '', 'login@login', 'Director', 1),
+(55, 'eee', 'eeee', '', '44444444', '', 'sehent@hotmail.com', 'Director', 1);
 
 -- --------------------------------------------------------
 
@@ -238,14 +255,21 @@ INSERT INTO `profesor` (`id`, `nombre`, `apellido`, `titulo`, `email`, `telefono
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `IDX_1435D52D361F7E9C` (`fk_carrera_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `carrera`
 --
 ALTER TABLE `carrera`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `carreras_alumnos`
+--
+ALTER TABLE `carreras_alumnos`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ID_Carrera` (`ID_Carrera`),
+  ADD KEY `ID_Alumno` (`ID_Alumno`);
 
 --
 -- Indices de la tabla `materia`
@@ -292,13 +316,19 @@ ALTER TABLE `profesor`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT de la tabla `carrera`
 --
 ALTER TABLE `carrera`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT de la tabla `carreras_alumnos`
+--
+ALTER TABLE `carreras_alumnos`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
@@ -316,7 +346,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `profesor`
@@ -329,10 +359,11 @@ ALTER TABLE `profesor`
 --
 
 --
--- Filtros para la tabla `alumno`
+-- Filtros para la tabla `carreras_alumnos`
 --
-ALTER TABLE `alumno`
-  ADD CONSTRAINT `FK_1435D52D361F7E9C` FOREIGN KEY (`fk_carrera_id`) REFERENCES `carrera` (`id`);
+ALTER TABLE `carreras_alumnos`
+  ADD CONSTRAINT `carreras_alumnos_ibfk_2` FOREIGN KEY (`ID_Carrera`) REFERENCES `carrera` (`id`),
+  ADD CONSTRAINT `carreras_alumnos_ibfk_3` FOREIGN KEY (`ID_Alumno`) REFERENCES `alumno` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `materia`
@@ -344,8 +375,8 @@ ALTER TABLE `materia`
 -- Filtros para la tabla `materia_carrera`
 --
 ALTER TABLE `materia_carrera`
-  ADD CONSTRAINT `FK_AC5DF516B54DBBCB` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_AC5DF516C671B40F` FOREIGN KEY (`carrera_id`) REFERENCES `carrera` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `materia_carrera_ibfk_1` FOREIGN KEY (`materia_id`) REFERENCES `materia` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `materia_carrera_ibfk_2` FOREIGN KEY (`carrera_id`) REFERENCES `carrera` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `personal`

@@ -65,21 +65,40 @@ max-width: 200px;
 
 }
 
+#inputt2{
+
+    max-width: 200px;
+    height: 150px;
+    
+    }
+
 
 .info{
 
     max-width: 300px;
-    max-height: 100px;
     padding:0.5rem;
     margin-bottom: 5px;
     border: 0.5px solid rgb(125, 125, 128);
     border-radius: 5px;
     overflow: hidden;
+    
 }
 .info p {
 
 margin:0px;
 
+}
+
+
+.info2{
+
+    max-width: 300px;
+    max-height: 100px;
+    padding:0.5rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: center;
 }
 
 /*--------------------------------------------------N */

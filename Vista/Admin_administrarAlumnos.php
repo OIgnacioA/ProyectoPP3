@@ -1,5 +1,5 @@
 <?php 
-
+  error_reporting(0);
   session_start();
 
   $nombre = $_SESSION['usuario'] ;
@@ -20,11 +20,7 @@
 
 
 ?>
-<?php 
-if ( isset($_POST["UpDate"])){
-require_once("../Controlador/UpDateAlumno.php");
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -181,12 +177,22 @@ require_once("../Controlador/UpDateAlumno.php");
 
             $pass=0;
             $cont = 0;
- 
+
+            $IdAlumnos= [];
+
             while($consulta = mysqli_fetch_array($resultado)){
           
               $cont +=1;
 
               $id = $consulta["id"];
+
+              //para terminar de completar , con losque no cumplen el primer sql.
+
+              array_push($IdAlumnos, $id);
+          
+              //////
+
+
               $nombre =  $consulta["nombre"];
               $Apellido =  $consulta["apellido"];
               $Mail =  $consulta["email"];
@@ -201,7 +207,7 @@ require_once("../Controlador/UpDateAlumno.php");
                 $dniToF = "false" ;
               }else {$Dni_pass = $consulta["dni"];}
          
-             
+          
 
               if($IdAux == $id) {
 
@@ -234,16 +240,55 @@ require_once("../Controlador/UpDateAlumno.php");
                          
             }
 
-            //el ultimo: 
 
-            Impresion($IdAux, $nombreAux, $ApellidoAux, $MailAux, $estadoAux, $tiempoAux, $dniToFAux,$CarreraAux, $Dni_passAux);
+          
 
-            ////si solo hay un alumno.
+            ////si solo hay un alumno./y ES el ultimo por definición.
             if($cont == 1 ){
               Impresion($IdAux, $nombreAux, $ApellidoAux, $MailAux, $estadoAux, $tiempoAux, $dniToFAux,$CarreraAux, $Dni_passAux);
+            }else {
+
+              //hay mas de uno y este es : el ultimo: 
+
+              Impresion($IdAux, $nombreAux, $ApellidoAux, $MailAux, $estadoAux, $tiempoAux, $dniToFAux,$CarreraAux, $Dni_passAux);
+            
             }
             /////
 
+            ///Alumnos sin datos completos: (no cumplen con el primer sql)
+
+            $consultaAl = "SELECT *  FROM alumno
+            ORDER BY id";
+
+            $resultado = mysqli_query($conexion,$consultaAl);
+
+
+            while($consulta = mysqli_fetch_array($resultado)){
+
+              $id = $consulta["id"];
+              $nombre =  $consulta["nombre"];
+              $Apellido =  $consulta["apellido"];
+              $Mail =  $consulta["email"];
+              $estado =  $consulta["estado"];
+              $tiempo = $consulta["FechaCambio"];
+              $dniToF = "true";
+              $Carrera =  $consulta["CNombre"];
+              $Carrera.=";";
+              if ($consulta["dni"] == "") { 
+
+                $Dni_pass = $consulta["pasaporte"];
+                $dniToF = "false" ;
+              }else {$Dni_pass = $consulta["dni"];}
+
+
+             
+
+
+
+              if( in_array($id, $IdAlumnos)){}
+              else {Impresion($id, $nombre, $Apellido, $Mail, $estado, $tiempo, $dniTo,$Carrera, $Dni_pass);}
+
+            }
 
               function Impresion($id, $nombre, $Apellido, $Mail, $estado, $tiempo, $dniToF,$Carrera, $Dni_pass){
                 
@@ -261,9 +306,6 @@ require_once("../Controlador/UpDateAlumno.php");
                 <div class=". "'". "info". "'" ." id= " . "'" ."nover"."'"." > 
                 <input id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100". "'" . "pattern=". "'". "{1,100}" . "'". "value=". "'". $id . "'" ."name=". "'"."id". "'". ">
                 </div>
-
-
-                  
 
 
                 <div class=". "'". "info". "'" . ">
@@ -289,12 +331,19 @@ require_once("../Controlador/UpDateAlumno.php");
 
                 <div class=". "'". "info". "'" . "> 
 
+                  <div> <select class=". "'". "options".$id. "'" . "'"."name=". "'" . "carrera" . "'" . "style=width:207px;height:25px; " ."onChange=" ."'" . "Agregar(".$id. ")".  "'".">
+                    <option value='Analista de sistemas;'>Analista de sistemas</option>
+                    <option value='Desarrollador de software;'>Desarrollador de software</option>
+                    <option value='Seguridad e Higiene;'>Seguridad e higiene</option>
+                    </select>
+                  </div><br>
+
                   <div  class=". "'". "overlay".$id. "'" . "  style=" . "'" . " display: none" . "'". ";>
 
-                  <textarea id=" . "'" . "inputt" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100".   "'" . "value=". "'". $Carrera . "'" ."name=". "'"."carrera". "'". "cols=". "'" .'50'. "'".">". $Carrera ."</textarea>
+                  <textarea  class=". "'". "areaTexto".$id. "'" . "id=" . "'" . "inputt2" . "'" . "type=". "'" . "text". "'" .  "maxlength=". "'"."100".   "'" . "value=". "'". $Carrera . "'" ."name=". "'"."carrera". "'". "cols=". "'" .'50'. "'".">". $Carrera ."</textarea>
                   </div>
 
-                  <div class=". "'". "info". "'" .  " onclick=" ."'" . "AbrirCerrar_Cont(".$id. ")". "'".">
+                  <div class=". "'". "info2". "'" .  " onclick=" ."'" . "AbrirCerrar_Cont(".$id. ")". "'".">
 
                     <input type=". "'" . "button".  "'" . "value= ". "'" . "Ver Carreras" . "'" . "name=". "'". "envio" . "'" . "class=" . "'" . "btn btn-secondary". "'". ">
                   
@@ -347,8 +396,6 @@ require_once("../Controlador/UpDateAlumno.php");
            // }
           ?>
 
-         
-
           <br><br>
         
          <a href="../Vista/Admin_AltaAlumno.php" > <button type="button" class=" btn btn-secondary">Dar Alta</button></a><br><br> 
@@ -369,8 +416,11 @@ require_once("../Controlador/UpDateAlumno.php");
 
   <!-- //------PHP------------------------------------------------------------------ -->
 
+  <?php if ( isset($_POST["UpDate"])){
 
+    require_once("../Controlador/UpDateAlumno.php");
 
+  }?>
 
   <!-- //--------------------------------------------------------------------------- -->
 

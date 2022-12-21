@@ -2,7 +2,7 @@
 
   error_reporting(0);
 
-  
+
 
 
   if ( isset($_POST["UpDate"]))  {
@@ -46,7 +46,8 @@
 
     }
 
-
+    
+ 
     /////////////////////////////////////////eliminacion de carrera: 
 
   
@@ -93,10 +94,19 @@
    ///////////////////////////////////////////////Agregar carrera: 
 
 
-    $Diferencia= array_diff($CarrArr, $CarreraDeAlumno);
-    $Diferente = $Diferencia[1];
-    
-    $NombreDeCarreras= [];
+    //La BBDD puede devolver una array de carreras vacio si el alumno no está inscripto a nada: 
+    if(empty($CarreraDeAlumno) == 1){ 
+
+        $Diferente = $CarrArr[0]; 
+  
+    }else {
+    $Diferencia = array_diff($CarrArr, $CarreraDeAlumno);
+    $Diferente =$Diferencia[1];
+    }
+    //
+
+
+    $NombreDeCarreras= [];//Nombres de todas las carreras vigentes.
 
     $consultar = "  SELECT ca.nombre, ca.id FROM carrera as ca ";
     $result =mysqli_query($conexion, $consultar);
@@ -114,8 +124,7 @@
 
 
     for($i=0; $i<count($NombreDeCarreras); $i++){
-
- 
+        
 
         if ($Diferente == $NombreDeCarreras[$i]['Nom']) {
           
@@ -129,7 +138,7 @@
 
 
 
- ///set
+ ////////////////////set
 
     if ($tip != "true") {
         $nuevoAlumno->setPasaporte($DNIP);

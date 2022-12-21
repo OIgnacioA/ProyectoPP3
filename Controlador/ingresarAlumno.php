@@ -128,9 +128,16 @@
  $idd = $con["id"];
  $_SESSION['id'] = $idd;
 
- 
- mysqli_query($conexion, "INSERT INTO `carreras_alumnos`( `ID_Carrera`, `ID_Alumno`) VALUES ('$carrera','$idd')");
 
+    try {
+
+        mysqli_query($conexion, "INSERT INTO `carreras_alumnos`( `ID_Carrera`, `ID_Alumno`) VALUES ('$carrera','$idd')");
+
+    } catch (Exception $e) {
+
+        echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        
+    }
 
 
 
@@ -172,13 +179,13 @@
 
 
 
- $arr = array("Director", "Vicedirector","Secretario"); #roles admin
+ /*$arr = array("Director", "Vicedirector","Secretario"); #roles admin
 
  if(in_array($rol, $arr)){
  
  require_once("../Controlador/Cabeceras.php"); 
  
- }
+ }*/
 
  // 
  

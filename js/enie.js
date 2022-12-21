@@ -7,7 +7,7 @@ flag2= true;
 function AbrirCerrar_Cont(val){
 
     var n = val;
-    console.log("------>"+ n);
+   
     if(flag== true){
 
         $(".overlay"+n).fadeIn("slow");
@@ -18,4 +18,22 @@ function AbrirCerrar_Cont(val){
         flag = true; 
     }
 
+}
+
+
+
+
+function Agregar(val) {
+
+    var n = val;
+    var datos = [];
+    var select = document.querySelector('.options'+n).value;
+    var eltexto = document.querySelector('.areaTexto'+n);
+    var fill = eltexto.value;
+    
+
+
+    datos.push(fill);
+    datos.push(select +"\n");
+    eltexto.value = datos;
 }
