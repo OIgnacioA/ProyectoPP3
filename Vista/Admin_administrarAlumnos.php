@@ -200,7 +200,11 @@
               $tiempo = $consulta["FechaCambio"];
               $dniToF = "true";
               $Carrera =  $consulta["CNombre"];
-              $Carrera.=";";
+
+              if($Carrera != ""){
+                $Carrera.=";";
+              }
+
               if ($consulta["dni"] == "") { 
 
                 $Dni_pass = $consulta["pasaporte"];
@@ -273,7 +277,11 @@
               $tiempo = $consulta["FechaCambio"];
               $dniToF = "true";
               $Carrera =  $consulta["CNombre"];
-              $Carrera.=";";
+
+              if($Carrera != ""){
+                $Carrera.=";";
+                
+              }
               if ($consulta["dni"] == "") { 
 
                 $Dni_pass = $consulta["pasaporte"];

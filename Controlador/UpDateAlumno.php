@@ -31,11 +31,12 @@
    $CarrArr=[];
     for ($i = 0; $i<strlen($Carr);$i++){
 
-        if($Carr[$i] !=";"){
+
+        if(($Carr[$i] !=";") && ($Carr[$i] !=",")){
            
             $var .=$Carr[$i];
            
-        }else { 
+        }else if($var!=""){ 
 
         
          array_push($CarrArr, $var);
@@ -46,10 +47,9 @@
 
     }
 
-    
- 
-    /////////////////////////////////////////eliminacion de carrera: 
 
+
+    /////////////////////////////////////Llamado a BBDD; 
   
     $CarrerasDDBB = [];
     $CarreraDeAlumno =[];
@@ -75,6 +75,8 @@
         array_push($CarreraDeAlumno, $NombreCarrera);
     
     }
+
+ /////////////////////////////////////////eliminacion de carrera: 
 
 
     for($i = 0; $i<count($CarrerasDDBB);$i++){
@@ -104,7 +106,6 @@
     $Diferente =$Diferencia[1];
     }
     //
-
 
     $NombreDeCarreras= [];//Nombres de todas las carreras vigentes.
 
