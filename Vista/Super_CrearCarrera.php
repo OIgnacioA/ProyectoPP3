@@ -131,13 +131,13 @@ error_reporting(0);
 
 
   <main>
-    <section>
+  <section>
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="col-12 d-flex justify-content-center">
 
 
-            <form id="bodyprincipal" action="crearCarrera.php" method="post" enctype='multipart/form-data'>
+            <form id="bodyprincipal" action="Super_CrearCarrera.php" method="post" enctype='multipart/form-data'>
 
               <div class="container">
                 <div class="row">
@@ -154,7 +154,7 @@ error_reporting(0);
                         <label>DURACION</label>
                         <select id="duracion" name="duracion" class="form-select "
                           style="background-color: #4a8d9ec5;" aria-label=".form-select-lg example" required>
-                          <option selected>Seleccione</option>
+                          <option></option>
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -348,23 +348,7 @@ error_reporting(0);
 
 <!-- //--------------------------------------------------------------------------- -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <script src="../js/scriptCarrera.js"></script>
 
-
-  <style type="text/css">
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    input[type=number] {
-      -moz-appearance: textfield;
-    }
-  </style>
 
 </body>
 
